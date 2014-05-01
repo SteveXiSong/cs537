@@ -1,0 +1,69 @@
+console.c:      if(proc->killed){
+exec.c:  safestrcpy(proc->name, last, sizeof(proc->name));
+exec.c:  oldpgdir = proc->pgdir;
+exec.c:  proc->pgdir = pgdir;
+exec.c:  proc->sz = sz_stack;
+exec.c:  proc->sz_heap = sz;
+exec.c:  proc->tf->eip = elf.entry;  // main
+exec.c:  proc->tf->esp = sp;
+fs.c:// inode; references are typically kept in struct file and in proc->cwd.
+fs.c:    ip = idup(proc->cwd);
+ide.c:  // Assuming will not sleep too long: ignore proc->killed.
+mp.c:      if(ncpu != proc->apicid){
+mp.c:        cprintf("mpinit: ncpu=%d apicid=%d\n", ncpu, proc->apicid);
+mp.c:      if(proc->flags & MPBOOT)
+pipe.c:      if(p->readopen == 0 || proc->killed){
+pipe.c:    if(proc->killed){
+proc.c:  sz = proc->sz_heap;
+proc.c:    if((sz = allocuvm(proc->pgdir, sz, sz + n)) == 0)
+proc.c:    if((sz = deallocuvm(proc->pgdir, sz, sz + n)) == 0)
+proc.c:  proc->sz_heap = sz;
+proc.c:  if((np->pgdir = copyuvm(proc->pgdir, proc->sz_heap)) == 0){
+proc.c:  np->sz = proc->sz;
+proc.c:  np->sz_heap = proc->sz_heap;//sx
+proc.c:  *np->tf = *proc->tf;
+proc.c:    if(proc->ofile[i])
+proc.c:      np->ofile[i] = filedup(proc->ofile[i]);
+proc.c:  np->cwd = idup(proc->cwd);
+proc.c:  safestrcpy(np->name, proc->name, sizeof(proc->name));
+proc.c:    if(proc->ofile[fd]){
+proc.c:      fileclose(proc->ofile[fd]);
+proc.c:      proc->ofile[fd] = 0;
+proc.c:  iput(proc->cwd);
+proc.c:  proc->cwd = 0;
+proc.c:  wakeup1(proc->parent);
+proc.c:  proc->state = ZOMBIE;
+proc.c:    if(!havekids || proc->killed){
+proc.c:      swtch(&cpu->scheduler, proc->context);
+proc.c:// and have changed proc->state.
+proc.c:  if(proc->state == RUNNING)
+proc.c:  swtch(&proc->context, cpu->scheduler);
+proc.c:  proc->state = RUNNABLE;
+proc.c:  proc->chan = chan;
+proc.c:  proc->state = SLEEPING;
+proc.c:  proc->chan = 0;
+syscall.c:  return fetchint(proc, proc->tf->esp + 4 + 4*n, ip);
+syscall.c:  if((uint)i >= proc->sz || (uint)i+size > proc->sz)
+syscall.c:  num = proc->tf->eax;
+syscall.c:    proc->tf->eax = syscalls[num]();
+syscall.c:            proc->pid, proc->name, num);
+syscall.c:    proc->tf->eax = -1;
+sysfile.c:  if(fd < 0 || fd >= NOFILE || (f=proc->ofile[fd]) == 0)
+sysfile.c:    if(proc->ofile[fd] == 0){
+sysfile.c:      proc->ofile[fd] = f;
+sysfile.c:  proc->ofile[fd] = 0;
+sysfile.c:  iput(proc->cwd);
+sysfile.c:  proc->cwd = ip;
+sysfile.c:      proc->ofile[fd0] = 0;
+sysproc.c:  return proc->pid;
+sysproc.c:  addr = proc->sz;
+sysproc.c:    if(proc->killed){
+trap.c:    if(proc->killed)
+trap.c:    proc->tf = tf;
+trap.c:    if(proc->killed)
+trap.c:            proc->pid, proc->name, tf->trapno, tf->err, cpu->id, tf->eip, 
+trap.c:    proc->killed = 1;
+trap.c:  if(proc && proc->killed && (tf->cs&3) == DPL_USER)
+trap.c:  if(proc && proc->state == RUNNING && tf->trapno == T_IRQ0+IRQ_TIMER)
+trap.c:  if(proc && proc->killed && (tf->cs&3) == DPL_USER)
+vm.c:  cpu->ts.esp0 = (uint)proc->kstack + KSTACKSIZE;

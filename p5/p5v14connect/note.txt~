@@ -1,0 +1,78 @@
+#define MFS_INUM               (4096) // inode number
+
+#define MFS_IMAPNUM            (256)  // imap number
+#define MFS_DIRECT_P           (14)   // number of data blocks inode points to
+#define MFS_NODE_PER_MAP       (16)
+#define MFS_NAME_SIZE          (60)
+
+typedef struct __MFS_CheckRegion_t{
+    int log_end;
+    int imap_ptr[MFS_IMAPNUM]; // each entry contains the offset of an inode map
+} MFS_CR_t;
+
+typedef struct __MFS_inode_t{
+    int size;
+    int type;
+    int ptr[MFS_DIRECT_P];  // each one is the offset of the data block
+} MFS_Inode_t;
+
+typedef struct __MFS_imap_t{
+    int imap[MFS_NODE_PER_MAP];
+} MFS_Imap_t;
+
+
+
+// NOTE: called under condition that fd > 0, no inner fd check mechanism
+int img_init(char* fimage);
+int img_mount(char* fimage);
+
+int img_lookup(int fd, int pinum, char* name);
+int img_stat(int fd, int inum, MFS_Stat_t* m);
+int img_write(int fd, int inum, char* buffer, int block);
+int img_read(int fd, int inum, char* buffer, int block);
+int img_creat(int fd, int pinum, int type, char* name);
+int img_unlink(int fd, int pinum, char*name);
+int img_shutdown(int fd);
+
+int inum2ptr(int fd, int inum);
+
+int entry_creat(MFS_DirEnt_t* dir, int inum, char* name);
+int init_box();
+int update_box(int fd);
+int get_inode(int fd, int ptr, MFS_Inode_t* inode);
+int entry_inum(int fd, int dir_ptr);
+int dir_contain(int fd, int dir_ptr, char* name);
+
+
+int get_inode(int fd, int inum, MFS_Inode_t* inode){
+    if(inum < 0 || inum > MFS_INUM){
+	printf("get_inode: illegal inode number\n");
+	return -1;
+    }
+	
+    int offset = inode_box[inum];
+    // read the inode	
+    lseek(fd, offset, SEEK_SET);
+    int in = read(fd, inode, sizeof(MFS_Inode_t));
+    if(in < 0){
+	printf("get_inode: read inode error\n");
+	return -1;
+    }
+	return 0;
+}
+
+
+
+int get_imap(int fd, int inum, MFS_Imap_t* imap){
+    if(inum < 0 || inum > MFS_INUM){
+	printf("get_inode: illegal inode number\n");
+	return -1;
+    }
+        int offset = inum/MFS_NODE_PER_MAP;
+	imap = (MFS_Imap_t*)inode_box;
+	imap += offset; 
+
+
+    return 0;
+
+}

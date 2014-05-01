@@ -1,0 +1,194 @@
+#include "mfs.h"
+#include "udp.h"
+struct sockaddr_in saddr;
+int sd;
+#define BUFFER_SIZE (5000)
+
+// network protocal:
+// message format:
+// operate     send format               return format
+// Look up-----L pinum name              RET
+// Stat--------S inum                    RET stat
+// write ------W inum block data         RET
+// Read  ------R inum block              RET data
+// creat ------C pinum type name         RET
+// Unlink -----U pinum name              RET
+// shutDown----D                         RET
+// 
+
+int MFS_Init(char *hostname, int port)
+{
+  sd = UDP_Open(0);
+  assert(sd > -1);
+
+  int rc = UDP_FillSockAddr(&saddr, hostname, port);
+  assert(rc == 0);
+
+  printf("CLIENT:: about to send message (%d)\ninit finish\n", rc);
+
+  return 0;
+  
+}
+
+
+int MFS_Lookup(int pinum, char *name){
+  char message[BUFFER_SIZE];
+  char buffer[BUFFER_SIZE];
+  if(strlen(name)>= 60)
+    return -1;
+  sprintf(message, "L %d %s", pinum,name);
+  int rc = UDP_Write(sd, &saddr, message, BUFFER_SIZE);
+  printf("CLIENT:: sent LOOKUP(%d,*name) (%d)\n",pinum, rc);
+  char *re;
+  if (rc > 0) {
+    struct sockaddr_in raddr;
+    int rc = UDP_Read(sd, &raddr, buffer, BUFFER_SIZE);
+    printf("CLIENT:: read %d bytes (message: '%s')\n", rc, buffer);
+    char *a;
+    a = strtok(buffer," ");
+    re = strdup(a);
+    //name = strtok(NULL, " ");
+    printf("receive inum :%s\n",re);
+  }
+  return atoi(re);
+}
+
+
+
+int MFS_Stat(int inum, MFS_Stat_t *m){
+  char message[BUFFER_SIZE];
+  char buffer[BUFFER_SIZE];
+  sprintf(message, "S %d", inum);
+  int rc = UDP_Write(sd, &saddr, message, BUFFER_SIZE);
+  printf("CLIENT:: sent LOOKUP(%d) (%d)\n",inum, rc);
+  char *re;
+  if (rc > 0) {
+    struct sockaddr_in raddr;
+    int rc = UDP_Read(sd, &raddr, buffer, BUFFER_SIZE);
+    printf("CLIENT:: read %d bytes (message: '%s')\n", rc, buffer);
+    memcpy(m, &buffer[2], sizeof(m));
+    char *a;
+    a = strtok(buffer," ");
+    re = strdup(a);
+    //name = strtok(NULL, " ");
+    printf("receive inum :%s\n",re);
+    printf("m.type:%d\n",m->size);
+  }
+  return atoi(re);
+}
+
+int MFS_Unlink(int pinum, char *name){
+  char message[BUFFER_SIZE];
+  char buffer[BUFFER_SIZE];
+  if(strlen(name)>=60)
+    return -1;
+  sprintf(message, "U %d %s", pinum,name);
+  int rc = UDP_Write(sd, &saddr, message, BUFFER_SIZE);
+  printf("CLIENT:: sent LOOKUP(%d,*name) (%d)\n",pinum, rc);
+  char *re;
+  if (rc > 0) {
+    struct sockaddr_in raddr;
+    int rc = UDP_Read(sd, &raddr, buffer, BUFFER_SIZE);
+    printf("CLIENT:: read %d bytes (message: '%s')\n", rc, buffer);
+    char *a;
+    a = strtok(buffer," ");
+    re = strdup(a);
+    //name = strtok(NULL, " ");
+    printf("receive inum :%s\n",re);
+  }
+  return atoi(re);
+}
+int MFS_Creat(int pinum, int type, char *name)
+{
+  char message[BUFFER_SIZE];
+  char buffer[BUFFER_SIZE];
+  if(strlen(name)>=60)
+    return -1;
+  sprintf(message, "C %d %d %s",pinum, type,name);
+  int rc = UDP_Write(sd, &saddr, message, BUFFER_SIZE);
+  printf("CLIENT:: sent LOOKUP(%d,*name) (%d)\n",pinum, rc);
+  char *re;
+  if (rc > 0) {
+    struct sockaddr_in raddr;
+    int rc = UDP_Read(sd, &raddr, buffer, BUFFER_SIZE);
+    printf("CLIENT:: read %d bytes (message: '%s')\n", rc, buffer);
+    char *a;
+    a = strtok(buffer," ");
+    re = strdup(a);
+    //name = strtok(NULL, " ");
+    printf("receive inum :%s\n",re);
+  }
+  return atoi(re);
+}
+int MFS_Write(int inum, char *buffer, int block){
+  char message[BUFFER_SIZE];
+  char buffers[BUFFER_SIZE];
+  if(block >=16)
+    return -1;
+  sprintf(message, "W %d %d",inum, block);
+  memcpy(&message[8], buffer, MFS_BLOCK_SIZE);
+  printf("message %s\n",message);
+  int rc = UDP_Write(sd, &saddr, message, BUFFER_SIZE);
+  printf("CLIENT:: sent LOOKUP(%d,*name) (%d)\n",inum, rc);
+  char *re;
+  if (rc > 0) {
+    struct sockaddr_in raddr;
+    int rc = UDP_Read(sd, &raddr, buffers, BUFFER_SIZE);
+    //printf("CLIENT:: read %d bytes (message: '%s')\n", rc, buffers);
+    char *a;
+    a = strtok(buffers," ");
+    re = strdup(a);
+    //name = strtok(NULL, " ");
+    printf("receive inum :%s\n",re);
+  }
+  return atoi(re);
+}
+
+
+int MFS_Read(int inum, char *buffer, int block){
+  char message[BUFFER_SIZE];
+  char buffers[BUFFER_SIZE];
+  sprintf(message, "R %d %d",inum, block);
+  // memcpy(&message[6], buffer, MFS_BLOCK_SIZE);
+  int rc = UDP_Write(sd, &saddr, message, BUFFER_SIZE);
+  printf("CLIENT:: sent LOOKUP(%d,*name (%d)\n",inum, rc);
+  char *re;
+  if (rc > 0) {
+    struct sockaddr_in raddr;
+    int rc = UDP_Read(sd, &raddr, buffers, BUFFER_SIZE);
+    printf("CLIENT\n");//: '%s')\n", rc, buffers);
+    memcpy(buffer, &buffers[4], MFS_BLOCK_SIZE);
+    char *a;
+    a = strtok(buffers," ");
+    re = strdup(a);
+    //name = strtok(NULL, " ");
+    printf("receive inum :%s\n",re);
+  }
+  return atoi(re);
+}
+
+
+
+int MFS_Shutdown(){
+  char message[BUFFER_SIZE];
+  char buffer[BUFFER_SIZE];
+  sprintf(message, "D");
+  int rc = UDP_Write(sd, &saddr, message, BUFFER_SIZE);
+  printf("CLIENT:: sent LOOKUP(%d,*name)\n",rc);
+  /*
+  char *re;
+  if (rc > 0) {
+    struct sockaddr_in raddr;
+    int rc = UDP_Read(sd, &raddr, buffer, BUFFER_SIZE);
+    printf("CLIENT:: read %d bytes (message: '%s')\n", rc, buffer);
+    char *a;
+    a = strtok(buffer," ");
+    re = strdup(a);
+    //name = strtok(NULL, " ");
+    printf("receive inum :%s\n",re);
+  }
+  return atoi(re);
+  */
+  return 0;
+
+}

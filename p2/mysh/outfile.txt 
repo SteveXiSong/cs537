@@ -1,0 +1,14 @@
+cmd.c
+hello.py
+hellotst.py
+makefile
+mysh
+mysh.c
+mysh.good_pipe_in.v2.c
+mysh.good.v2.c
+mysh.h
+mysh.redir.v1.c
+mysh.v1.c
+ outfile2.txt 
+ outfile3.txt 
+outfile.txt 

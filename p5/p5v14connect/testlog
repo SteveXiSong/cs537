@@ -1,0 +1,705 @@
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f *.o *.so 
+Trying to build project using make
+make
+gcc -c -fpic libmfs.c udp.c -Wall -Werror
+gcc -shared -o libmfs.so libmfs.o udp.o
+gcc -lmfs -L. -o mymfs main.c -Wall -Werror
+gcc -Wall -Werror -c server.c -o server.o
+gcc -o server server.o udp.o
+
+
+test build PASSED
+ (build project using make)
+ file 'server' exists after make clean, removing
+
+
+**********************************************************************
+
+Test shutdown
+init server and client then call shutdown
+
+**********************************************************************
+Starting server on port 6981
+/tmp/tmpMEFFjq/p/server 6981 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test shutdown FAILED
+ (init server and client then call shutdown)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test creat
+creat a file and check with lookup
+
+**********************************************************************
+Starting server on port 6231
+/tmp/tmpMEFFjq/p/server 6231 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test creat FAILED
+ (creat a file and check with lookup)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test write
+write then read one block
+
+**********************************************************************
+Starting server on port 5540
+/tmp/tmpMEFFjq/p/server 5540 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test write FAILED
+ (write then read one block)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test stat
+stat a regular file
+
+**********************************************************************
+Starting server on port 5056
+/tmp/tmpMEFFjq/p/server 5056 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test stat FAILED
+ (stat a regular file)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test overwrite
+overwrite a block
+
+**********************************************************************
+Starting server on port 7516
+/tmp/tmpMEFFjq/p/server 7516 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test overwrite FAILED
+ (overwrite a block)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test maxfile
+write largest possible file
+
+**********************************************************************
+Starting server on port 7901
+/tmp/tmpMEFFjq/p/server 7901 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test maxfile FAILED
+ (write largest possible file)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test maxfile2
+write more blocks than possible
+
+**********************************************************************
+Starting server on port 8721
+/tmp/tmpMEFFjq/p/server 8721 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test maxfile2 FAILED
+ (write more blocks than possible)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test sparse
+write first and last block
+
+**********************************************************************
+Starting server on port 7250
+/tmp/tmpMEFFjq/p/server 7250 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test sparse FAILED
+ (write first and last block)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test stat2
+stat a sparse file
+
+**********************************************************************
+Starting server on port 9412
+/tmp/tmpMEFFjq/p/server 9412 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test stat2 FAILED
+ (stat a sparse file)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test dir1
+check root for dot entries
+
+**********************************************************************
+Starting server on port 6070
+/tmp/tmpMEFFjq/p/server 6070 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test dir1 FAILED
+ (check root for dot entries)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test dir2
+create a new directory and check it
+
+**********************************************************************
+Starting server on port 6334
+/tmp/tmpMEFFjq/p/server 6334 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test dir2 FAILED
+ (create a new directory and check it)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test baddir
+try to create a file with a file parent inode
+
+**********************************************************************
+Starting server on port 8780
+/tmp/tmpMEFFjq/p/server 8780 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test baddir FAILED
+ (try to create a file with a file parent inode)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test baddir2
+try to lookup a file with a file parent inode
+
+**********************************************************************
+Starting server on port 7403
+/tmp/tmpMEFFjq/p/server 7403 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test baddir2 FAILED
+ (try to lookup a file with a file parent inode)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test unlink
+unlink a file
+
+**********************************************************************
+Starting server on port 9378
+/tmp/tmpMEFFjq/p/server 9378 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test unlink FAILED
+ (unlink a file)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test unlink2
+unlink a directory
+
+**********************************************************************
+Starting server on port 8798
+/tmp/tmpMEFFjq/p/server 8798 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test unlink2 FAILED
+ (unlink a directory)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test empty
+unlink a non-empty directory
+
+**********************************************************************
+Starting server on port 5125
+/tmp/tmpMEFFjq/p/server 5125 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test empty FAILED
+ (unlink a non-empty directory)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test name
+name too long
+
+**********************************************************************
+Starting server on port 6812
+/tmp/tmpMEFFjq/p/server 6812 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test name FAILED
+ (name too long)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test persist
+restart server after creating a file
+
+**********************************************************************
+Starting server on port 9312
+/tmp/tmpMEFFjq/p/server 9312 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test persist FAILED
+ (restart server after creating a file)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test drop
+drop every other packet sent by client
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f *.o *.so 
+Trying to build project using make
+make
+gcc -c -fpic libmfs.c udp.c -Wall -Werror
+gcc -shared -o libmfs.so libmfs.o udp.o
+gcc -lmfs -L. -o mymfs main.c -Wall -Werror
+gcc -Wall -Werror -c server.c -o server.o
+gcc -o server server.o udp.o
+Starting server on port 8757
+/tmp/tmpMEFFjq/p/server 8757 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+Trying to clean project using make clean
+make clean
+rm -f *.o *.so 
+Trying to build project using make
+make
+gcc -c -fpic libmfs.c udp.c -Wall -Werror
+gcc -shared -o libmfs.so libmfs.o udp.o
+gcc -lmfs -L. -o mymfs main.c -Wall -Werror
+gcc -Wall -Werror -c server.c -o server.o
+gcc -o server server.o udp.o
+
+
+test drop FAILED
+ (drop every other packet sent by client)
+ file 'server' exists after make clean, removing
+ Unexpected exception [Errno 3] No such process
+ file 'server' exists after make clean, removing
+
+
+**********************************************************************
+
+Test bigdir
+create a directory with max number of files
+
+**********************************************************************
+Starting server on port 8506
+/tmp/tmpMEFFjq/p/server 8506 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test bigdir FAILED
+ (create a directory with max number of files)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test bigdir2
+create a directory with more files than possible
+
+**********************************************************************
+Starting server on port 6678
+/tmp/tmpMEFFjq/p/server 6678 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test bigdir2 FAILED
+ (create a directory with more files than possible)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test deep
+create many deeply nested directories
+
+**********************************************************************
+Starting server on port 7198
+/tmp/tmpMEFFjq/p/server 7198 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test deep FAILED
+ (create many deeply nested directories)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test complex
+a long sequence of creats and writes followed by a check
+
+**********************************************************************
+Starting server on port 8759
+/tmp/tmpMEFFjq/p/server 8759 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test complex FAILED
+ (a long sequence of creats and writes followed by a check)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test complex2
+a long sequence of creats and writes followed by a check
+
+**********************************************************************
+Starting server on port 6038
+/tmp/tmpMEFFjq/p/server 6038 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test complex2 FAILED
+ (a long sequence of creats and writes followed by a check)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test persist2
+restart server after creating many dirs and files
+
+**********************************************************************
+Starting server on port 8915
+/tmp/tmpMEFFjq/p/server 8915 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test persist2 FAILED
+ (restart server after creating many dirs and files)
+ Unexpected exception [Errno 3] No such process
+
+
+**********************************************************************
+
+Test free
+check that inodes and direcrtory entries are freed
+
+**********************************************************************
+Starting server on port 8555
+/tmp/tmpMEFFjq/p/server 8555 testimage
+bind: Address already in use
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+HERE
+OSError: [Errno 3] No such process
+
+
+test free FAILED
+ (check that inodes and direcrtory entries are freed)
+ Unexpected exception [Errno 3] No such process
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build project using make)
+ file 'server' exists after make clean, removing
+
+test shutdown FAILED
+ (init server and client then call shutdown)
+ Unexpected exception [Errno 3] No such process
+
+test creat FAILED
+ (creat a file and check with lookup)
+ Unexpected exception [Errno 3] No such process
+
+test write FAILED
+ (write then read one block)
+ Unexpected exception [Errno 3] No such process
+
+test stat FAILED
+ (stat a regular file)
+ Unexpected exception [Errno 3] No such process
+
+test overwrite FAILED
+ (overwrite a block)
+ Unexpected exception [Errno 3] No such process
+
+test maxfile FAILED
+ (write largest possible file)
+ Unexpected exception [Errno 3] No such process
+
+test maxfile2 FAILED
+ (write more blocks than possible)
+ Unexpected exception [Errno 3] No such process
+
+test sparse FAILED
+ (write first and last block)
+ Unexpected exception [Errno 3] No such process
+
+test stat2 FAILED
+ (stat a sparse file)
+ Unexpected exception [Errno 3] No such process
+
+test dir1 FAILED
+ (check root for dot entries)
+ Unexpected exception [Errno 3] No such process
+
+test dir2 FAILED
+ (create a new directory and check it)
+ Unexpected exception [Errno 3] No such process
+
+test baddir FAILED
+ (try to create a file with a file parent inode)
+ Unexpected exception [Errno 3] No such process
+
+test baddir2 FAILED
+ (try to lookup a file with a file parent inode)
+ Unexpected exception [Errno 3] No such process
+
+test unlink FAILED
+ (unlink a file)
+ Unexpected exception [Errno 3] No such process
+
+test unlink2 FAILED
+ (unlink a directory)
+ Unexpected exception [Errno 3] No such process
+
+test empty FAILED
+ (unlink a non-empty directory)
+ Unexpected exception [Errno 3] No such process
+
+test name FAILED
+ (name too long)
+ Unexpected exception [Errno 3] No such process
+
+test persist FAILED
+ (restart server after creating a file)
+ Unexpected exception [Errno 3] No such process
+
+test drop FAILED
+ (drop every other packet sent by client)
+ file 'server' exists after make clean, removing
+ Unexpected exception [Errno 3] No such process
+ file 'server' exists after make clean, removing
+
+test bigdir FAILED
+ (create a directory with max number of files)
+ Unexpected exception [Errno 3] No such process
+
+test bigdir2 FAILED
+ (create a directory with more files than possible)
+ Unexpected exception [Errno 3] No such process
+
+test deep FAILED
+ (create many deeply nested directories)
+ Unexpected exception [Errno 3] No such process
+
+test complex FAILED
+ (a long sequence of creats and writes followed by a check)
+ Unexpected exception [Errno 3] No such process
+
+test complex2 FAILED
+ (a long sequence of creats and writes followed by a check)
+ Unexpected exception [Errno 3] No such process
+
+test persist2 FAILED
+ (restart server after creating many dirs and files)
+ Unexpected exception [Errno 3] No such process
+
+test free FAILED
+ (check that inodes and direcrtory entries are freed)
+ Unexpected exception [Errno 3] No such process
+
+Passed 1 of 27 tests.
+Overall 1 of 27

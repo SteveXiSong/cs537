@@ -1,0 +1,988 @@
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f *.o *.so 
+Trying to build project using make
+make
+gcc -c -fpic libmfs.c udp.c -Wall -Werror
+gcc -shared -o libmfs.so libmfs.o udp.o
+gcc -lmfs -L. -o mymfs main.c -Wall -Werror
+gcc -Wall -Werror -c server.c -o server.o
+gcc -o server server.o udp.o -g
+
+
+test build PASSED
+ (build project using make)
+ file 'server' exists after make clean, removing
+
+
+**********************************************************************
+
+Test shutdown
+init server and client then call shutdown
+
+**********************************************************************
+Starting server on port 5119
+/tmp/tmp8AoN4p/p/server 5119 testimage
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+rc: 4256
+shutdown
+HERE
+CLIENT:: about to send message (0)
+
+
+test shutdown PASSED
+ (init server and client then call shutdown)
+
+
+**********************************************************************
+
+Test creat
+creat a file and check with lookup
+
+**********************************************************************
+Starting server on port 9973
+/tmp/tmp8AoN4p/p/server 9973 testimage
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+SERVER:: waiting in loop
+rc: 4256
+create
+read inode_ptr: 5124
+in get_inode, ptr is 5124
+inode_in,size 4096, type 0
+assign finish
+lookup inode size: 4096, type: 0
+read inode_ptr: 5124
+in get_inode, ptr is 5124
+inode_in,size 4096, type 0
+assign finish
+rc: 4256
+lookup
+read inode_ptr: 9348
+in get_inode, ptr is 9348
+read inode error
+rc: 4256
+shutdown
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+Failure: MFS_Shutdown returned failure
+
+
+test creat FAILED
+ (creat a file and check with lookup)
+ MFS_Shutdown returned failure
+
+
+**********************************************************************
+
+Test write
+write then read one block
+
+**********************************************************************
+Starting server on port 7044
+/tmp/tmp8AoN4p/p/server 7044 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+Failure: MFS_Write returned failure inum=100100 block=0
+
+
+test write FAILED
+ (write then read one block)
+ MFS_Write returned failure inum=100100 block=0
+
+
+**********************************************************************
+
+Test stat
+stat a regular file
+
+**********************************************************************
+Starting server on port 6329
+/tmp/tmp8AoN4p/p/server 6329 testimage
+
+
+test stat FAILED
+ (stat a regular file)
+ Timelimit (10.0s) exceeded
+
+
+**********************************************************************
+
+Test overwrite
+overwrite a block
+
+**********************************************************************
+Starting server on port 5828
+/tmp/tmp8AoN4p/p/server 5828 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+Failure: MFS_Write returned failure inum=100100 block=0
+
+
+test overwrite FAILED
+ (overwrite a block)
+ MFS_Write returned failure inum=100100 block=0
+
+
+**********************************************************************
+
+Test maxfile
+write largest possible file
+
+**********************************************************************
+Starting server on port 7055
+/tmp/tmp8AoN4p/p/server 7055 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+Failure: MFS_Write returned failure inum=100100 block=0
+
+
+test maxfile FAILED
+ (write largest possible file)
+ MFS_Write returned failure inum=100100 block=0
+
+
+**********************************************************************
+
+Test maxfile2
+write more blocks than possible
+
+**********************************************************************
+Starting server on port 9059
+/tmp/tmp8AoN4p/p/server 9059 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+Failure: MFS_Write returned failure inum=100100 block=0
+
+
+test maxfile2 FAILED
+ (write more blocks than possible)
+ MFS_Write returned failure inum=100100 block=0
+
+
+**********************************************************************
+
+Test sparse
+write first and last block
+
+**********************************************************************
+Starting server on port 8962
+/tmp/tmp8AoN4p/p/server 8962 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+Failure: MFS_Write returned failure inum=100100 block=0
+
+
+test sparse FAILED
+ (write first and last block)
+ MFS_Write returned failure inum=100100 block=0
+
+
+**********************************************************************
+
+Test stat2
+stat a sparse file
+
+**********************************************************************
+Starting server on port 5608
+/tmp/tmp8AoN4p/p/server 5608 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+Failure: MFS_Write returned failure inum=100100 block=0
+
+
+test stat2 FAILED
+ (stat a sparse file)
+ MFS_Write returned failure inum=100100 block=0
+
+
+**********************************************************************
+
+Test dir1
+check root for dot entries
+
+**********************************************************************
+Starting server on port 6720
+/tmp/tmp8AoN4p/p/server 6720 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+Failure: MFS_Lookup returned failure inum=0 name='.'
+
+
+test dir1 FAILED
+ (check root for dot entries)
+ MFS_Lookup returned failure inum=0 name='.'
+
+
+**********************************************************************
+
+Test dir2
+create a new directory and check it
+
+**********************************************************************
+Starting server on port 9719
+/tmp/tmp8AoN4p/p/server 9719 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Failure: MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+
+test dir2 FAILED
+ (create a new directory and check it)
+ MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+
+**********************************************************************
+
+Test baddir
+try to create a file with a file parent inode
+
+**********************************************************************
+Starting server on port 7624
+/tmp/tmp8AoN4p/p/server 7624 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+stat message sent
+Client:: MSF_Creat receives message
+Failure: MFS_Shutdown returned failure
+
+
+test baddir FAILED
+ (try to create a file with a file parent inode)
+ MFS_Shutdown returned failure
+
+
+**********************************************************************
+
+Test baddir2
+try to lookup a file with a file parent inode
+
+**********************************************************************
+Starting server on port 9506
+/tmp/tmp8AoN4p/p/server 9506 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+lookup message sent
+Failure: MFS_Shutdown returned failure
+
+
+test baddir2 FAILED
+ (try to lookup a file with a file parent inode)
+ MFS_Shutdown returned failure
+
+
+**********************************************************************
+
+Test unlink
+unlink a file
+
+**********************************************************************
+Starting server on port 9210
+/tmp/tmp8AoN4p/p/server 9210 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+Failure: MFS_Unlink returned failure pinum=0 name='test'
+
+
+test unlink FAILED
+ (unlink a file)
+ MFS_Unlink returned failure pinum=0 name='test'
+
+
+**********************************************************************
+
+Test unlink2
+unlink a directory
+
+**********************************************************************
+Starting server on port 8721
+/tmp/tmp8AoN4p/p/server 8721 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Failure: MFS_Creat returned failure inum=0 type=0 name='test'
+
+
+test unlink2 FAILED
+ (unlink a directory)
+ MFS_Creat returned failure inum=0 type=0 name='test'
+
+
+**********************************************************************
+
+Test empty
+unlink a non-empty directory
+
+**********************************************************************
+Starting server on port 7521
+/tmp/tmp8AoN4p/p/server 7521 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Failure: MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+
+test empty FAILED
+ (unlink a non-empty directory)
+ MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+
+**********************************************************************
+
+Test name
+name too long
+
+**********************************************************************
+Starting server on port 7486
+/tmp/tmp8AoN4p/p/server 7486 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+Failure: Name argument too long did not result in failure
+
+
+test name FAILED
+ (name too long)
+ Name argument too long did not result in failure
+
+
+**********************************************************************
+
+Test persist
+restart server after creating a file
+
+**********************************************************************
+Starting server on port 5779
+/tmp/tmp8AoN4p/p/server 5779 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+lookup message sent
+Failure: MFS_Write returned failure inum=100100 block=0
+
+
+test persist FAILED
+ (restart server after creating a file)
+ MFS_Write returned failure inum=100100 block=0
+
+
+**********************************************************************
+
+Test drop
+drop every other packet sent by client
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f *.o *.so 
+Trying to build project using make
+make
+gcc -c -fpic libmfs.c udp.c -Wall -Werror
+gcc -shared -o libmfs.so libmfs.o udp.o
+gcc -lmfs -L. -o mymfs main.c -Wall -Werror
+gcc -Wall -Werror -c server.c -o server.o
+gcc -o server server.o udp.o -g
+Starting server on port 9161
+/tmp/tmp8AoN4p/p/server 9161 testimage
+tester: packet dropped
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+Failure: MFS_Creat returned failure inum=0 type=1 name='test'
+Trying to clean project using make clean
+make clean
+rm -f *.o *.so 
+Trying to build project using make
+make
+gcc -c -fpic libmfs.c udp.c -Wall -Werror
+gcc -shared -o libmfs.so libmfs.o udp.o
+gcc -lmfs -L. -o mymfs main.c -Wall -Werror
+gcc -Wall -Werror -c server.c -o server.o
+gcc -o server server.o udp.o -g
+
+
+test drop FAILED
+ (drop every other packet sent by client)
+ file 'server' exists after make clean, removing
+ MFS_Creat returned failure inum=0 type=1 name='test'
+ file 'server' exists after make clean, removing
+
+
+**********************************************************************
+
+Test bigdir
+create a directory with max number of files
+
+**********************************************************************
+Starting server on port 8775
+/tmp/tmp8AoN4p/p/server 8775 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Failure: MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+
+test bigdir FAILED
+ (create a directory with max number of files)
+ MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+
+**********************************************************************
+
+Test bigdir2
+create a directory with more files than possible
+
+**********************************************************************
+Starting server on port 9826
+/tmp/tmp8AoN4p/p/server 9826 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Failure: MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+
+test bigdir2 FAILED
+ (create a directory with more files than possible)
+ MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+
+**********************************************************************
+
+Test deep
+create many deeply nested directories
+
+**********************************************************************
+Starting server on port 9288
+/tmp/tmp8AoN4p/p/server 9288 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Failure: MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+
+test deep FAILED
+ (create many deeply nested directories)
+ MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+
+**********************************************************************
+
+Test complex
+a long sequence of creats and writes followed by a check
+
+**********************************************************************
+Starting server on port 9701
+/tmp/tmp8AoN4p/p/server 9701 testimage
+HERE
+CLIENT:: about to send message (0)
+Filesyste to be written:
+
+
+/1
+/1/1
+/1/1/file2 [1, None, 1]
+/1/1/file1 [2]
+/1/file2 [1]
+/1/file1 [1]
+/1/2
+/1/2/file2 [1, None, 2]
+/1/2/file1 [3]
+/1/0
+/1/0/file2 [1, None, 0]
+/1/0/file1 [1]
+/0
+/0/1
+/0/1/file2 [0, None, 1]
+/0/1/file1 [1]
+/0/file2 [0]
+/0/file1 [0]
+/0/2
+/0/2/file2 [0, None, 2]
+/0/2/file1 [2]
+/0/0
+/0/0/file2 [0, None, 0]
+/0/0/file1 [0]
+/2
+/2/1
+/2/1/file2 [2, None, 1]
+/2/1/file1 [3]
+/2/file2 [2]
+/2/file1 [2]
+/2/2
+/2/2/file2 [2, None, 2]
+/2/2/file1 [4]
+/2/0
+/2/0/file2 [2, None, 0]
+/2/0/file1 [2]
+
+stat message sent
+Failure: MFS_Creat returned failure inum=0 type=0 name='1'
+
+
+test complex FAILED
+ (a long sequence of creats and writes followed by a check)
+ MFS_Creat returned failure inum=0 type=0 name='1'
+
+
+**********************************************************************
+
+Test complex2
+a long sequence of creats and writes followed by a check
+
+**********************************************************************
+Starting server on port 9759
+/tmp/tmp8AoN4p/p/server 9759 testimage
+HERE
+CLIENT:: about to send message (0)
+Filesyste to be written:
+
+
+/1
+/1/1
+/1/1/1
+/1/1/1/file2 [1, None, 1, None, 1]
+/1/1/1/file1 [3]
+/1/1/file2 [1, None, 1]
+/1/1/file1 [2]
+/1/1/0
+/1/1/0/file2 [1, None, 1, None, 0]
+/1/1/0/file1 [2]
+/1/file2 [2]
+/1/file1 [1]
+/1/2
+/1/2/1
+/1/2/1/file2 [1, None, 2, None, 1]
+/1/2/1/file1 [4]
+/1/2/file2 [1, None, 2]
+/1/2/file1 [3]
+/1/2/0
+/1/2/0/file2 [1, None, 2, None, 0]
+/1/2/0/file1 [3]
+/1/0
+/1/0/1
+/1/0/1/file2 [1, None, 0, None, 1]
+/1/0/1/file1 [2]
+/1/0/file2 [1, None, 0]
+/1/0/file1 [1]
+/1/0/0
+/1/0/0/file2 [1, None, 0, None, 0]
+/1/0/0/file1 [1]
+/0
+/0/1
+/0/1/1
+/0/1/1/file2 [0, None, 1, None, 1]
+/0/1/1/file1 [2]
+/0/1/file2 [0, None, 1]
+/0/1/file1 [1]
+/0/1/0
+/0/1/0/file2 [0, None, 1, None, 0]
+/0/1/0/file1 [1]
+/0/file2 [0]
+/0/file1 [0]
+/0/2
+/0/2/1
+/0/2/1/file2 [0, None, 2, None, 1]
+/0/2/1/file1 [3]
+/0/2/file2 [0, None, 2]
+/0/2/file1 [2]
+/0/2/0
+/0/2/0/file2 [0, None, 2, None, 0]
+/0/2/0/file1 [2]
+/0/0
+/0/0/1
+/0/0/1/file2 [0, None, 0, None, 1]
+/0/0/1/file1 [1]
+/0/0/file2 [0, None, 0]
+/0/0/file1 [0]
+/0/0/0
+/0/0/0/file2 [0, None, 0, None, 0]
+/0/0/0/file1 [0]
+/3
+/3/1
+/3/1/1
+/3/1/1/file2 [3, None, 1, None, 1]
+/3/1/1/file1 [5]
+/3/1/file2 [3, None, 1]
+/3/1/file1 [4]
+/3/1/0
+/3/1/0/file2 [3, None, 1, None, 0]
+/3/1/0/file1 [4]
+/3/file2 [6]
+/3/file1 [3]
+/3/2
+/3/2/1
+/3/2/1/file2 [3, None, 2, None, 1]
+/3/2/1/file1 [6]
+/3/2/file2 [3, None, 2]
+/3/2/file1 [5]
+/3/2/0
+/3/2/0/file2 [3, None, 2, None, 0]
+/3/2/0/file1 [5]
+/3/0
+/3/0/1
+/3/0/1/file2 [3, None, 0, None, 1]
+/3/0/1/file1 [4]
+/3/0/file2 [3, None, 0]
+/3/0/file1 [3]
+/3/0/0
+/3/0/0/file2 [3, None, 0, None, 0]
+/3/0/0/file1 [3]
+/2
+/2/1
+/2/1/1
+/2/1/1/file2 [2, None, 1, None, 1]
+/2/1/1/file1 [4]
+/2/1/file2 [2, None, 1]
+/2/1/file1 [3]
+/2/1/0
+/2/1/0/file2 [2, None, 1, None, 0]
+/2/1/0/file1 [3]
+/2/file2 [4]
+/2/file1 [2]
+/2/2
+/2/2/1
+/2/2/1/file2 [2, None, 2, None, 1]
+/2/2/1/file1 [5]
+/2/2/file2 [2, None, 2]
+/2/2/file1 [4]
+/2/2/0
+/2/2/0/file2 [2, None, 2, None, 0]
+/2/2/0/file1 [4]
+/2/0
+/2/0/1
+/2/0/1/file2 [2, None, 0, None, 1]
+/2/0/1/file1 [3]
+/2/0/file2 [2, None, 0]
+/2/0/file1 [2]
+/2/0/0
+/2/0/0/file2 [2, None, 0, None, 0]
+/2/0/0/file1 [2]
+
+stat message sent
+Failure: MFS_Creat returned failure inum=0 type=0 name='1'
+
+
+test complex2 FAILED
+ (a long sequence of creats and writes followed by a check)
+ MFS_Creat returned failure inum=0 type=0 name='1'
+
+
+**********************************************************************
+
+Test persist2
+restart server after creating many dirs and files
+
+**********************************************************************
+Starting server on port 6841
+/tmp/tmp8AoN4p/p/server 6841 testimage
+HERE
+CLIENT:: about to send message (0)
+Filesyste to be written:
+
+
+/1
+/1/1
+/1/1/1
+/1/1/1/file2 [1, None, 1, None, 1]
+/1/1/1/file1 [3]
+/1/1/file2 [1, None, 1]
+/1/1/file1 [2]
+/1/1/0
+/1/1/0/file2 [1, None, 1, None, 0]
+/1/1/0/file1 [2]
+/1/file2 [2]
+/1/file1 [1]
+/1/2
+/1/2/1
+/1/2/1/file2 [1, None, 2, None, 1]
+/1/2/1/file1 [4]
+/1/2/file2 [1, None, 2]
+/1/2/file1 [3]
+/1/2/0
+/1/2/0/file2 [1, None, 2, None, 0]
+/1/2/0/file1 [3]
+/1/0
+/1/0/1
+/1/0/1/file2 [1, None, 0, None, 1]
+/1/0/1/file1 [2]
+/1/0/file2 [1, None, 0]
+/1/0/file1 [1]
+/1/0/0
+/1/0/0/file2 [1, None, 0, None, 0]
+/1/0/0/file1 [1]
+/0
+/0/1
+/0/1/1
+/0/1/1/file2 [0, None, 1, None, 1]
+/0/1/1/file1 [2]
+/0/1/file2 [0, None, 1]
+/0/1/file1 [1]
+/0/1/0
+/0/1/0/file2 [0, None, 1, None, 0]
+/0/1/0/file1 [1]
+/0/file2 [0]
+/0/file1 [0]
+/0/2
+/0/2/1
+/0/2/1/file2 [0, None, 2, None, 1]
+/0/2/1/file1 [3]
+/0/2/file2 [0, None, 2]
+/0/2/file1 [2]
+/0/2/0
+/0/2/0/file2 [0, None, 2, None, 0]
+/0/2/0/file1 [2]
+/0/0
+/0/0/1
+/0/0/1/file2 [0, None, 0, None, 1]
+/0/0/1/file1 [1]
+/0/0/file2 [0, None, 0]
+/0/0/file1 [0]
+/0/0/0
+/0/0/0/file2 [0, None, 0, None, 0]
+/0/0/0/file1 [0]
+/3
+/3/1
+/3/1/1
+/3/1/1/file2 [3, None, 1, None, 1]
+/3/1/1/file1 [5]
+/3/1/file2 [3, None, 1]
+/3/1/file1 [4]
+/3/1/0
+/3/1/0/file2 [3, None, 1, None, 0]
+/3/1/0/file1 [4]
+/3/file2 [6]
+/3/file1 [3]
+/3/2
+/3/2/1
+/3/2/1/file2 [3, None, 2, None, 1]
+/3/2/1/file1 [6]
+/3/2/file2 [3, None, 2]
+/3/2/file1 [5]
+/3/2/0
+/3/2/0/file2 [3, None, 2, None, 0]
+/3/2/0/file1 [5]
+/3/0
+/3/0/1
+/3/0/1/file2 [3, None, 0, None, 1]
+/3/0/1/file1 [4]
+/3/0/file2 [3, None, 0]
+/3/0/file1 [3]
+/3/0/0
+/3/0/0/file2 [3, None, 0, None, 0]
+/3/0/0/file1 [3]
+/2
+/2/1
+/2/1/1
+/2/1/1/file2 [2, None, 1, None, 1]
+/2/1/1/file1 [4]
+/2/1/file2 [2, None, 1]
+/2/1/file1 [3]
+/2/1/0
+/2/1/0/file2 [2, None, 1, None, 0]
+/2/1/0/file1 [3]
+/2/file2 [4]
+/2/file1 [2]
+/2/2
+/2/2/1
+/2/2/1/file2 [2, None, 2, None, 1]
+/2/2/1/file1 [5]
+/2/2/file2 [2, None, 2]
+/2/2/file1 [4]
+/2/2/0
+/2/2/0/file2 [2, None, 2, None, 0]
+/2/2/0/file1 [4]
+/2/0
+/2/0/1
+/2/0/1/file2 [2, None, 0, None, 1]
+/2/0/1/file1 [3]
+/2/0/file2 [2, None, 0]
+/2/0/file1 [2]
+/2/0/0
+/2/0/0/file2 [2, None, 0, None, 0]
+/2/0/0/file1 [2]
+
+stat message sent
+Failure: MFS_Creat returned failure inum=0 type=0 name='1'
+
+
+test persist2 FAILED
+ (restart server after creating many dirs and files)
+ MFS_Creat returned failure inum=0 type=0 name='1'
+
+
+**********************************************************************
+
+Test free
+check that inodes and direcrtory entries are freed
+
+**********************************************************************
+Starting server on port 6030
+/tmp/tmp8AoN4p/p/server 6030 testimage
+HERE
+CLIENT:: about to send message (0)
+stat message sent
+Client:: MSF_Creat receives message
+Failure: MFS_Unlink returned failure pinum=0 name='0'
+
+
+test free FAILED
+ (check that inodes and direcrtory entries are freed)
+ MFS_Unlink returned failure pinum=0 name='0'
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build project using make)
+ file 'server' exists after make clean, removing
+
+test shutdown PASSED
+ (init server and client then call shutdown)
+
+test creat FAILED
+ (creat a file and check with lookup)
+ MFS_Shutdown returned failure
+
+test write FAILED
+ (write then read one block)
+ MFS_Write returned failure inum=100100 block=0
+
+test stat FAILED
+ (stat a regular file)
+ Timelimit (10.0s) exceeded
+
+test overwrite FAILED
+ (overwrite a block)
+ MFS_Write returned failure inum=100100 block=0
+
+test maxfile FAILED
+ (write largest possible file)
+ MFS_Write returned failure inum=100100 block=0
+
+test maxfile2 FAILED
+ (write more blocks than possible)
+ MFS_Write returned failure inum=100100 block=0
+
+test sparse FAILED
+ (write first and last block)
+ MFS_Write returned failure inum=100100 block=0
+
+test stat2 FAILED
+ (stat a sparse file)
+ MFS_Write returned failure inum=100100 block=0
+
+test dir1 FAILED
+ (check root for dot entries)
+ MFS_Lookup returned failure inum=0 name='.'
+
+test dir2 FAILED
+ (create a new directory and check it)
+ MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+test baddir FAILED
+ (try to create a file with a file parent inode)
+ MFS_Shutdown returned failure
+
+test baddir2 FAILED
+ (try to lookup a file with a file parent inode)
+ MFS_Shutdown returned failure
+
+test unlink FAILED
+ (unlink a file)
+ MFS_Unlink returned failure pinum=0 name='test'
+
+test unlink2 FAILED
+ (unlink a directory)
+ MFS_Creat returned failure inum=0 type=0 name='test'
+
+test empty FAILED
+ (unlink a non-empty directory)
+ MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+test name FAILED
+ (name too long)
+ Name argument too long did not result in failure
+
+test persist FAILED
+ (restart server after creating a file)
+ MFS_Write returned failure inum=100100 block=0
+
+test drop FAILED
+ (drop every other packet sent by client)
+ file 'server' exists after make clean, removing
+ MFS_Creat returned failure inum=0 type=1 name='test'
+ file 'server' exists after make clean, removing
+
+test bigdir FAILED
+ (create a directory with max number of files)
+ MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+test bigdir2 FAILED
+ (create a directory with more files than possible)
+ MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+test deep FAILED
+ (create many deeply nested directories)
+ MFS_Creat returned failure inum=0 type=0 name='testdir'
+
+test complex FAILED
+ (a long sequence of creats and writes followed by a check)
+ MFS_Creat returned failure inum=0 type=0 name='1'
+
+test complex2 FAILED
+ (a long sequence of creats and writes followed by a check)
+ MFS_Creat returned failure inum=0 type=0 name='1'
+
+test persist2 FAILED
+ (restart server after creating many dirs and files)
+ MFS_Creat returned failure inum=0 type=0 name='1'
+
+test free FAILED
+ (check that inodes and direcrtory entries are freed)
+ MFS_Unlink returned failure pinum=0 name='0'
+
+Passed 2 of 27 tests.
+Overall 2 of 27

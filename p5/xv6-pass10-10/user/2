@@ -1,0 +1,45 @@
+#include "types.h"
+#include "stat.h"
+#include "user.h"
+#include "fs.h"
+#include "fcntl.h"
+#include "syscall.h"
+#include "traps.h"
+
+int main()
+{
+	int fd;
+	char buf[100];
+	fd=open("tstfile",O_CREATE|O_CHECKED|O_RDWR);
+	if(fd<0)
+		printf(1,"fd(%d)\n",fd);
+	struct stat st;
+	fstat(fd,&st);
+	printf(1,"%s\n",st.checksum);
+		
+    	if(write(fd, "aaaaaaaaaa", 10) != 10){
+      		printf(1, "error: write aa  new file failed\n");
+      		exit();
+	}
+	read(fd,buf,10);
+	printf(1,"read end\n");
+	printf(1,"%s\n",buf);
+	//-----------------------------
+	fd=open("tstfile",O_CREATE|O_CHECKED|O_RDWR);
+	if(fd<0)
+		printf(1,"fd(%d)\n",fd);
+	struct stat st;
+	fstat(fd,&st);
+	printf(1,"%s\n",st.checksum);
+		
+    	if(write(fd, "aaaaaaaaaa", 10) != 10){
+      		printf(1, "error: write aa  new file failed\n");
+      		exit();
+	}
+	read(fd,buf,10);
+	printf(1,"read end\n");
+	printf(1,"%s\n",buf);
+	exit();
+}
+
+

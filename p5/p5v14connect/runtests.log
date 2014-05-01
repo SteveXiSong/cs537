@@ -1,0 +1,490 @@
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f *.o *.so 
+Trying to build project using make
+make
+gcc -c -fpic libmfs.c udp.c -Wall -Werror
+gcc -shared -o libmfs.so libmfs.o udp.o
+gcc -lmfs -L. -o mymfs main.c -Wall -Werror
+gcc -Wall -Werror -c server.c -o server.o
+gcc -o server server.o udp.o -g
+
+
+test build PASSED
+ (build project using make)
+ file 'server' exists after make clean, removing
+
+
+**********************************************************************
+
+Test shutdown
+init server and client then call shutdown
+
+**********************************************************************
+Starting server on port 6041
+/tmp/tmphV4TDY/p/server 6041 testimage
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+ SERVER:: waiting in loop
+shutdown
+HERE
+CLIENT:: about to send message (0)
+shut: msg_type: 6
+shut:msg_rs: 0
+
+
+test shutdown PASSED
+ (init server and client then call shutdown)
+
+
+**********************************************************************
+
+Test creat
+creat a file and check with lookup
+
+**********************************************************************
+Starting server on port 5852
+/tmp/tmphV4TDY/p/server 5852 testimage
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+ SERVER:: waiting in loop
+create
+not found name in given pinum
+lookup
+lookup: 1
+shutdown
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+shut: msg_type: 6
+shut:msg_rs: 0
+
+
+test creat PASSED
+ (creat a file and check with lookup)
+
+
+**********************************************************************
+
+Test write
+write then read one block
+
+**********************************************************************
+Starting server on port 8587
+/tmp/tmphV4TDY/p/server 8587 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+Failure: MFS_Read returned failure inum=1 block=0
+
+
+test write FAILED
+ (write then read one block)
+ MFS_Read returned failure inum=1 block=0
+
+
+**********************************************************************
+
+Test stat
+stat a regular file
+
+**********************************************************************
+Starting server on port 5143
+/tmp/tmphV4TDY/p/server 5143 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+stat message sent
+stat message sent
+stat message sent
+Failure: Stat gave wrong size
+
+
+test stat FAILED
+ (stat a regular file)
+ Stat gave wrong size
+
+
+**********************************************************************
+
+Test overwrite
+overwrite a block
+
+**********************************************************************
+Starting server on port 5113
+/tmp/tmphV4TDY/p/server 5113 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+Failure: MFS_Read returned failure inum=1 block=0
+
+
+test overwrite FAILED
+ (overwrite a block)
+ MFS_Read returned failure inum=1 block=0
+
+
+**********************************************************************
+
+Test maxfile
+write largest possible file
+
+**********************************************************************
+Starting server on port 5152
+/tmp/tmphV4TDY/p/server 5152 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+Failure: MFS_Read returned failure inum=1 block=0
+
+
+test maxfile FAILED
+ (write largest possible file)
+ MFS_Read returned failure inum=1 block=0
+
+
+**********************************************************************
+
+Test maxfile2
+write more blocks than possible
+
+**********************************************************************
+Starting server on port 8550
+/tmp/tmphV4TDY/p/server 8550 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+Failure: Corrupt data returned by read
+
+
+test maxfile2 FAILED
+ (write more blocks than possible)
+ Corrupt data returned by read
+
+
+**********************************************************************
+
+Test sparse
+write first and last block
+
+**********************************************************************
+Starting server on port 7385
+/tmp/tmphV4TDY/p/server 7385 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+Failure: MFS_Read returned failure inum=1 block=0
+
+
+test sparse FAILED
+ (write first and last block)
+ MFS_Read returned failure inum=1 block=0
+
+
+**********************************************************************
+
+Test stat2
+stat a sparse file
+
+**********************************************************************
+Starting server on port 9431
+/tmp/tmphV4TDY/p/server 9431 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+stat message sent
+Failure: Stat gave wrong type
+
+
+test stat2 FAILED
+ (stat a sparse file)
+ Stat gave wrong type
+
+
+**********************************************************************
+
+Test dir1
+check root for dot entries
+
+**********************************************************************
+Starting server on port 7768
+/tmp/tmphV4TDY/p/server 7768 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+Failure: MFS_Lookup returned failure inum=0 name='.'
+
+
+test dir1 FAILED
+ (check root for dot entries)
+ MFS_Lookup returned failure inum=0 name='.'
+
+
+**********************************************************************
+
+Test dir2
+create a new directory and check it
+
+**********************************************************************
+Starting server on port 5421
+/tmp/tmphV4TDY/p/server 5421 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+lookup message sent
+lookup message sent
+Failure: MFS_Lookup returned failure inum=1 name='..'
+
+
+test dir2 FAILED
+ (create a new directory and check it)
+ MFS_Lookup returned failure inum=1 name='..'
+
+
+**********************************************************************
+
+Test baddir
+try to create a file with a file parent inode
+
+**********************************************************************
+Starting server on port 8410
+/tmp/tmphV4TDY/p/server 8410 testimage
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+ SERVER:: waiting in loop
+create
+not found name in given pinum
+lookup
+lookup: 1
+create
+img_creat: given inode is not a directory, can't creat file or dir under it
+shutdown
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+shut: msg_type: 6
+shut:msg_rs: 0
+
+
+test baddir PASSED
+ (try to create a file with a file parent inode)
+
+
+**********************************************************************
+
+Test baddir2
+try to lookup a file with a file parent inode
+
+**********************************************************************
+Starting server on port 9565
+/tmp/tmphV4TDY/p/server 9565 testimage
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+ SERVER:: waiting in loop
+create
+not found name in given pinum
+lookup
+lookup: 1
+lookup
+img_lookup: error, it's not directory
+shutdown
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+lookup message sent
+shut: msg_type: 6
+shut:msg_rs: 0
+
+
+test baddir2 PASSED
+ (try to lookup a file with a file parent inode)
+
+
+**********************************************************************
+
+Test unlink
+unlink a file
+
+**********************************************************************
+Starting server on port 7812
+/tmp/tmphV4TDY/p/server 7812 testimage
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+ SERVER:: waiting in loop
+create
+not found name in given pinum
+lookup
+lookup: 1
+unlink
+lookup: 1
+lookup
+not found name in given pinum
+shutdown
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+lookup message sent
+shut: msg_type: 6
+shut:msg_rs: 0
+
+
+test unlink PASSED
+ (unlink a file)
+
+
+**********************************************************************
+
+Test unlink2
+unlink a directory
+
+**********************************************************************
+Starting server on port 8465
+/tmp/tmphV4TDY/p/server 8465 testimage
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+ SERVER:: waiting in loop
+create
+not found name in given pinum
+lookup
+lookup: 1
+unlink
+lookup: 1
+lookup
+not found name in given pinum
+shutdown
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+lookup message sent
+shut: msg_type: 6
+shut:msg_rs: 0
+
+
+test unlink2 PASSED
+ (unlink a directory)
+
+
+**********************************************************************
+
+Test empty
+unlink a non-empty directory
+
+**********************************************************************
+Starting server on port 5337
+/tmp/tmphV4TDY/p/server 5337 testimage
+not exist, create and init
+img_init: open successfully, fd 6 now it can be operated 
+ SERVER:: waiting in loop
+create
+not found name in given pinum
+lookup
+lookup: 1
+create
+not found name in given pinum
+lookup
+lookup: 2
+unlink
+lookup: 1
+img_unlink: the directory is not empty
+unlink
+lookup: 2
+unlink
+lookup: 1
+shutdown
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+lookup message sent
+shut: msg_type: 6
+shut:msg_rs: 0
+
+
+test empty PASSED
+ (unlink a non-empty directory)
+
+
+**********************************************************************
+
+Test name
+name too long
+
+**********************************************************************
+Starting server on port 8376
+/tmp/tmphV4TDY/p/server 8376 testimage
+HERE
+CLIENT:: about to send message (0)
+Failure: Name argument too long did not result in failure
+
+
+test name FAILED
+ (name too long)
+ Name argument too long did not result in failure
+
+
+**********************************************************************
+
+Test persist
+restart server after creating a file
+
+**********************************************************************
+Starting server on port 7976
+/tmp/tmphV4TDY/p/server 7976 testimage
+HERE
+CLIENT:: about to send message (0)
+lookup message sent
+lookup message sent
+Failure: MFS_Read returned failure inum=1 block=0
+
+
+test persist FAILED
+ (restart server after creating a file)
+ MFS_Read returned failure inum=1 block=0
+
+
+**********************************************************************
+
+Test drop
+drop every other packet sent by client
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f *.o *.so 
+Trying to build project using make
+make
+gcc -c -fpic libmfs.c udp.c -Wall -Werror
+gcc -shared -o libmfs.so libmfs.o udp.o
+gcc -lmfs -L. -o mymfs main.c -Wall -Werror
+gcc -Wall -Werror -c server.c -o server.o
+gcc -o server server.o udp.o -g
+Starting server on port 8643
+/tmp/tmphV4TDY/p/server 8643 testimage
+tester: packet dropped
+Trying to clean project using make clean
+make clean
+HERE
+CLIENT:: about to send message (0)
+rm -f *.o *.so 
+Trying to build project using make
+make
+gcc -c -fpic libmfs.c udp.c -Wall -Werror
+gcc -shared -o libmfs.so libmfs.o udp.o
+gcc -lmfs -L. -o mymfs main.c -Wall -Werror
+gcc -Wall -Werror -c server.c -o server.o
+gcc -o server server.o udp.o -g
+
+
+test drop FAILED
+ (drop every other packet sent by client)
+ User interrupted test
+ file 'server' exists after make clean, removing
+
+Skipped 7 tests.
+To keep testing after failing a test, use flag '-c' or '--continue'

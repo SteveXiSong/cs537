@@ -1,0 +1,2561 @@
+
+**********************************************************************
+
+Test build
+build xv6 using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/fs.c -MF kernel/fs.d -MT kernel/fs.d -MT kernel/fs.o
+rm -rf kernel/bio.o kernel/console.o kernel/exec.o kernel/file.o kernel/fs.o kernel/ide.o kernel/ioapic.o kernel/kalloc.o kernel/kbd.o kernel/lapic.o kernel/main.o kernel/mp.o kernel/picirq.o kernel/pipe.o kernel/proc.o kernel/spinlock.o kernel/string.o kernel/swtch.o kernel/syscall.o kernel/sysfile.o kernel/sysproc.o kernel/timer.o kernel/trapasm.o kernel/trap.o kernel/uart.o kernel/vectors.o kernel/vm.o kernel/bootmain.o kernel/bootasm.o kernel/multiboot.o kernel/data.o kernel/bootother.o kernel/initcode.o kernel/bio.d kernel/console.d kernel/exec.d kernel/file.d kernel/fs.d kernel/ide.d kernel/ioapic.d kernel/kalloc.d kernel/kbd.d kernel/lapic.d kernel/main.d kernel/mp.d kernel/picirq.d kernel/pipe.d kernel/proc.d kernel/spinlock.d kernel/string.d kernel/swtch.d kernel/syscall.d kernel/sysfile.d kernel/sysproc.d kernel/timer.d kernel/trapasm.d kernel/trap.d kernel/uart.d kernel/vectors.d kernel/vm.d kernel/bootmain.d kernel/bootasm.d kernel/multiboot.d kernel/data.d kernel/bootother.d kernel/initcode.d kernel/vectors.S kernel/bootblock kernel/bootblock.out kernel/bootother.out kernel/initcode.out kernel/kernel bootother initcode xv6.img user/bin user/cat user/echo user/forktest user/grep user/init user/kill user/ln user/ls user/mkdir user/rm user/sh user/stressfs user/tester user/usertests user/wc user/zombie user/file_tst user/write2 user/cat.o user/echo.o user/forktest.o user/grep.o user/init.o user/kill.o user/ln.o user/ls.o user/mkdir.o user/rm.o user/sh.o user/stressfs.o user/tester.o user/usertests.o user/wc.o user/zombie.o user/file_tst.o user/write2.o user/ulib.o user/usys.o user/printf.o user/umalloc.o user/cat.d user/echo.d user/forktest.d user/grep.d user/init.d user/kill.d user/ln.d user/ls.d user/mkdir.d user/rm.d user/sh.d user/stressfs.d user/tester.d user/usertests.d user/wc.d user/zombie.d user/file_tst.d user/write2.d user/ulib.d user/usys.d user/printf.d user/umalloc.d tools/mkfs tools/mkfs.o tools/mkfs.d fs fs.img .gdbinit .bochsrc dist
+Trying to build project using make
+make
+Makefile:149: kernel/bio.d: No such file or directory
+Makefile:149: kernel/console.d: No such file or directory
+Makefile:149: kernel/exec.d: No such file or directory
+Makefile:149: kernel/file.d: No such file or directory
+Makefile:149: kernel/fs.d: No such file or directory
+Makefile:149: kernel/ide.d: No such file or directory
+Makefile:149: kernel/ioapic.d: No such file or directory
+Makefile:149: kernel/kalloc.d: No such file or directory
+Makefile:149: kernel/kbd.d: No such file or directory
+Makefile:149: kernel/lapic.d: No such file or directory
+Makefile:149: kernel/main.d: No such file or directory
+Makefile:149: kernel/mp.d: No such file or directory
+Makefile:149: kernel/picirq.d: No such file or directory
+Makefile:149: kernel/pipe.d: No such file or directory
+Makefile:149: kernel/proc.d: No such file or directory
+Makefile:149: kernel/spinlock.d: No such file or directory
+Makefile:149: kernel/string.d: No such file or directory
+Makefile:149: kernel/swtch.d: No such file or directory
+Makefile:149: kernel/syscall.d: No such file or directory
+Makefile:149: kernel/sysfile.d: No such file or directory
+Makefile:149: kernel/sysproc.d: No such file or directory
+Makefile:149: kernel/timer.d: No such file or directory
+Makefile:149: kernel/trapasm.d: No such file or directory
+Makefile:149: kernel/trap.d: No such file or directory
+Makefile:149: kernel/uart.d: No such file or directory
+Makefile:149: kernel/vectors.d: No such file or directory
+Makefile:149: kernel/vm.d: No such file or directory
+Makefile:149: kernel/bootmain.d: No such file or directory
+Makefile:149: kernel/bootasm.d: No such file or directory
+Makefile:149: kernel/multiboot.d: No such file or directory
+Makefile:149: kernel/data.d: No such file or directory
+Makefile:149: kernel/bootother.d: No such file or directory
+Makefile:149: kernel/initcode.d: No such file or directory
+Makefile:149: user/cat.d: No such file or directory
+Makefile:149: user/echo.d: No such file or directory
+Makefile:149: user/forktest.d: No such file or directory
+Makefile:149: user/grep.d: No such file or directory
+Makefile:149: user/init.d: No such file or directory
+Makefile:149: user/kill.d: No such file or directory
+Makefile:149: user/ln.d: No such file or directory
+Makefile:149: user/ls.d: No such file or directory
+Makefile:149: user/mkdir.d: No such file or directory
+Makefile:149: user/rm.d: No such file or directory
+Makefile:149: user/sh.d: No such file or directory
+Makefile:149: user/stressfs.d: No such file or directory
+Makefile:149: user/tester.d: No such file or directory
+Makefile:149: user/usertests.d: No such file or directory
+Makefile:149: user/wc.d: No such file or directory
+Makefile:149: user/zombie.d: No such file or directory
+Makefile:149: user/file_tst.d: No such file or directory
+Makefile:149: user/write2.d: No such file or directory
+Makefile:149: user/ulib.d: No such file or directory
+Makefile:149: user/usys.d: No such file or directory
+Makefile:149: user/printf.d: No such file or directory
+Makefile:149: user/umalloc.d: No such file or directory
+Makefile:149: tools/mkfs.d: No such file or directory
+gcc  -iquote include -Wall -Werror -ggdb  \
+	  -M -MG tools/mkfs.c -MF tools/mkfs.d -MT tools/mkfs.d -MT tools/mkfs.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/umalloc.c -MF user/umalloc.d -MT user/umalloc.d -MT user/umalloc.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/printf.c -MF user/printf.d -MT user/printf.d -MT user/printf.o
+gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/usys.S -MF user/usys.d -MT user/usys.d -MT user/usys.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/ulib.c -MF user/ulib.d -MT user/ulib.d -MT user/ulib.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/write2.c -MF user/write2.d -MT user/write2.d -MT user/write2.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/file_tst.c -MF user/file_tst.d -MT user/file_tst.d -MT user/file_tst.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/zombie.c -MF user/zombie.d -MT user/zombie.d -MT user/zombie.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/wc.c -MF user/wc.d -MT user/wc.d -MT user/wc.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/usertests.c -MF user/usertests.d -MT user/usertests.d -MT user/usertests.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/stressfs.c -MF user/stressfs.d -MT user/stressfs.d -MT user/stressfs.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/sh.c -MF user/sh.d -MT user/sh.d -MT user/sh.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/rm.c -MF user/rm.d -MT user/rm.d -MT user/rm.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/mkdir.c -MF user/mkdir.d -MT user/mkdir.d -MT user/mkdir.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/ls.c -MF user/ls.d -MT user/ls.d -MT user/ls.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/ln.c -MF user/ln.d -MT user/ln.d -MT user/ln.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/kill.c -MF user/kill.d -MT user/kill.d -MT user/kill.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/init.c -MF user/init.d -MT user/init.d -MT user/init.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/grep.c -MF user/grep.d -MT user/grep.d -MT user/grep.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/forktest.c -MF user/forktest.d -MT user/forktest.d -MT user/forktest.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/echo.c -MF user/echo.d -MT user/echo.d -MT user/echo.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/cat.c -MF user/cat.d -MT user/cat.d -MT user/cat.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/initcode.S -MF kernel/initcode.d -MT kernel/initcode.d -MT kernel/initcode.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/bootother.S -MF kernel/bootother.d -MT kernel/bootother.d -MT kernel/bootother.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/data.S -MF kernel/data.d -MT kernel/data.d -MT kernel/data.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/multiboot.S -MF kernel/multiboot.d -MT kernel/multiboot.d -MT kernel/multiboot.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/bootasm.S -MF kernel/bootasm.d -MT kernel/bootasm.d -MT kernel/bootasm.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/bootmain.c -MF kernel/bootmain.d -MT kernel/bootmain.d -MT kernel/bootmain.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/vm.c -MF kernel/vm.d -MT kernel/vm.d -MT kernel/vm.o
+perl kernel/vectors.pl > kernel/vectors.S
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/vectors.S -MF kernel/vectors.d -MT kernel/vectors.d -MT kernel/vectors.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/uart.c -MF kernel/uart.d -MT kernel/uart.d -MT kernel/uart.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/trap.c -MF kernel/trap.d -MT kernel/trap.d -MT kernel/trap.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/trapasm.S -MF kernel/trapasm.d -MT kernel/trapasm.d -MT kernel/trapasm.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/timer.c -MF kernel/timer.d -MT kernel/timer.d -MT kernel/timer.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/sysproc.c -MF kernel/sysproc.d -MT kernel/sysproc.d -MT kernel/sysproc.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/sysfile.c -MF kernel/sysfile.d -MT kernel/sysfile.d -MT kernel/sysfile.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/syscall.c -MF kernel/syscall.d -MT kernel/syscall.d -MT kernel/syscall.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/swtch.S -MF kernel/swtch.d -MT kernel/swtch.d -MT kernel/swtch.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/string.c -MF kernel/string.d -MT kernel/string.d -MT kernel/string.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/spinlock.c -MF kernel/spinlock.d -MT kernel/spinlock.d -MT kernel/spinlock.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/proc.c -MF kernel/proc.d -MT kernel/proc.d -MT kernel/proc.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/pipe.c -MF kernel/pipe.d -MT kernel/pipe.d -MT kernel/pipe.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/picirq.c -MF kernel/picirq.d -MT kernel/picirq.d -MT kernel/picirq.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/mp.c -MF kernel/mp.d -MT kernel/mp.d -MT kernel/mp.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/main.c -MF kernel/main.d -MT kernel/main.d -MT kernel/main.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/lapic.c -MF kernel/lapic.d -MT kernel/lapic.d -MT kernel/lapic.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/kbd.c -MF kernel/kbd.d -MT kernel/kbd.d -MT kernel/kbd.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/kalloc.c -MF kernel/kalloc.d -MT kernel/kalloc.d -MT kernel/kalloc.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/ioapic.c -MF kernel/ioapic.d -MT kernel/ioapic.d -MT kernel/ioapic.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/ide.c -MF kernel/ide.d -MT kernel/ide.d -MT kernel/ide.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/fs.c -MF kernel/fs.d -MT kernel/fs.d -MT kernel/fs.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/file.c -MF kernel/file.d -MT kernel/file.d -MT kernel/file.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/exec.c -MF kernel/exec.d -MT kernel/exec.d -MT kernel/exec.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/console.c -MF kernel/console.d -MT kernel/console.d -MT kernel/console.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG kernel/bio.c -MF kernel/bio.d -MT kernel/bio.d -MT kernel/bio.o
+gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/bootasm.S -o kernel/bootasm.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		 -Os -c -o kernel/bootmain.o kernel/bootmain.c
+ld  -m    elf_i386 -nostdlib --omagic \
+		--entry=start --section-start=.text=0x7C00 \
+		--output=kernel/bootblock.out kernel/bootasm.o kernel/bootmain.o
+objcopy -S -O binary -j .text kernel/bootblock.out kernel/bootblock
+./kernel/sign.pl kernel/bootblock
+boot block is 447 bytes (max 510)
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/bio.o kernel/bio.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/console.o kernel/console.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/exec.o kernel/exec.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/file.o kernel/file.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/fs.o kernel/fs.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/ide.o kernel/ide.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/ioapic.o kernel/ioapic.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/kalloc.o kernel/kalloc.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/kbd.o kernel/kbd.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/lapic.o kernel/lapic.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/main.o kernel/main.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/mp.o kernel/mp.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/picirq.o kernel/picirq.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/pipe.o kernel/pipe.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/proc.o kernel/proc.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/spinlock.o kernel/spinlock.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/string.o kernel/string.c
+gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/swtch.S -o kernel/swtch.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/syscall.o kernel/syscall.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/sysfile.o kernel/sysfile.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/sysproc.o kernel/sysproc.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/timer.o kernel/timer.c
+gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/trapasm.S -o kernel/trapasm.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/trap.o kernel/trap.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/uart.o kernel/uart.c
+gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/vectors.S -o kernel/vectors.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/vm.o kernel/vm.c
+gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/multiboot.S -o kernel/multiboot.o
+gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/data.S -o kernel/data.o
+gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/bootother.S -o kernel/bootother.o
+ld  -m    elf_i386 -nostdlib --omagic \
+		--entry=start --section-start=.text=0x7000 \
+		--output=kernel/bootother.out kernel/bootother.o
+objcopy -S -O binary kernel/bootother.out bootother
+gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/initcode.S -o kernel/initcode.o
+ld  -m    elf_i386 -nostdlib --omagic \
+		--entry=start --section-start=.text=0x0 \
+		--output=kernel/initcode.out kernel/initcode.o
+objcopy -S -O binary kernel/initcode.out initcode
+ld  -m    elf_i386 -nostdlib --omagic \
+		--section-start=.text=0x100000 --entry=main --output=kernel/kernel \
+		kernel/multiboot.o kernel/data.o kernel/bio.o kernel/console.o kernel/exec.o kernel/file.o kernel/fs.o kernel/ide.o kernel/ioapic.o kernel/kalloc.o kernel/kbd.o kernel/lapic.o kernel/main.o kernel/mp.o kernel/picirq.o kernel/pipe.o kernel/proc.o kernel/spinlock.o kernel/string.o kernel/swtch.o kernel/syscall.o kernel/sysfile.o kernel/sysproc.o kernel/timer.o kernel/trapasm.o kernel/trap.o kernel/uart.o kernel/vectors.o kernel/vm.o \
+		-b binary initcode bootother
+dd if=/dev/zero of=xv6.img count=10000
+10000+0 records in
+10000+0 records out
+5120000 bytes (5.1 MB) copied, 0.021984 s, 233 MB/s
+dd if=kernel/bootblock of=xv6.img conv=notrunc
+1+0 records in
+1+0 records out
+512 bytes (512 B) copied, 1.7975e-05 s, 28.5 MB/s
+dd if=kernel/kernel of=xv6.img seek=1 conv=notrunc
+255+1 records in
+255+1 records out
+130692 bytes (131 kB) copied, 0.000414372 s, 315 MB/s
+gcc -c  -iquote include -Wall -Werror -ggdb  -o tools/mkfs.o tools/mkfs.c
+gcc  tools/mkfs.o -o tools/mkfs
+mkdir -p fs
+cp README fs/README
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/cat.o user/cat.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/ulib.o user/ulib.c
+gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c user/usys.S -o user/usys.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/printf.o user/printf.c
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/umalloc.o user/umalloc.c
+mkdir -p user/bin
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/cat user/cat.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/cat fs/cat
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/echo.o user/echo.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/echo user/echo.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/echo fs/echo
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/forktest.o user/forktest.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/forktest user/forktest.o user/ulib.o user/usys.o
+cp user/bin/forktest fs/forktest
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/grep.o user/grep.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/grep user/grep.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/grep fs/grep
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/init.o user/init.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/init user/init.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/init fs/init
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/kill.o user/kill.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/kill user/kill.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/kill fs/kill
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/ln.o user/ln.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/ln user/ln.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/ln fs/ln
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/ls.o user/ls.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/ls user/ls.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/ls fs/ls
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/mkdir.o user/mkdir.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/mkdir user/mkdir.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/mkdir fs/mkdir
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/rm.o user/rm.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/rm user/rm.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/rm fs/rm
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/sh.o user/sh.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/sh user/sh.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/sh fs/sh
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/stressfs.o user/stressfs.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/stressfs user/stressfs.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/stressfs fs/stressfs
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/tester fs/tester
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/usertests.o user/usertests.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/usertests user/usertests.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/usertests fs/usertests
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/wc.o user/wc.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/wc user/wc.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/wc fs/wc
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/zombie.o user/zombie.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/zombie user/zombie.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/zombie fs/zombie
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/file_tst.o user/file_tst.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/file_tst user/file_tst.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/file_tst fs/file_tst
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/write2.o user/write2.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/write2 user/write2.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/write2 fs/write2
+./tools/mkfs fs.img fs
+used 29 (bit 1 ninode 26) free 29 total 1024
+file_tst
+sh
+usertests
+mkdir
+wc
+grep
+rm
+cat
+forktest
+README
+init
+zombie
+kill
+echo
+tester
+stressfs
+ln
+write2
+ls
+balloc: first 464 blocks have been allocated
+balloc: write bitmap block at sector 28
+rm user/bin/stressfs user/bin/grep user/bin/write2 user/bin/tester user/bin/kill user/bin/cat user/bin/mkdir user/bin/init user/bin/rm user/bin/echo user/bin/ls user/bin/ln user/bin/usertests user/bin/file_tst user/bin/sh user/bin/wc user/bin/zombie
+
+
+test build PASSED
+ (build xv6 using make)
+
+
+**********************************************************************
+
+Test write1
+write then read a block
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/5b/tests/write1.c
+Trying to build project using make
+make
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/tester fs/tester
+./tools/mkfs fs.img fs
+used 29 (bit 1 ninode 26) free 29 total 1024
+file_tst
+sh
+usertests
+mkdir
+wc
+grep
+rm
+cat
+forktest
+README
+init
+zombie
+kill
+echo
+tester
+stressfs
+ln
+write2
+ls
+balloc: first 467 blocks have been allocated
+balloc: write bitmap block at sector 28
+rm user/bin/tester
+make qemu-nox 
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+cpu0: starting
+init: starting sh
+$ tester
+tester
+buffer size: 512
+file size: 512
+create checked file
+create T_CHECKED
+writing file
+==cmpck:41(41)==|wri:(1d3)(41)
+reopening read only
+reading file
+==cmpck:41(41)==rdi:410001d3(410001d3)?(10b40c)==(41)
+TEST PASSED
+$ 
+
+test write1 PASSED
+ (write then read a block)
+
+
+**********************************************************************
+
+Test write2
+write then read largest possible file
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/5b/tests/write2.c
+Trying to build project using make
+make
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/tester fs/tester
+./tools/mkfs fs.img fs
+used 29 (bit 1 ninode 26) free 29 total 1024
+file_tst
+sh
+usertests
+mkdir
+wc
+grep
+rm
+cat
+forktest
+README
+init
+zombie
+kill
+echo
+tester
+stressfs
+ln
+write2
+ls
+balloc: first 467 blocks have been allocated
+balloc: write bitmap block at sector 28
+rm user/bin/tester
+make qemu-nox 
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+cpu0: starting
+init: starting sh
+$ tester
+tester
+buffer size: 512
+file size: 71680
+create checked file
+create T_CHECKED
+writing file
+==cmpck:41(41)==|wri:(1d3)(41)
+==cmpck:42(42)==|wri:(1d4)(42)
+==cmpck:43(43)==|wri:(1d5)(43)
+==cmpck:44(44)==|wri:(1d6)(44)
+==cmpck:45(45)==|wri:(1d7)(45)
+==cmpck:46(46)==|wri:(1d8)(46)
+==cmpck:47(47)==|wri:(1d9)(47)
+==cmpck:48(48)==|wri:(1da)(48)
+==cmpck:49(49)==|wri:(1db)(49)
+==cmpck:4a(4a)==|wri:(1dc)(4a)
+==cmpck:4b(4b)==|wri:(1dd)(4b)
+==cmpck:4c(4c)==|wri:(1de)(4c)
+==cmpck:4d(4d)==|wri:(1e0)(4d)
+==cmpck:4e(4e)==|wri:(1e1)(4e)
+==cmpck:4f(4f)==|wri:(1e2)(4f)
+==cmpck:50(50)==|wri:(1e3)(50)
+==cmpck:51(51)==|wri:(1e4)(51)
+==cmpck:52(52)==|wri:(1e5)(52)
+==cmpck:53(53)==|wri:(1e6)(53)
+==cmpck:54(54)==|wri:(1e7)(54)
+==cmpck:55(55)==|wri:(1e8)(55)
+==cmpck:56(56)==|wri:(1e9)(56)
+==cmpck:57(57)==|wri:(1ea)(57)
+==cmpck:58(58)==|wri:(1eb)(58)
+==cmpck:59(59)==|wri:(1ec)(59)
+==cmpck:5a(5a)==|wri:(1ed)(5a)
+==cmpck:5b(5b)==|wri:(1ee)(5b)
+==cmpck:5c(5c)==|wri:(1ef)(5c)
+==cmpck:5d(5d)==|wri:(1f0)(5d)
+==cmpck:5e(5e)==|wri:(1f1)(5e)
+==cmpck:5f(5f)==|wri:(1f2)(5f)
+==cmpck:60(60)==|wri:(1f3)(60)
+==cmpck:61(61)==|wri:(1f4)(61)
+==cmpck:62(62)==|wri:(1f5)(62)
+==cmpck:63(63)==|wri:(1f6)(63)
+==cmpck:64(64)==|wri:(1f7)(64)
+==cmpck:65(65)==|wri:(1f8)(65)
+==cmpck:66(66)==|wri:(1f9)(66)
+==cmpck:67(67)==|wri:(1fa)(67)
+==cmpck:68(68)==|wri:(1fb)(68)
+==cmpck:69(69)==|wri:(1fc)(69)
+==cmpck:6a(6a)==|wri:(1fd)(6a)
+==cmpck:6b(6b)==|wri:(1fe)(6b)
+==cmpck:6c(6c)==|wri:(1ff)(6c)
+==cmpck:6d(6d)==|wri:(200)(6d)
+==cmpck:6e(6e)==|wri:(201)(6e)
+==cmpck:6f(6f)==|wri:(202)(6f)
+==cmpck:70(70)==|wri:(203)(70)
+==cmpck:71(71)==|wri:(204)(71)
+==cmpck:72(72)==|wri:(205)(72)
+==cmpck:73(73)==|wri:(206)(73)
+==cmpck:74(74)==|wri:(207)(74)
+==cmpck:75(75)==|wri:(208)(75)
+==cmpck:76(76)==|wri:(209)(76)
+==cmpck:77(77)==|wri:(20a)(77)
+==cmpck:78(78)==|wri:(20b)(78)
+==cmpck:79(79)==|wri:(20c)(79)
+==cmpck:7a(7a)==|wri:(20d)(7a)
+==cmpck:7b(7b)==|wri:(20e)(7b)
+==cmpck:7c(7c)==|wri:(20f)(7c)
+==cmpck:7d(7d)==|wri:(210)(7d)
+==cmpck:7e(7e)==|wri:(211)(7e)
+==cmpck:7f(7f)==|wri:(212)(7f)
+==cmpck:80(80)==|wri:(213)(80)
+==cmpck:81(81)==|wri:(214)(81)
+==cmpck:82(82)==|wri:(215)(82)
+==cmpck:83(83)==|wri:(216)(83)
+==cmpck:84(84)==|wri:(217)(84)
+==cmpck:85(85)==|wri:(218)(85)
+==cmpck:86(86)==|wri:(219)(86)
+==cmpck:87(87)==|wri:(21a)(87)
+==cmpck:88(88)==|wri:(21b)(88)
+==cmpck:89(89)==|wri:(21c)(89)
+==cmpck:8a(8a)==|wri:(21d)(8a)
+==cmpck:8b(8b)==|wri:(21e)(8b)
+==cmpck:8c(8c)==|wri:(21f)(8c)
+==cmpck:8d(8d)==|wri:(220)(8d)
+==cmpck:8e(8e)==|wri:(221)(8e)
+==cmpck:8f(8f)==|wri:(222)(8f)
+==cmpck:90(90)==|wri:(223)(90)
+==cmpck:91(91)==|wri:(224)(91)
+==cmpck:92(92)==|wri:(225)(92)
+==cmpck:93(93)==|wri:(226)(93)
+==cmpck:94(94)==|wri:(227)(94)
+==cmpck:95(95)==|wri:(228)(95)
+==cmpck:96(96)==|wri:(229)(96)
+==cmpck:97(97)==|wri:(22a)(97)
+==cmpck:98(98)==|wri:(22b)(98)
+==cmpck:99(99)==|wri:(22c)(99)
+==cmpck:9a(9a)==|wri:(22d)(9a)
+==cmpck:9b(9b)==|wri:(22e)(9b)
+==cmpck:9c(9c)==|wri:(22f)(9c)
+==cmpck:9d(9d)==|wri:(230)(9d)
+==cmpck:9e(9e)==|wri:(231)(9e)
+==cmpck:9f(9f)==|wri:(232)(9f)
+==cmpck:a0(a0)==|wri:(233)(a0)
+==cmpck:a1(a1)==|wri:(234)(a1)
+==cmpck:a2(a2)==|wri:(235)(a2)
+==cmpck:a3(a3)==|wri:(236)(a3)
+==cmpck:a4(a4)==|wri:(237)(a4)
+==cmpck:a5(a5)==|wri:(238)(a5)
+==cmpck:a6(a6)==|wri:(239)(a6)
+==cmpck:a7(a7)==|wri:(23a)(a7)
+==cmpck:a8(a8)==|wri:(23b)(a8)
+==cmpck:a9(a9)==|wri:(23c)(a9)
+==cmpck:aa(aa)==|wri:(23d)(aa)
+==cmpck:ab(ab)==|wri:(23e)(ab)
+==cmpck:ac(ac)==|wri:(23f)(ac)
+==cmpck:ad(ad)==|wri:(240)(ad)
+==cmpck:ae(ae)==|wri:(241)(ae)
+==cmpck:af(af)==|wri:(242)(af)
+==cmpck:b0(b0)==|wri:(243)(b0)
+==cmpck:b1(b1)==|wri:(244)(b1)
+==cmpck:b2(b2)==|wri:(245)(b2)
+==cmpck:b3(b3)==|wri:(246)(b3)
+==cmpck:b4(b4)==|wri:(247)(b4)
+==cmpck:b5(b5)==|wri:(248)(b5)
+==cmpck:b6(b6)==|wri:(249)(b6)
+==cmpck:b7(b7)==|wri:(24a)(b7)
+==cmpck:b8(b8)==|wri:(24b)(b8)
+==cmpck:b9(b9)==|wri:(24c)(b9)
+==cmpck:ba(ba)==|wri:(24d)(ba)
+==cmpck:bb(bb)==|wri:(24e)(bb)
+==cmpck:bc(bc)==|wri:(24f)(bc)
+==cmpck:bd(bd)==|wri:(250)(bd)
+==cmpck:be(be)==|wri:(251)(be)
+==cmpck:bf(bf)==|wri:(252)(bf)
+==cmpck:c0(c0)==|wri:(253)(c0)
+==cmpck:c1(c1)==|wri:(254)(c1)
+==cmpck:c2(c2)==|wri:(255)(c2)
+==cmpck:c3(c3)==|wri:(256)(c3)
+==cmpck:c4(c4)==|wri:(257)(c4)
+==cmpck:c5(c5)==|wri:(258)(c5)
+==cmpck:c6(c6)==|wri:(259)(c6)
+==cmpck:c7(c7)==|wri:(25a)(c7)
+==cmpck:c8(c8)==|wri:(25b)(c8)
+==cmpck:c9(c9)==|wri:(25c)(c9)
+==cmpck:ca(ca)==|wri:(25d)(ca)
+==cmpck:cb(cb)==|wri:(25e)(cb)
+==cmpck:cc(cc)==|wri:(25f)(cc)
+reopening read only
+reading file
+==cmpck:41(41)==rdi:410001d3(410001d3)?(10b83c)==(41)
+==cmpck:42(42)==rdi:420001d4(420001d4)?(10bc6c)==(42)
+==cmpck:43(43)==rdi:430001d5(430001d5)?(10afdc)==(43)
+==cmpck:44(44)==rdi:440001d6(440001d6)?(10ba54)==(44)
+==cmpck:45(45)==rdi:450001d7(450001d7)?(10b1f4)==(45)
+==cmpck:46(46)==rdi:460001d8(460001d8)?(10abac)==(46)
+==cmpck:47(47)==rdi:470001d9(470001d9)?(10be84)==(47)
+==cmpck:48(48)==rdi:480001da(480001da)?(10b40c)==(48)
+==cmpck:49(49)==rdi:490001db(490001db)?(10b624)==(49)
+==cmpck:4a(4a)==rdi:4a0001dc(4a0001dc)?(10adc4)==(4a)
+==cmpck:4b(4b)==rdi:4b0001dd(4b0001dd)?(10b83c)==(4b)
+==cmpck:4c(4c)==rdi:4c0001de(4c0001de)?(10bc6c)==(4c)
+==cmpck:4d(4d)==rdi:4d0001e0(4d0001e0)?(10ba54)==(4d)
+==cmpck:4e(4e)==rdi:4e0001e1(4e0001e1)?(10b1f4)==(4e)
+==cmpck:4f(4f)==rdi:4f0001e2(4f0001e2)?(10abac)==(4f)
+==cmpck:50(50)==rdi:500001e3(500001e3)?(10be84)==(50)
+==cmpck:51(51)==rdi:510001e4(510001e4)?(10b40c)==(51)
+==cmpck:52(52)==rdi:520001e5(520001e5)?(10b624)==(52)
+==cmpck:53(53)==rdi:530001e6(530001e6)?(10adc4)==(53)
+==cmpck:54(54)==rdi:540001e7(540001e7)?(10b83c)==(54)
+==cmpck:55(55)==rdi:550001e8(550001e8)?(10bc6c)==(55)
+==cmpck:56(56)==rdi:560001e9(560001e9)?(10ba54)==(56)
+==cmpck:57(57)==rdi:570001ea(570001ea)?(10b1f4)==(57)
+==cmpck:58(58)==rdi:580001eb(580001eb)?(10abac)==(58)
+==cmpck:59(59)==rdi:590001ec(590001ec)?(10be84)==(59)
+==cmpck:5a(5a)==rdi:5a0001ed(5a0001ed)?(10b40c)==(5a)
+==cmpck:5b(5b)==rdi:5b0001ee(5b0001ee)?(10b624)==(5b)
+==cmpck:5c(5c)==rdi:5c0001ef(5c0001ef)?(10adc4)==(5c)
+==cmpck:5d(5d)==rdi:5d0001f0(5d0001f0)?(10b83c)==(5d)
+==cmpck:5e(5e)==rdi:5e0001f1(5e0001f1)?(10bc6c)==(5e)
+==cmpck:5f(5f)==rdi:5f0001f2(5f0001f2)?(10ba54)==(5f)
+==cmpck:60(60)==rdi:600001f3(600001f3)?(10b1f4)==(60)
+==cmpck:61(61)==rdi:610001f4(610001f4)?(10abac)==(61)
+==cmpck:62(62)==rdi:620001f5(620001f5)?(10be84)==(62)
+==cmpck:63(63)==rdi:630001f6(630001f6)?(10b40c)==(63)
+==cmpck:64(64)==rdi:640001f7(640001f7)?(10b624)==(64)
+==cmpck:65(65)==rdi:650001f8(650001f8)?(10adc4)==(65)
+==cmpck:66(66)==rdi:660001f9(660001f9)?(10b83c)==(66)
+==cmpck:67(67)==rdi:670001fa(670001fa)?(10bc6c)==(67)
+==cmpck:68(68)==rdi:680001fb(680001fb)?(10ba54)==(68)
+==cmpck:69(69)==rdi:690001fc(690001fc)?(10b1f4)==(69)
+==cmpck:6a(6a)==rdi:6a0001fd(6a0001fd)?(10abac)==(6a)
+==cmpck:6b(6b)==rdi:6b0001fe(6b0001fe)?(10be84)==(6b)
+==cmpck:6c(6c)==rdi:6c0001ff(6c0001ff)?(10b40c)==(6c)
+==cmpck:6d(6d)==rdi:6d000200(6d000200)?(10b624)==(6d)
+==cmpck:6e(6e)==rdi:6e000201(6e000201)?(10adc4)==(6e)
+==cmpck:6f(6f)==rdi:6f000202(6f000202)?(10b83c)==(6f)
+==cmpck:70(70)==rdi:70000203(70000203)?(10bc6c)==(70)
+==cmpck:71(71)==rdi:71000204(71000204)?(10ba54)==(71)
+==cmpck:72(72)==rdi:72000205(72000205)?(10b1f4)==(72)
+==cmpck:73(73)==rdi:73000206(73000206)?(10abac)==(73)
+==cmpck:74(74)==rdi:74000207(74000207)?(10be84)==(74)
+==cmpck:75(75)==rdi:75000208(75000208)?(10b40c)==(75)
+==cmpck:76(76)==rdi:76000209(76000209)?(10b624)==(76)
+==cmpck:77(77)==rdi:7700020a(7700020a)?(10adc4)==(77)
+==cmpck:78(78)==rdi:7800020b(7800020b)?(10b83c)==(78)
+==cmpck:79(79)==rdi:7900020c(7900020c)?(10bc6c)==(79)
+==cmpck:7a(7a)==rdi:7a00020d(7a00020d)?(10ba54)==(7a)
+==cmpck:7b(7b)==rdi:7b00020e(7b00020e)?(10b1f4)==(7b)
+==cmpck:7c(7c)==rdi:7c00020f(7c00020f)?(10abac)==(7c)
+==cmpck:7d(7d)==rdi:7d000210(7d000210)?(10be84)==(7d)
+==cmpck:7e(7e)==rdi:7e000211(7e000211)?(10b40c)==(7e)
+==cmpck:7f(7f)==rdi:7f000212(7f000212)?(10b624)==(7f)
+==cmpck:80(80)==rdi:80000213(80000213)?(10adc4)==(80)
+==cmpck:81(81)==rdi:81000214(81000214)?(10b83c)==(81)
+==cmpck:82(82)==rdi:82000215(82000215)?(10bc6c)==(82)
+==cmpck:83(83)==rdi:83000216(83000216)?(10ba54)==(83)
+==cmpck:84(84)==rdi:84000217(84000217)?(10b1f4)==(84)
+==cmpck:85(85)==rdi:85000218(85000218)?(10abac)==(85)
+==cmpck:86(86)==rdi:86000219(86000219)?(10be84)==(86)
+==cmpck:87(87)==rdi:8700021a(8700021a)?(10b40c)==(87)
+==cmpck:88(88)==rdi:8800021b(8800021b)?(10b624)==(88)
+==cmpck:89(89)==rdi:8900021c(8900021c)?(10adc4)==(89)
+==cmpck:8a(8a)==rdi:8a00021d(8a00021d)?(10b83c)==(8a)
+==cmpck:8b(8b)==rdi:8b00021e(8b00021e)?(10bc6c)==(8b)
+==cmpck:8c(8c)==rdi:8c00021f(8c00021f)?(10ba54)==(8c)
+==cmpck:8d(8d)==rdi:8d000220(8d000220)?(10b1f4)==(8d)
+==cmpck:8e(8e)==rdi:8e000221(8e000221)?(10abac)==(8e)
+==cmpck:8f(8f)==rdi:8f000222(8f000222)?(10be84)==(8f)
+==cmpck:90(90)==rdi:90000223(90000223)?(10b40c)==(90)
+==cmpck:91(91)==rdi:91000224(91000224)?(10b624)==(91)
+==cmpck:92(92)==rdi:92000225(92000225)?(10adc4)==(92)
+==cmpck:93(93)==rdi:93000226(93000226)?(10b83c)==(93)
+==cmpck:94(94)==rdi:94000227(94000227)?(10bc6c)==(94)
+==cmpck:95(95)==rdi:95000228(95000228)?(10ba54)==(95)
+==cmpck:96(96)==rdi:96000229(96000229)?(10b1f4)==(96)
+==cmpck:97(97)==rdi:9700022a(9700022a)?(10abac)==(97)
+==cmpck:98(98)==rdi:9800022b(9800022b)?(10be84)==(98)
+==cmpck:99(99)==rdi:9900022c(9900022c)?(10b40c)==(99)
+==cmpck:9a(9a)==rdi:9a00022d(9a00022d)?(10b624)==(9a)
+==cmpck:9b(9b)==rdi:9b00022e(9b00022e)?(10adc4)==(9b)
+==cmpck:9c(9c)==rdi:9c00022f(9c00022f)?(10b83c)==(9c)
+==cmpck:9d(9d)==rdi:9d000230(9d000230)?(10bc6c)==(9d)
+==cmpck:9e(9e)==rdi:9e000231(9e000231)?(10ba54)==(9e)
+==cmpck:9f(9f)==rdi:9f000232(9f000232)?(10b1f4)==(9f)
+==cmpck:a0(a0)==rdi:a0000233(a0000233)?(10abac)==(a0)
+==cmpck:a1(a1)==rdi:a1000234(a1000234)?(10be84)==(a1)
+==cmpck:a2(a2)==rdi:a2000235(a2000235)?(10b40c)==(a2)
+==cmpck:a3(a3)==rdi:a3000236(a3000236)?(10b624)==(a3)
+==cmpck:a4(a4)==rdi:a4000237(a4000237)?(10adc4)==(a4)
+==cmpck:a5(a5)==rdi:a5000238(a5000238)?(10b83c)==(a5)
+==cmpck:a6(a6)==rdi:a6000239(a6000239)?(10bc6c)==(a6)
+==cmpck:a7(a7)==rdi:a700023a(a700023a)?(10ba54)==(a7)
+==cmpck:a8(a8)==rdi:a800023b(a800023b)?(10b1f4)==(a8)
+==cmpck:a9(a9)==rdi:a900023c(a900023c)?(10abac)==(a9)
+==cmpck:aa(aa)==rdi:aa00023d(aa00023d)?(10be84)==(aa)
+==cmpck:ab(ab)==rdi:ab00023e(ab00023e)?(10b40c)==(ab)
+==cmpck:ac(ac)==rdi:ac00023f(ac00023f)?(10b624)==(ac)
+==cmpck:ad(ad)==rdi:ad000240(ad000240)?(10adc4)==(ad)
+==cmpck:ae(ae)==rdi:ae000241(ae000241)?(10b83c)==(ae)
+==cmpck:af(af)==rdi:af000242(af000242)?(10bc6c)==(af)
+==cmpck:b0(b0)==rdi:b0000243(b0000243)?(10ba54)==(b0)
+==cmpck:b1(b1)==rdi:b1000244(b1000244)?(10b1f4)==(b1)
+==cmpck:b2(b2)==rdi:b2000245(b2000245)?(10abac)==(b2)
+==cmpck:b3(b3)==rdi:b3000246(b3000246)?(10be84)==(b3)
+==cmpck:b4(b4)==rdi:b4000247(b4000247)?(10b40c)==(b4)
+==cmpck:b5(b5)==rdi:b5000248(b5000248)?(10b624)==(b5)
+==cmpck:b6(b6)==rdi:b6000249(b6000249)?(10adc4)==(b6)
+==cmpck:b7(b7)==rdi:b700024a(b700024a)?(10b83c)==(b7)
+==cmpck:b8(b8)==rdi:b800024b(b800024b)?(10bc6c)==(b8)
+==cmpck:b9(b9)==rdi:b900024c(b900024c)?(10ba54)==(b9)
+==cmpck:ba(ba)==rdi:ba00024d(ba00024d)?(10b1f4)==(ba)
+==cmpck:bb(bb)==rdi:bb00024e(bb00024e)?(10abac)==(bb)
+==cmpck:bc(bc)==rdi:bc00024f(bc00024f)?(10be84)==(bc)
+==cmpck:bd(bd)==rdi:bd000250(bd000250)?(10b40c)==(bd)
+==cmpck:be(be)==rdi:be000251(be000251)?(10b624)==(be)
+==cmpck:bf(bf)==rdi:bf000252(bf000252)?(10adc4)==(bf)
+==cmpck:c0(c0)==rdi:c0000253(c0000253)?(10b83c)==(c0)
+==cmpck:c1(c1)==rdi:c1000254(c1000254)?(10bc6c)==(c1)
+==cmpck:c2(c2)==rdi:c2000255(c2000255)?(10ba54)==(c2)
+==cmpck:c3(c3)==rdi:c3000256(c3000256)?(10b1f4)==(c3)
+==cmpck:c4(c4)==rdi:c4000257(c4000257)?(10abac)==(c4)
+==cmpck:c5(c5)==rdi:c5000258(c5000258)?(10be84)==(c5)
+==cmpck:c6(c6)==rdi:c6000259(c6000259)?(10b40c)==(c6)
+==cmpck:c7(c7)==rdi:c700025a(c700025a)?(10b624)==(c7)
+==cmpck:c8(c8)==rdi:c800025b(c800025b)?(10adc4)==(c8)
+==cmpck:c9(c9)==rdi:c900025c(c900025c)?(10b83c)==(c9)
+==cmpck:ca(ca)==rdi:ca00025d(ca00025d)?(10bc6c)==(ca)
+==cmpck:cb(cb)==rdi:cb00025e(cb00025e)?(10ba54)==(cb)
+==cmpck:cc(cc)==rdi:cc00025f(cc00025f)?(10b1f4)==(cc)
+TEST PASSED
+
+
+test write2 PASSED
+ (write then read largest possible file)
+
+
+**********************************************************************
+
+Test write3
+write then read, buffer smaller than one block
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/5b/tests/write3.c
+Trying to build project using make
+make
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/tester fs/tester
+./tools/mkfs fs.img fs
+used 29 (bit 1 ninode 26) free 29 total 1024
+file_tst
+sh
+usertests
+mkdir
+wc
+grep
+rm
+cat
+forktest
+README
+init
+zombie
+kill
+echo
+tester
+stressfs
+ln
+write2
+ls
+balloc: first 467 blocks have been allocated
+balloc: write bitmap block at sector 28
+rm user/bin/tester
+make qemu-nox 
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+cpu0: starting
+init: starting sh
+$ tester
+tester
+buffer size: 500
+file size: 71500
+create checked file
+create T_CHECKED
+writing file
+==cmpck:41(41)==|wri:(1d3)(41)
+==cmpck:41(3)==|wri:(410001d3)(3)
+==cmpck:0(0)==|wri:(1d4)(0)
+==cmpck:0(43)==|wri:(1d4)(43)
+==cmpck:0(0)==|wri:(1d5)(0)
+==cmpck:0(44)==|wri:(1d5)(44)
+==cmpck:0(0)==|wri:(1d6)(0)
+==cmpck:0(45)==|wri:(1d6)(45)
+==cmpck:0(0)==|wri:(1d7)(0)
+==cmpck:0(46)==|wri:(1d7)(46)
+==cmpck:0(0)==|wri:(1d8)(0)
+==cmpck:0(47)==|wri:(1d8)(47)
+==cmpck:0(0)==|wri:(1d9)(0)
+==cmpck:0(48)==|wri:(1d9)(48)
+==cmpck:0(0)==|wri:(1da)(0)
+==cmpck:0(49)==|wri:(1da)(49)
+==cmpck:0(0)==|wri:(1db)(0)
+==cmpck:0(4a)==|wri:(1db)(4a)
+==cmpck:0(0)==|wri:(1dc)(0)
+==cmpck:0(4b)==|wri:(1dc)(4b)
+==cmpck:0(0)==|wri:(1dd)(0)
+==cmpck:0(4c)==|wri:(1dd)(4c)
+==cmpck:0(0)==|wri:(1de)(0)
+==cmpck:0(4d)==|wri:(1de)(4d)
+==cmpck:0(0)==|wri:(1e0)(0)
+==cmpck:0(4e)==|wri:(1e0)(4e)
+==cmpck:0(0)==|wri:(1e1)(0)
+==cmpck:0(4f)==|wri:(1e1)(4f)
+==cmpck:0(0)==|wri:(1e2)(0)
+==cmpck:0(50)==|wri:(1e2)(50)
+==cmpck:0(0)==|wri:(1e3)(0)
+==cmpck:0(51)==|wri:(1e3)(51)
+==cmpck:0(0)==|wri:(1e4)(0)
+==cmpck:0(52)==|wri:(1e4)(52)
+==cmpck:0(0)==|wri:(1e5)(0)
+==cmpck:0(53)==|wri:(1e5)(53)
+==cmpck:0(0)==|wri:(1e6)(0)
+==cmpck:0(54)==|wri:(1e6)(54)
+==cmpck:0(0)==|wri:(1e7)(0)
+==cmpck:0(55)==|wri:(1e7)(55)
+==cmpck:0(0)==|wri:(1e8)(0)
+==cmpck:0(56)==|wri:(1e8)(56)
+==cmpck:0(0)==|wri:(1e9)(0)
+==cmpck:0(57)==|wri:(1e9)(57)
+==cmpck:0(0)==|wri:(1ea)(0)
+==cmpck:0(58)==|wri:(1ea)(58)
+==cmpck:0(0)==|wri:(1eb)(0)
+==cmpck:0(59)==|wri:(1eb)(59)
+==cmpck:0(0)==|wri:(1ec)(0)
+==cmpck:0(5a)==|wri:(1ec)(5a)
+==cmpck:0(0)==|wri:(1ed)(0)
+==cmpck:0(5b)==|wri:(1ed)(5b)
+==cmpck:0(0)==|wri:(1ee)(0)
+==cmpck:0(5c)==|wri:(1ee)(5c)
+==cmpck:0(0)==|wri:(1ef)(0)
+==cmpck:0(5d)==|wri:(1ef)(5d)
+==cmpck:0(0)==|wri:(1f0)(0)
+==cmpck:0(5e)==|wri:(1f0)(5e)
+==cmpck:0(0)==|wri:(1f1)(0)
+==cmpck:0(5f)==|wri:(1f1)(5f)
+==cmpck:0(0)==|wri:(1f2)(0)
+==cmpck:0(60)==|wri:(1f2)(60)
+==cmpck:0(0)==|wri:(1f3)(0)
+==cmpck:0(61)==|wri:(1f3)(61)
+==cmpck:0(0)==|wri:(1f4)(0)
+==cmpck:0(62)==|wri:(1f4)(62)
+==cmpck:0(0)==|wri:(1f5)(0)
+==cmpck:0(63)==|wri:(1f5)(63)
+==cmpck:0(0)==|wri:(1f6)(0)
+==cmpck:0(64)==|wri:(1f6)(64)
+==cmpck:0(0)==|wri:(1f7)(0)
+==cmpck:0(65)==|wri:(1f7)(65)
+==cmpck:0(0)==|wri:(1f8)(0)
+==cmpck:0(66)==|wri:(1f8)(66)
+==cmpck:0(0)==|wri:(1f9)(0)
+==cmpck:0(67)==|wri:(1f9)(67)
+==cmpck:0(0)==|wri:(1fa)(0)
+==cmpck:0(68)==|wri:(1fa)(68)
+==cmpck:0(0)==|wri:(1fb)(0)
+==cmpck:0(69)==|wri:(1fb)(69)
+==cmpck:0(0)==|wri:(1fc)(0)
+==cmpck:0(6a)==|wri:(1fc)(6a)
+==cmpck:0(0)==|wri:(1fd)(0)
+==cmpck:0(6b)==|wri:(1fd)(6b)
+==cmpck:0(7)==|wri:(6b0001fd)(7)
+==cmpck:0(0)==|wri:(1fe)(0)
+==cmpck:0(6d)==|wri:(1fe)(6d)
+==cmpck:0(0)==|wri:(1ff)(0)
+==cmpck:0(6e)==|wri:(1ff)(6e)
+==cmpck:0(0)==|wri:(200)(0)
+==cmpck:0(6f)==|wri:(200)(6f)
+==cmpck:0(0)==|wri:(201)(0)
+==cmpck:0(70)==|wri:(201)(70)
+==cmpck:0(0)==|wri:(202)(0)
+==cmpck:0(71)==|wri:(202)(71)
+==cmpck:0(0)==|wri:(203)(0)
+==cmpck:0(72)==|wri:(203)(72)
+==cmpck:0(0)==|wri:(204)(0)
+==cmpck:0(73)==|wri:(204)(73)
+==cmpck:0(0)==|wri:(205)(0)
+==cmpck:0(74)==|wri:(205)(74)
+==cmpck:0(0)==|wri:(206)(0)
+==cmpck:0(75)==|wri:(206)(75)
+==cmpck:0(0)==|wri:(207)(0)
+==cmpck:0(76)==|wri:(207)(76)
+==cmpck:0(0)==|wri:(208)(0)
+==cmpck:0(77)==|wri:(208)(77)
+==cmpck:0(0)==|wri:(209)(0)
+==cmpck:0(78)==|wri:(209)(78)
+==cmpck:0(0)==|wri:(20a)(0)
+==cmpck:0(79)==|wri:(20a)(79)
+==cmpck:0(0)==|wri:(20b)(0)
+==cmpck:0(7a)==|wri:(20b)(7a)
+==cmpck:0(0)==|wri:(20c)(0)
+==cmpck:0(7b)==|wri:(20c)(7b)
+==cmpck:0(0)==|wri:(20d)(0)
+==cmpck:0(7c)==|wri:(20d)(7c)
+==cmpck:0(0)==|wri:(20e)(0)
+==cmpck:0(7d)==|wri:(20e)(7d)
+==cmpck:0(0)==|wri:(20f)(0)
+==cmpck:0(7e)==|wri:(20f)(7e)
+==cmpck:0(0)==|wri:(210)(0)
+==cmpck:0(7f)==|wri:(210)(7f)
+==cmpck:0(0)==|wri:(211)(0)
+==cmpck:0(80)==|wri:(211)(80)
+==cmpck:0(0)==|wri:(212)(0)
+==cmpck:0(81)==|wri:(212)(81)
+==cmpck:0(0)==|wri:(213)(0)
+==cmpck:0(82)==|wri:(213)(82)
+==cmpck:0(0)==|wri:(214)(0)
+==cmpck:0(83)==|wri:(214)(83)
+==cmpck:0(0)==|wri:(215)(0)
+==cmpck:0(84)==|wri:(215)(84)
+==cmpck:0(0)==|wri:(216)(0)
+==cmpck:0(85)==|wri:(216)(85)
+==cmpck:0(0)==|wri:(217)(0)
+==cmpck:0(86)==|wri:(217)(86)
+==cmpck:0(0)==|wri:(218)(0)
+==cmpck:0(87)==|wri:(218)(87)
+==cmpck:0(0)==|wri:(219)(0)
+==cmpck:0(88)==|wri:(219)(88)
+==cmpck:0(0)==|wri:(21a)(0)
+==cmpck:0(89)==|wri:(21a)(89)
+==cmpck:0(0)==|wri:(21b)(0)
+==cmpck:0(8a)==|wri:(21b)(8a)
+==cmpck:0(0)==|wri:(21c)(0)
+==cmpck:0(8b)==|wri:(21c)(8b)
+==cmpck:0(0)==|wri:(21d)(0)
+==cmpck:0(8c)==|wri:(21d)(8c)
+==cmpck:0(0)==|wri:(21e)(0)
+==cmpck:0(8d)==|wri:(21e)(8d)
+==cmpck:0(0)==|wri:(21f)(0)
+==cmpck:0(8e)==|wri:(21f)(8e)
+==cmpck:0(0)==|wri:(220)(0)
+==cmpck:0(8f)==|wri:(220)(8f)
+==cmpck:0(0)==|wri:(221)(0)
+==cmpck:0(90)==|wri:(221)(90)
+==cmpck:0(0)==|wri:(222)(0)
+==cmpck:0(91)==|wri:(222)(91)
+==cmpck:0(0)==|wri:(223)(0)
+==cmpck:0(92)==|wri:(223)(92)
+==cmpck:0(0)==|wri:(224)(0)
+==cmpck:0(93)==|wri:(224)(93)
+==cmpck:0(0)==|wri:(225)(0)
+==cmpck:0(94)==|wri:(225)(94)
+==cmpck:0(0)==|wri:(226)(0)
+==cmpck:0(95)==|wri:(226)(95)
+==cmpck:0(0)==|wri:(227)(0)
+==cmpck:0(96)==|wri:(227)(96)
+==cmpck:0(1)==|wri:(96000227)(1)
+==cmpck:0(0)==|wri:(228)(0)
+==cmpck:0(98)==|wri:(228)(98)
+==cmpck:0(0)==|wri:(229)(0)
+==cmpck:0(99)==|wri:(229)(99)
+==cmpck:0(0)==|wri:(22a)(0)
+==cmpck:0(9a)==|wri:(22a)(9a)
+==cmpck:0(0)==|wri:(22b)(0)
+==cmpck:0(9b)==|wri:(22b)(9b)
+==cmpck:0(0)==|wri:(22c)(0)
+==cmpck:0(9c)==|wri:(22c)(9c)
+==cmpck:0(0)==|wri:(22d)(0)
+==cmpck:0(9d)==|wri:(22d)(9d)
+==cmpck:0(0)==|wri:(22e)(0)
+==cmpck:0(9e)==|wri:(22e)(9e)
+==cmpck:0(0)==|wri:(22f)(0)
+==cmpck:0(9f)==|wri:(22f)(9f)
+==cmpck:0(0)==|wri:(230)(0)
+==cmpck:0(a0)==|wri:(230)(a0)
+==cmpck:0(0)==|wri:(231)(0)
+==cmpck:0(a1)==|wri:(231)(a1)
+==cmpck:0(0)==|wri:(232)(0)
+==cmpck:0(a2)==|wri:(232)(a2)
+==cmpck:0(0)==|wri:(233)(0)
+==cmpck:0(a3)==|wri:(233)(a3)
+==cmpck:0(0)==|wri:(234)(0)
+==cmpck:0(a4)==|wri:(234)(a4)
+==cmpck:0(0)==|wri:(235)(0)
+==cmpck:0(a5)==|wri:(235)(a5)
+==cmpck:0(0)==|wri:(236)(0)
+==cmpck:0(a6)==|wri:(236)(a6)
+==cmpck:0(0)==|wri:(237)(0)
+==cmpck:0(a7)==|wri:(237)(a7)
+==cmpck:0(0)==|wri:(238)(0)
+==cmpck:0(a8)==|wri:(238)(a8)
+==cmpck:0(0)==|wri:(239)(0)
+==cmpck:0(a9)==|wri:(239)(a9)
+==cmpck:0(0)==|wri:(23a)(0)
+==cmpck:0(aa)==|wri:(23a)(aa)
+==cmpck:0(0)==|wri:(23b)(0)
+==cmpck:0(ab)==|wri:(23b)(ab)
+==cmpck:0(0)==|wri:(23c)(0)
+==cmpck:0(ac)==|wri:(23c)(ac)
+==cmpck:0(0)==|wri:(23d)(0)
+==cmpck:0(ad)==|wri:(23d)(ad)
+==cmpck:0(0)==|wri:(23e)(0)
+==cmpck:0(ae)==|wri:(23e)(ae)
+==cmpck:0(0)==|wri:(23f)(0)
+==cmpck:0(af)==|wri:(23f)(af)
+==cmpck:0(0)==|wri:(240)(0)
+==cmpck:0(b0)==|wri:(240)(b0)
+==cmpck:0(0)==|wri:(241)(0)
+==cmpck:0(b1)==|wri:(241)(b1)
+==cmpck:0(0)==|wri:(242)(0)
+==cmpck:0(b2)==|wri:(242)(b2)
+==cmpck:0(0)==|wri:(243)(0)
+==cmpck:0(b3)==|wri:(243)(b3)
+==cmpck:0(0)==|wri:(244)(0)
+==cmpck:0(b4)==|wri:(244)(b4)
+==cmpck:0(0)==|wri:(245)(0)
+==cmpck:0(b5)==|wri:(245)(b5)
+==cmpck:0(0)==|wri:(246)(0)
+==cmpck:0(b6)==|wri:(246)(b6)
+==cmpck:0(0)==|wri:(247)(0)
+==cmpck:0(b7)==|wri:(247)(b7)
+==cmpck:0(0)==|wri:(248)(0)
+==cmpck:0(b8)==|wri:(248)(b8)
+==cmpck:0(0)==|wri:(249)(0)
+==cmpck:0(b9)==|wri:(249)(b9)
+==cmpck:0(0)==|wri:(24a)(0)
+==cmpck:0(ba)==|wri:(24a)(ba)
+==cmpck:0(0)==|wri:(24b)(0)
+==cmpck:0(bb)==|wri:(24b)(bb)
+==cmpck:0(0)==|wri:(24c)(0)
+==cmpck:0(bc)==|wri:(24c)(bc)
+==cmpck:0(0)==|wri:(24d)(0)
+==cmpck:0(bd)==|wri:(24d)(bd)
+==cmpck:0(0)==|wri:(24e)(0)
+==cmpck:0(be)==|wri:(24e)(be)
+==cmpck:0(0)==|wri:(24f)(0)
+==cmpck:0(bf)==|wri:(24f)(bf)
+==cmpck:0(0)==|wri:(250)(0)
+==cmpck:0(c0)==|wri:(250)(c0)
+==cmpck:c1(c1)==|wri:(251)(c1)
+==cmpck:c1(3)==|wri:(c1000251)(3)
+==cmpck:0(0)==|wri:(252)(0)
+==cmpck:0(c3)==|wri:(252)(c3)
+==cmpck:0(0)==|wri:(253)(0)
+==cmpck:0(c4)==|wri:(253)(c4)
+==cmpck:0(0)==|wri:(254)(0)
+==cmpck:0(c5)==|wri:(254)(c5)
+==cmpck:0(0)==|wri:(255)(0)
+==cmpck:0(c6)==|wri:(255)(c6)
+==cmpck:0(0)==|wri:(256)(0)
+==cmpck:0(c7)==|wri:(256)(c7)
+==cmpck:0(0)==|wri:(257)(0)
+==cmpck:0(c8)==|wri:(257)(c8)
+==cmpck:0(0)==|wri:(258)(0)
+==cmpck:0(c9)==|wri:(258)(c9)
+==cmpck:0(0)==|wri:(259)(0)
+==cmpck:0(ca)==|wri:(259)(ca)
+==cmpck:0(0)==|wri:(25a)(0)
+==cmpck:0(cb)==|wri:(25a)(cb)
+==cmpck:0(0)==|wri:(25b)(0)
+==cmpck:0(cc)==|wri:(25b)(cc)
+==cmpck:0(0)==|wri:(25c)(0)
+==cmpck:0(cd)==|wri:(25c)(cd)
+==cmpck:0(0)==|wri:(25d)(0)
+==cmpck:0(ce)==|wri:(25d)(ce)
+==cmpck:0(0)==|wri:(25e)(0)
+==cmpck:0(cf)==|wri:(25e)(cf)
+==cmpck:0(0)==|wri:(25f)(0)
+reopening read only
+reading file
+==cmpck:41(3)==rdi:30001d3(30001d3)?(10b83c)==(3)
+==cmpck:41(3)==rdi:30001d3(30001d3)?(10b83c)==(3)
+==cmpck:0(43)==rdi:430001d4(430001d4)?(10bc6c)==(43)
+==cmpck:0(43)==rdi:430001d4(430001d4)?(10bc6c)==(43)
+==cmpck:0(44)==rdi:440001d5(440001d5)?(10afdc)==(44)
+==cmpck:0(44)==rdi:440001d5(440001d5)?(10afdc)==(44)
+==cmpck:0(45)==rdi:450001d6(450001d6)?(10ba54)==(45)
+==cmpck:0(45)==rdi:450001d6(450001d6)?(10ba54)==(45)
+==cmpck:0(46)==rdi:460001d7(460001d7)?(10b1f4)==(46)
+==cmpck:0(46)==rdi:460001d7(460001d7)?(10b1f4)==(46)
+==cmpck:0(47)==rdi:470001d8(470001d8)?(10abac)==(47)
+==cmpck:0(47)==rdi:470001d8(470001d8)?(10abac)==(47)
+==cmpck:0(48)==rdi:480001d9(480001d9)?(10be84)==(48)
+==cmpck:0(48)==rdi:480001d9(480001d9)?(10be84)==(48)
+==cmpck:0(49)==rdi:490001da(490001da)?(10b40c)==(49)
+==cmpck:0(49)==rdi:490001da(490001da)?(10b40c)==(49)
+==cmpck:0(4a)==rdi:4a0001db(4a0001db)?(10b624)==(4a)
+==cmpck:0(4a)==rdi:4a0001db(4a0001db)?(10b624)==(4a)
+==cmpck:0(4b)==rdi:4b0001dc(4b0001dc)?(10adc4)==(4b)
+==cmpck:0(4b)==rdi:4b0001dc(4b0001dc)?(10adc4)==(4b)
+==cmpck:0(4c)==rdi:4c0001dd(4c0001dd)?(10b83c)==(4c)
+==cmpck:0(4c)==rdi:4c0001dd(4c0001dd)?(10b83c)==(4c)
+==cmpck:0(4d)==rdi:4d0001de(4d0001de)?(10bc6c)==(4d)
+==cmpck:0(4d)==rdi:4d0001de(4d0001de)?(10bc6c)==(4d)
+==cmpck:0(4e)==rdi:4e0001e0(4e0001e0)?(10ba54)==(4e)
+==cmpck:0(4e)==rdi:4e0001e0(4e0001e0)?(10ba54)==(4e)
+==cmpck:0(4f)==rdi:4f0001e1(4f0001e1)?(10b1f4)==(4f)
+==cmpck:0(4f)==rdi:4f0001e1(4f0001e1)?(10b1f4)==(4f)
+==cmpck:0(50)==rdi:500001e2(500001e2)?(10abac)==(50)
+==cmpck:0(50)==rdi:500001e2(500001e2)?(10abac)==(50)
+==cmpck:0(51)==rdi:510001e3(510001e3)?(10be84)==(51)
+==cmpck:0(51)==rdi:510001e3(510001e3)?(10be84)==(51)
+==cmpck:0(52)==rdi:520001e4(520001e4)?(10b40c)==(52)
+==cmpck:0(52)==rdi:520001e4(520001e4)?(10b40c)==(52)
+==cmpck:0(53)==rdi:530001e5(530001e5)?(10b624)==(53)
+==cmpck:0(53)==rdi:530001e5(530001e5)?(10b624)==(53)
+==cmpck:0(54)==rdi:540001e6(540001e6)?(10adc4)==(54)
+==cmpck:0(54)==rdi:540001e6(540001e6)?(10adc4)==(54)
+==cmpck:0(55)==rdi:550001e7(550001e7)?(10b83c)==(55)
+==cmpck:0(55)==rdi:550001e7(550001e7)?(10b83c)==(55)
+==cmpck:0(56)==rdi:560001e8(560001e8)?(10bc6c)==(56)
+==cmpck:0(56)==rdi:560001e8(560001e8)?(10bc6c)==(56)
+==cmpck:0(57)==rdi:570001e9(570001e9)?(10ba54)==(57)
+==cmpck:0(57)==rdi:570001e9(570001e9)?(10ba54)==(57)
+==cmpck:0(58)==rdi:580001ea(580001ea)?(10b1f4)==(58)
+==cmpck:0(58)==rdi:580001ea(580001ea)?(10b1f4)==(58)
+==cmpck:0(59)==rdi:590001eb(590001eb)?(10abac)==(59)
+==cmpck:0(59)==rdi:590001eb(590001eb)?(10abac)==(59)
+==cmpck:0(5a)==rdi:5a0001ec(5a0001ec)?(10be84)==(5a)
+==cmpck:0(5a)==rdi:5a0001ec(5a0001ec)?(10be84)==(5a)
+==cmpck:0(5b)==rdi:5b0001ed(5b0001ed)?(10b40c)==(5b)
+==cmpck:0(5b)==rdi:5b0001ed(5b0001ed)?(10b40c)==(5b)
+==cmpck:0(5c)==rdi:5c0001ee(5c0001ee)?(10b624)==(5c)
+==cmpck:0(5c)==rdi:5c0001ee(5c0001ee)?(10b624)==(5c)
+==cmpck:0(5d)==rdi:5d0001ef(5d0001ef)?(10adc4)==(5d)
+==cmpck:0(5d)==rdi:5d0001ef(5d0001ef)?(10adc4)==(5d)
+==cmpck:0(5e)==rdi:5e0001f0(5e0001f0)?(10b83c)==(5e)
+==cmpck:0(5e)==rdi:5e0001f0(5e0001f0)?(10b83c)==(5e)
+==cmpck:0(5f)==rdi:5f0001f1(5f0001f1)?(10bc6c)==(5f)
+==cmpck:0(5f)==rdi:5f0001f1(5f0001f1)?(10bc6c)==(5f)
+==cmpck:0(60)==rdi:600001f2(600001f2)?(10ba54)==(60)
+==cmpck:0(60)==rdi:600001f2(600001f2)?(10ba54)==(60)
+==cmpck:0(61)==rdi:610001f3(610001f3)?(10b1f4)==(61)
+==cmpck:0(61)==rdi:610001f3(610001f3)?(10b1f4)==(61)
+==cmpck:0(62)==rdi:620001f4(620001f4)?(10abac)==(62)
+==cmpck:0(62)==rdi:620001f4(620001f4)?(10abac)==(62)
+==cmpck:0(63)==rdi:630001f5(630001f5)?(10be84)==(63)
+==cmpck:0(63)==rdi:630001f5(630001f5)?(10be84)==(63)
+==cmpck:0(64)==rdi:640001f6(640001f6)?(10b40c)==(64)
+==cmpck:0(64)==rdi:640001f6(640001f6)?(10b40c)==(64)
+==cmpck:0(65)==rdi:650001f7(650001f7)?(10b624)==(65)
+==cmpck:0(65)==rdi:650001f7(650001f7)?(10b624)==(65)
+==cmpck:0(66)==rdi:660001f8(660001f8)?(10adc4)==(66)
+==cmpck:0(66)==rdi:660001f8(660001f8)?(10adc4)==(66)
+==cmpck:0(67)==rdi:670001f9(670001f9)?(10b83c)==(67)
+==cmpck:0(67)==rdi:670001f9(670001f9)?(10b83c)==(67)
+==cmpck:0(68)==rdi:680001fa(680001fa)?(10bc6c)==(68)
+==cmpck:0(68)==rdi:680001fa(680001fa)?(10bc6c)==(68)
+==cmpck:0(69)==rdi:690001fb(690001fb)?(10ba54)==(69)
+==cmpck:0(69)==rdi:690001fb(690001fb)?(10ba54)==(69)
+==cmpck:0(6a)==rdi:6a0001fc(6a0001fc)?(10b1f4)==(6a)
+==cmpck:0(6a)==rdi:6a0001fc(6a0001fc)?(10b1f4)==(6a)
+==cmpck:0(7)==rdi:70001fd(70001fd)?(10abac)==(7)
+==cmpck:0(7)==rdi:70001fd(70001fd)?(10abac)==(7)
+==cmpck:0(7)==rdi:70001fd(70001fd)?(10abac)==(7)
+==cmpck:0(6d)==rdi:6d0001fe(6d0001fe)?(10be84)==(6d)
+==cmpck:0(6d)==rdi:6d0001fe(6d0001fe)?(10be84)==(6d)
+==cmpck:0(6e)==rdi:6e0001ff(6e0001ff)?(10b40c)==(6e)
+==cmpck:0(6e)==rdi:6e0001ff(6e0001ff)?(10b40c)==(6e)
+==cmpck:0(6f)==rdi:6f000200(6f000200)?(10b624)==(6f)
+==cmpck:0(6f)==rdi:6f000200(6f000200)?(10b624)==(6f)
+==cmpck:0(70)==rdi:70000201(70000201)?(10adc4)==(70)
+==cmpck:0(70)==rdi:70000201(70000201)?(10adc4)==(70)
+==cmpck:0(71)==rdi:71000202(71000202)?(10b83c)==(71)
+==cmpck:0(71)==rdi:71000202(71000202)?(10b83c)==(71)
+==cmpck:0(72)==rdi:72000203(72000203)?(10bc6c)==(72)
+==cmpck:0(72)==rdi:72000203(72000203)?(10bc6c)==(72)
+==cmpck:0(73)==rdi:73000204(73000204)?(10ba54)==(73)
+==cmpck:0(73)==rdi:73000204(73000204)?(10ba54)==(73)
+==cmpck:0(74)==rdi:74000205(74000205)?(10b1f4)==(74)
+==cmpck:0(74)==rdi:74000205(74000205)?(10b1f4)==(74)
+==cmpck:0(75)==rdi:75000206(75000206)?(10abac)==(75)
+==cmpck:0(75)==rdi:75000206(75000206)?(10abac)==(75)
+==cmpck:0(76)==rdi:76000207(76000207)?(10be84)==(76)
+==cmpck:0(76)==rdi:76000207(76000207)?(10be84)==(76)
+==cmpck:0(77)==rdi:77000208(77000208)?(10b40c)==(77)
+==cmpck:0(77)==rdi:77000208(77000208)?(10b40c)==(77)
+==cmpck:0(78)==rdi:78000209(78000209)?(10b624)==(78)
+==cmpck:0(78)==rdi:78000209(78000209)?(10b624)==(78)
+==cmpck:0(79)==rdi:7900020a(7900020a)?(10adc4)==(79)
+==cmpck:0(79)==rdi:7900020a(7900020a)?(10adc4)==(79)
+==cmpck:0(7a)==rdi:7a00020b(7a00020b)?(10b83c)==(7a)
+==cmpck:0(7a)==rdi:7a00020b(7a00020b)?(10b83c)==(7a)
+==cmpck:0(7b)==rdi:7b00020c(7b00020c)?(10bc6c)==(7b)
+==cmpck:0(7b)==rdi:7b00020c(7b00020c)?(10bc6c)==(7b)
+==cmpck:0(7c)==rdi:7c00020d(7c00020d)?(10ba54)==(7c)
+==cmpck:0(7c)==rdi:7c00020d(7c00020d)?(10ba54)==(7c)
+==cmpck:0(7d)==rdi:7d00020e(7d00020e)?(10b1f4)==(7d)
+==cmpck:0(7d)==rdi:7d00020e(7d00020e)?(10b1f4)==(7d)
+==cmpck:0(7e)==rdi:7e00020f(7e00020f)?(10abac)==(7e)
+==cmpck:0(7e)==rdi:7e00020f(7e00020f)?(10abac)==(7e)
+==cmpck:0(7f)==rdi:7f000210(7f000210)?(10be84)==(7f)
+==cmpck:0(7f)==rdi:7f000210(7f000210)?(10be84)==(7f)
+==cmpck:0(80)==rdi:80000211(80000211)?(10b40c)==(80)
+==cmpck:0(80)==rdi:80000211(80000211)?(10b40c)==(80)
+==cmpck:0(81)==rdi:81000212(81000212)?(10b624)==(81)
+==cmpck:0(81)==rdi:81000212(81000212)?(10b624)==(81)
+==cmpck:0(82)==rdi:82000213(82000213)?(10adc4)==(82)
+==cmpck:0(82)==rdi:82000213(82000213)?(10adc4)==(82)
+==cmpck:0(83)==rdi:83000214(83000214)?(10b83c)==(83)
+==cmpck:0(83)==rdi:83000214(83000214)?(10b83c)==(83)
+==cmpck:0(84)==rdi:84000215(84000215)?(10bc6c)==(84)
+==cmpck:0(84)==rdi:84000215(84000215)?(10bc6c)==(84)
+==cmpck:0(85)==rdi:85000216(85000216)?(10ba54)==(85)
+==cmpck:0(85)==rdi:85000216(85000216)?(10ba54)==(85)
+==cmpck:0(86)==rdi:86000217(86000217)?(10b1f4)==(86)
+==cmpck:0(86)==rdi:86000217(86000217)?(10b1f4)==(86)
+==cmpck:0(87)==rdi:87000218(87000218)?(10abac)==(87)
+==cmpck:0(87)==rdi:87000218(87000218)?(10abac)==(87)
+==cmpck:0(88)==rdi:88000219(88000219)?(10be84)==(88)
+==cmpck:0(88)==rdi:88000219(88000219)?(10be84)==(88)
+==cmpck:0(89)==rdi:8900021a(8900021a)?(10b40c)==(89)
+==cmpck:0(89)==rdi:8900021a(8900021a)?(10b40c)==(89)
+==cmpck:0(8a)==rdi:8a00021b(8a00021b)?(10b624)==(8a)
+==cmpck:0(8a)==rdi:8a00021b(8a00021b)?(10b624)==(8a)
+==cmpck:0(8b)==rdi:8b00021c(8b00021c)?(10adc4)==(8b)
+==cmpck:0(8b)==rdi:8b00021c(8b00021c)?(10adc4)==(8b)
+==cmpck:0(8c)==rdi:8c00021d(8c00021d)?(10b83c)==(8c)
+==cmpck:0(8c)==rdi:8c00021d(8c00021d)?(10b83c)==(8c)
+==cmpck:0(8d)==rdi:8d00021e(8d00021e)?(10bc6c)==(8d)
+==cmpck:0(8d)==rdi:8d00021e(8d00021e)?(10bc6c)==(8d)
+==cmpck:0(8e)==rdi:8e00021f(8e00021f)?(10ba54)==(8e)
+==cmpck:0(8e)==rdi:8e00021f(8e00021f)?(10ba54)==(8e)
+==cmpck:0(8f)==rdi:8f000220(8f000220)?(10b1f4)==(8f)
+==cmpck:0(8f)==rdi:8f000220(8f000220)?(10b1f4)==(8f)
+==cmpck:0(90)==rdi:90000221(90000221)?(10abac)==(90)
+==cmpck:0(90)==rdi:90000221(90000221)?(10abac)==(90)
+==cmpck:0(91)==rdi:91000222(91000222)?(10be84)==(91)
+==cmpck:0(91)==rdi:91000222(91000222)?(10be84)==(91)
+==cmpck:0(92)==rdi:92000223(92000223)?(10b40c)==(92)
+==cmpck:0(92)==rdi:92000223(92000223)?(10b40c)==(92)
+==cmpck:0(93)==rdi:93000224(93000224)?(10b624)==(93)
+==cmpck:0(93)==rdi:93000224(93000224)?(10b624)==(93)
+==cmpck:0(94)==rdi:94000225(94000225)?(10adc4)==(94)
+==cmpck:0(94)==rdi:94000225(94000225)?(10adc4)==(94)
+==cmpck:0(95)==rdi:95000226(95000226)?(10b83c)==(95)
+==cmpck:0(95)==rdi:95000226(95000226)?(10b83c)==(95)
+==cmpck:0(1)==rdi:1000227(1000227)?(10bc6c)==(1)
+==cmpck:0(1)==rdi:1000227(1000227)?(10bc6c)==(1)
+==cmpck:0(1)==rdi:1000227(1000227)?(10bc6c)==(1)
+==cmpck:0(98)==rdi:98000228(98000228)?(10ba54)==(98)
+==cmpck:0(98)==rdi:98000228(98000228)?(10ba54)==(98)
+==cmpck:0(99)==rdi:99000229(99000229)?(10b1f4)==(99)
+==cmpck:0(99)==rdi:99000229(99000229)?(10b1f4)==(99)
+==cmpck:0(9a)==rdi:9a00022a(9a00022a)?(10abac)==(9a)
+==cmpck:0(9a)==rdi:9a00022a(9a00022a)?(10abac)==(9a)
+==cmpck:0(9b)==rdi:9b00022b(9b00022b)?(10be84)==(9b)
+==cmpck:0(9b)==rdi:9b00022b(9b00022b)?(10be84)==(9b)
+==cmpck:0(9c)==rdi:9c00022c(9c00022c)?(10b40c)==(9c)
+==cmpck:0(9c)==rdi:9c00022c(9c00022c)?(10b40c)==(9c)
+==cmpck:0(9d)==rdi:9d00022d(9d00022d)?(10b624)==(9d)
+==cmpck:0(9d)==rdi:9d00022d(9d00022d)?(10b624)==(9d)
+==cmpck:0(9e)==rdi:9e00022e(9e00022e)?(10adc4)==(9e)
+==cmpck:0(9e)==rdi:9e00022e(9e00022e)?(10adc4)==(9e)
+==cmpck:0(9f)==rdi:9f00022f(9f00022f)?(10b83c)==(9f)
+==cmpck:0(9f)==rdi:9f00022f(9f00022f)?(10b83c)==(9f)
+==cmpck:0(a0)==rdi:a0000230(a0000230)?(10bc6c)==(a0)
+==cmpck:0(a0)==rdi:a0000230(a0000230)?(10bc6c)==(a0)
+==cmpck:0(a1)==rdi:a1000231(a1000231)?(10ba54)==(a1)
+==cmpck:0(a1)==rdi:a1000231(a1000231)?(10ba54)==(a1)
+==cmpck:0(a2)==rdi:a2000232(a2000232)?(10b1f4)==(a2)
+==cmpck:0(a2)==rdi:a2000232(a2000232)?(10b1f4)==(a2)
+==cmpck:0(a3)==rdi:a3000233(a3000233)?(10abac)==(a3)
+==cmpck:0(a3)==rdi:a3000233(a3000233)?(10abac)==(a3)
+==cmpck:0(a4)==rdi:a4000234(a4000234)?(10be84)==(a4)
+==cmpck:0(a4)==rdi:a4000234(a4000234)?(10be84)==(a4)
+==cmpck:0(a5)==rdi:a5000235(a5000235)?(10b40c)==(a5)
+==cmpck:0(a5)==rdi:a5000235(a5000235)?(10b40c)==(a5)
+==cmpck:0(a6)==rdi:a6000236(a6000236)?(10b624)==(a6)
+==cmpck:0(a6)==rdi:a6000236(a6000236)?(10b624)==(a6)
+==cmpck:0(a7)==rdi:a7000237(a7000237)?(10adc4)==(a7)
+==cmpck:0(a7)==rdi:a7000237(a7000237)?(10adc4)==(a7)
+==cmpck:0(a8)==rdi:a8000238(a8000238)?(10b83c)==(a8)
+==cmpck:0(a8)==rdi:a8000238(a8000238)?(10b83c)==(a8)
+==cmpck:0(a9)==rdi:a9000239(a9000239)?(10bc6c)==(a9)
+==cmpck:0(a9)==rdi:a9000239(a9000239)?(10bc6c)==(a9)
+==cmpck:0(aa)==rdi:aa00023a(aa00023a)?(10ba54)==(aa)
+==cmpck:0(aa)==rdi:aa00023a(aa00023a)?(10ba54)==(aa)
+==cmpck:0(ab)==rdi:ab00023b(ab00023b)?(10b1f4)==(ab)
+==cmpck:0(ab)==rdi:ab00023b(ab00023b)?(10b1f4)==(ab)
+==cmpck:0(ac)==rdi:ac00023c(ac00023c)?(10abac)==(ac)
+==cmpck:0(ac)==rdi:ac00023c(ac00023c)?(10abac)==(ac)
+==cmpck:0(ad)==rdi:ad00023d(ad00023d)?(10be84)==(ad)
+==cmpck:0(ad)==rdi:ad00023d(ad00023d)?(10be84)==(ad)
+==cmpck:0(ae)==rdi:ae00023e(ae00023e)?(10b40c)==(ae)
+==cmpck:0(ae)==rdi:ae00023e(ae00023e)?(10b40c)==(ae)
+==cmpck:0(af)==rdi:af00023f(af00023f)?(10b624)==(af)
+==cmpck:0(af)==rdi:af00023f(af00023f)?(10b624)==(af)
+==cmpck:0(b0)==rdi:b0000240(b0000240)?(10adc4)==(b0)
+==cmpck:0(b0)==rdi:b0000240(b0000240)?(10adc4)==(b0)
+==cmpck:0(b1)==rdi:b1000241(b1000241)?(10b83c)==(b1)
+==cmpck:0(b1)==rdi:b1000241(b1000241)?(10b83c)==(b1)
+==cmpck:0(b2)==rdi:b2000242(b2000242)?(10bc6c)==(b2)
+==cmpck:0(b2)==rdi:b2000242(b2000242)?(10bc6c)==(b2)
+==cmpck:0(b3)==rdi:b3000243(b3000243)?(10ba54)==(b3)
+==cmpck:0(b3)==rdi:b3000243(b3000243)?(10ba54)==(b3)
+==cmpck:0(b4)==rdi:b4000244(b4000244)?(10b1f4)==(b4)
+==cmpck:0(b4)==rdi:b4000244(b4000244)?(10b1f4)==(b4)
+==cmpck:0(b5)==rdi:b5000245(b5000245)?(10abac)==(b5)
+==cmpck:0(b5)==rdi:b5000245(b5000245)?(10abac)==(b5)
+==cmpck:0(b6)==rdi:b6000246(b6000246)?(10be84)==(b6)
+==cmpck:0(b6)==rdi:b6000246(b6000246)?(10be84)==(b6)
+==cmpck:0(b7)==rdi:b7000247(b7000247)?(10b40c)==(b7)
+==cmpck:0(b7)==rdi:b7000247(b7000247)?(10b40c)==(b7)
+==cmpck:0(b8)==rdi:b8000248(b8000248)?(10b624)==(b8)
+==cmpck:0(b8)==rdi:b8000248(b8000248)?(10b624)==(b8)
+==cmpck:0(b9)==rdi:b9000249(b9000249)?(10adc4)==(b9)
+==cmpck:0(b9)==rdi:b9000249(b9000249)?(10adc4)==(b9)
+==cmpck:0(ba)==rdi:ba00024a(ba00024a)?(10b83c)==(ba)
+==cmpck:0(ba)==rdi:ba00024a(ba00024a)?(10b83c)==(ba)
+==cmpck:0(bb)==rdi:bb00024b(bb00024b)?(10bc6c)==(bb)
+==cmpck:0(bb)==rdi:bb00024b(bb00024b)?(10bc6c)==(bb)
+==cmpck:0(bc)==rdi:bc00024c(bc00024c)?(10ba54)==(bc)
+==cmpck:0(bc)==rdi:bc00024c(bc00024c)?(10ba54)==(bc)
+==cmpck:0(bd)==rdi:bd00024d(bd00024d)?(10b1f4)==(bd)
+==cmpck:0(bd)==rdi:bd00024d(bd00024d)?(10b1f4)==(bd)
+==cmpck:0(be)==rdi:be00024e(be00024e)?(10abac)==(be)
+==cmpck:0(be)==rdi:be00024e(be00024e)?(10abac)==(be)
+==cmpck:0(bf)==rdi:bf00024f(bf00024f)?(10be84)==(bf)
+==cmpck:0(bf)==rdi:bf00024f(bf00024f)?(10be84)==(bf)
+==cmpck:0(c0)==rdi:c0000250(c0000250)?(10b40c)==(c0)
+==cmpck:0(c0)==rdi:c0000250(c0000250)?(10b40c)==(c0)
+==cmpck:c1(3)==rdi:3000251(3000251)?(10b624)==(3)
+==cmpck:c1(3)==rdi:3000251(3000251)?(10b624)==(3)
+==cmpck:0(c3)==rdi:c3000252(c3000252)?(10adc4)==(c3)
+==cmpck:0(c3)==rdi:c3000252(c3000252)?(10adc4)==(c3)
+==cmpck:0(c4)==rdi:c4000253(c4000253)?(10b83c)==(c4)
+==cmpck:0(c4)==rdi:c4000253(c4000253)?(10b83c)==(c4)
+==cmpck:0(c5)==rdi:c5000254(c5000254)?(10bc6c)==(c5)
+==cmpck:0(c5)==rdi:c5000254(c5000254)?(10bc6c)==(c5)
+==cmpck:0(c6)==rdi:c6000255(c6000255)?(10ba54)==(c6)
+==cmpck:0(c6)==rdi:c6000255(c6000255)?(10ba54)==(c6)
+==cmpck:0(c7)==rdi:c7000256(c7000256)?(10b1f4)==(c7)
+==cmpck:0(c7)==rdi:c7000256(c7000256)?(10b1f4)==(c7)
+==cmpck:0(c8)==rdi:c8000257(c8000257)?(10abac)==(c8)
+==cmpck:0(c8)==rdi:c8000257(c8000257)?(10abac)==(c8)
+==cmpck:0(c9)==rdi:c9000258(c9000258)?(10be84)==(c9)
+==cmpck:0(c9)==rdi:c9000258(c9000258)?(10be84)==(c9)
+==cmpck:0(ca)==rdi:ca000259(ca000259)?(10b40c)==(ca)
+==cmpck:0(ca)==rdi:ca000259(ca000259)?(10b40c)==(ca)
+==cmpck:0(cb)==rdi:cb00025a(cb00025a)?(10b624)==(cb)
+==cmpck:0(cb)==rdi:cb00025a(cb00025a)?(10b624)==(cb)
+==cmpck:0(cc)==rdi:cc00025b(cc00025b)?(10adc4)==(cc)
+==cmpck:0(cc)==rdi:cc00025b(cc00025b)?(10adc4)==(cc)
+==cmpck:0(cd)==rdi:cd00025c(cd00025c)?(10b83c)==(cd)
+==cmpck:0(cd)==rdi:cd00025c(cd00025c)?(10b83c)==(cd)
+==cmpck:0(ce)==rdi:ce00025d(ce00025d)?(10bc6c)==(ce)
+==cmpck:0(ce)==rdi:ce00025d(ce00025d)?(10bc6c)==(ce)
+==cmpck:0(cf)==rdi:cf00025e(cf00025e)?(10ba54)==(cf)
+==cmpck:0(cf)==rdi:cf00025e(cf00025e)?(10ba54)==(cf)
+==cmpck:0(0)==rdi:25f(25f)?(10b1f4)==(0)
+TEST PASSED
+
+
+test write3 PASSED
+ (write then read, buffer smaller than one block)
+
+
+**********************************************************************
+
+Test write4
+write then read, buffer larger than one block
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/5b/tests/write4.c
+Trying to build project using make
+make
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/tester fs/tester
+./tools/mkfs fs.img fs
+used 29 (bit 1 ninode 26) free 29 total 1024
+file_tst
+sh
+usertests
+mkdir
+wc
+grep
+rm
+cat
+forktest
+README
+init
+zombie
+kill
+echo
+tester
+stressfs
+ln
+write2
+ls
+balloc: first 467 blocks have been allocated
+balloc: write bitmap block at sector 28
+rm user/bin/tester
+make qemu-nox 
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+cpu0: starting
+init: starting sh
+$ tester
+tester
+buffer size: 1000
+file size: 71000
+create checked file
+create T_CHECKED
+writing file
+==cmpck:41(41)==|wri:(1d3)(41)
+==cmpck:0(0)==|wri:(1d4)(0)
+==cmpck:0(42)==|wri:(1d4)(42)
+==cmpck:0(0)==|wri:(1d5)(0)
+==cmpck:0(0)==|wri:(1d6)(0)
+==cmpck:0(43)==|wri:(1d6)(43)
+==cmpck:0(0)==|wri:(1d7)(0)
+==cmpck:0(0)==|wri:(1d8)(0)
+==cmpck:0(44)==|wri:(1d8)(44)
+==cmpck:0(0)==|wri:(1d9)(0)
+==cmpck:0(0)==|wri:(1da)(0)
+==cmpck:0(45)==|wri:(1da)(45)
+==cmpck:0(0)==|wri:(1db)(0)
+==cmpck:0(0)==|wri:(1dc)(0)
+==cmpck:0(46)==|wri:(1dc)(46)
+==cmpck:0(0)==|wri:(1dd)(0)
+==cmpck:0(0)==|wri:(1de)(0)
+==cmpck:0(47)==|wri:(1de)(47)
+==cmpck:0(0)==|wri:(1e0)(0)
+==cmpck:0(0)==|wri:(1e1)(0)
+==cmpck:0(48)==|wri:(1e1)(48)
+==cmpck:0(0)==|wri:(1e2)(0)
+==cmpck:0(0)==|wri:(1e3)(0)
+==cmpck:0(49)==|wri:(1e3)(49)
+==cmpck:0(0)==|wri:(1e4)(0)
+==cmpck:0(0)==|wri:(1e5)(0)
+==cmpck:0(4a)==|wri:(1e5)(4a)
+==cmpck:0(0)==|wri:(1e6)(0)
+==cmpck:0(0)==|wri:(1e7)(0)
+==cmpck:0(4b)==|wri:(1e7)(4b)
+==cmpck:0(0)==|wri:(1e8)(0)
+==cmpck:0(0)==|wri:(1e9)(0)
+==cmpck:0(4c)==|wri:(1e9)(4c)
+==cmpck:0(0)==|wri:(1ea)(0)
+==cmpck:0(0)==|wri:(1eb)(0)
+==cmpck:0(4d)==|wri:(1eb)(4d)
+==cmpck:0(0)==|wri:(1ec)(0)
+==cmpck:0(0)==|wri:(1ed)(0)
+==cmpck:0(4e)==|wri:(1ed)(4e)
+==cmpck:0(0)==|wri:(1ee)(0)
+==cmpck:0(0)==|wri:(1ef)(0)
+==cmpck:0(4f)==|wri:(1ef)(4f)
+==cmpck:0(0)==|wri:(1f0)(0)
+==cmpck:0(0)==|wri:(1f1)(0)
+==cmpck:0(50)==|wri:(1f1)(50)
+==cmpck:0(0)==|wri:(1f2)(0)
+==cmpck:0(0)==|wri:(1f3)(0)
+==cmpck:0(51)==|wri:(1f3)(51)
+==cmpck:0(0)==|wri:(1f4)(0)
+==cmpck:0(0)==|wri:(1f5)(0)
+==cmpck:0(52)==|wri:(1f5)(52)
+==cmpck:0(0)==|wri:(1f6)(0)
+==cmpck:0(0)==|wri:(1f7)(0)
+==cmpck:0(53)==|wri:(1f7)(53)
+==cmpck:0(0)==|wri:(1f8)(0)
+==cmpck:0(0)==|wri:(1f9)(0)
+==cmpck:0(54)==|wri:(1f9)(54)
+==cmpck:0(0)==|wri:(1fa)(0)
+==cmpck:0(0)==|wri:(1fb)(0)
+==cmpck:0(55)==|wri:(1fb)(55)
+==cmpck:0(0)==|wri:(1fc)(0)
+==cmpck:0(0)==|wri:(1fd)(0)
+==cmpck:0(56)==|wri:(1fd)(56)
+==cmpck:0(0)==|wri:(1fe)(0)
+==cmpck:0(57)==|wri:(1fe)(57)
+==cmpck:0(0)==|wri:(1ff)(0)
+==cmpck:0(0)==|wri:(200)(0)
+==cmpck:0(58)==|wri:(200)(58)
+==cmpck:0(0)==|wri:(201)(0)
+==cmpck:0(0)==|wri:(202)(0)
+==cmpck:0(59)==|wri:(202)(59)
+==cmpck:0(0)==|wri:(203)(0)
+==cmpck:0(0)==|wri:(204)(0)
+==cmpck:0(5a)==|wri:(204)(5a)
+==cmpck:0(0)==|wri:(205)(0)
+==cmpck:0(0)==|wri:(206)(0)
+==cmpck:0(5b)==|wri:(206)(5b)
+==cmpck:0(0)==|wri:(207)(0)
+==cmpck:0(0)==|wri:(208)(0)
+==cmpck:0(5c)==|wri:(208)(5c)
+==cmpck:0(0)==|wri:(209)(0)
+==cmpck:0(0)==|wri:(20a)(0)
+==cmpck:0(5d)==|wri:(20a)(5d)
+==cmpck:0(0)==|wri:(20b)(0)
+==cmpck:0(0)==|wri:(20c)(0)
+==cmpck:0(5e)==|wri:(20c)(5e)
+==cmpck:0(0)==|wri:(20d)(0)
+==cmpck:0(0)==|wri:(20e)(0)
+==cmpck:0(5f)==|wri:(20e)(5f)
+==cmpck:0(0)==|wri:(20f)(0)
+==cmpck:0(0)==|wri:(210)(0)
+==cmpck:0(60)==|wri:(210)(60)
+==cmpck:0(0)==|wri:(211)(0)
+==cmpck:0(0)==|wri:(212)(0)
+==cmpck:0(61)==|wri:(212)(61)
+==cmpck:0(0)==|wri:(213)(0)
+==cmpck:0(0)==|wri:(214)(0)
+==cmpck:0(62)==|wri:(214)(62)
+==cmpck:0(0)==|wri:(215)(0)
+==cmpck:0(0)==|wri:(216)(0)
+==cmpck:0(63)==|wri:(216)(63)
+==cmpck:0(0)==|wri:(217)(0)
+==cmpck:0(0)==|wri:(218)(0)
+==cmpck:0(64)==|wri:(218)(64)
+==cmpck:0(0)==|wri:(219)(0)
+==cmpck:0(0)==|wri:(21a)(0)
+==cmpck:0(65)==|wri:(21a)(65)
+==cmpck:0(0)==|wri:(21b)(0)
+==cmpck:0(0)==|wri:(21c)(0)
+==cmpck:0(66)==|wri:(21c)(66)
+==cmpck:0(0)==|wri:(21d)(0)
+==cmpck:0(0)==|wri:(21e)(0)
+==cmpck:0(67)==|wri:(21e)(67)
+==cmpck:0(0)==|wri:(21f)(0)
+==cmpck:0(0)==|wri:(220)(0)
+==cmpck:0(68)==|wri:(220)(68)
+==cmpck:0(0)==|wri:(221)(0)
+==cmpck:0(0)==|wri:(222)(0)
+==cmpck:0(69)==|wri:(222)(69)
+==cmpck:0(0)==|wri:(223)(0)
+==cmpck:0(0)==|wri:(224)(0)
+==cmpck:0(6a)==|wri:(224)(6a)
+==cmpck:0(0)==|wri:(225)(0)
+==cmpck:0(0)==|wri:(226)(0)
+==cmpck:0(6b)==|wri:(226)(6b)
+==cmpck:0(0)==|wri:(227)(0)
+==cmpck:0(6c)==|wri:(227)(6c)
+==cmpck:0(0)==|wri:(228)(0)
+==cmpck:0(0)==|wri:(229)(0)
+==cmpck:0(6d)==|wri:(229)(6d)
+==cmpck:0(0)==|wri:(22a)(0)
+==cmpck:0(0)==|wri:(22b)(0)
+==cmpck:0(6e)==|wri:(22b)(6e)
+==cmpck:0(0)==|wri:(22c)(0)
+==cmpck:0(0)==|wri:(22d)(0)
+==cmpck:0(6f)==|wri:(22d)(6f)
+==cmpck:0(0)==|wri:(22e)(0)
+==cmpck:0(0)==|wri:(22f)(0)
+==cmpck:0(70)==|wri:(22f)(70)
+==cmpck:0(0)==|wri:(230)(0)
+==cmpck:0(0)==|wri:(231)(0)
+==cmpck:0(71)==|wri:(231)(71)
+==cmpck:0(0)==|wri:(232)(0)
+==cmpck:0(0)==|wri:(233)(0)
+==cmpck:0(72)==|wri:(233)(72)
+==cmpck:0(0)==|wri:(234)(0)
+==cmpck:0(0)==|wri:(235)(0)
+==cmpck:0(73)==|wri:(235)(73)
+==cmpck:0(0)==|wri:(236)(0)
+==cmpck:0(0)==|wri:(237)(0)
+==cmpck:0(74)==|wri:(237)(74)
+==cmpck:0(0)==|wri:(238)(0)
+==cmpck:0(0)==|wri:(239)(0)
+==cmpck:0(75)==|wri:(239)(75)
+==cmpck:0(0)==|wri:(23a)(0)
+==cmpck:0(0)==|wri:(23b)(0)
+==cmpck:0(76)==|wri:(23b)(76)
+==cmpck:0(0)==|wri:(23c)(0)
+==cmpck:0(0)==|wri:(23d)(0)
+==cmpck:0(77)==|wri:(23d)(77)
+==cmpck:0(0)==|wri:(23e)(0)
+==cmpck:0(0)==|wri:(23f)(0)
+==cmpck:0(78)==|wri:(23f)(78)
+==cmpck:0(0)==|wri:(240)(0)
+==cmpck:0(0)==|wri:(241)(0)
+==cmpck:0(79)==|wri:(241)(79)
+==cmpck:0(0)==|wri:(242)(0)
+==cmpck:0(0)==|wri:(243)(0)
+==cmpck:0(7a)==|wri:(243)(7a)
+==cmpck:0(0)==|wri:(244)(0)
+==cmpck:0(0)==|wri:(245)(0)
+==cmpck:0(7b)==|wri:(245)(7b)
+==cmpck:0(0)==|wri:(246)(0)
+==cmpck:0(0)==|wri:(247)(0)
+==cmpck:0(7c)==|wri:(247)(7c)
+==cmpck:0(0)==|wri:(248)(0)
+==cmpck:0(0)==|wri:(249)(0)
+==cmpck:0(7d)==|wri:(249)(7d)
+==cmpck:0(0)==|wri:(24a)(0)
+==cmpck:0(0)==|wri:(24b)(0)
+==cmpck:0(7e)==|wri:(24b)(7e)
+==cmpck:0(0)==|wri:(24c)(0)
+==cmpck:0(0)==|wri:(24d)(0)
+==cmpck:0(7f)==|wri:(24d)(7f)
+==cmpck:0(0)==|wri:(24e)(0)
+==cmpck:0(0)==|wri:(24f)(0)
+==cmpck:0(80)==|wri:(24f)(80)
+==cmpck:0(0)==|wri:(250)(0)
+==cmpck:81(81)==|wri:(251)(81)
+==cmpck:0(0)==|wri:(252)(0)
+==cmpck:0(82)==|wri:(252)(82)
+==cmpck:0(0)==|wri:(253)(0)
+==cmpck:0(0)==|wri:(254)(0)
+==cmpck:0(83)==|wri:(254)(83)
+==cmpck:0(0)==|wri:(255)(0)
+==cmpck:0(0)==|wri:(256)(0)
+==cmpck:0(84)==|wri:(256)(84)
+==cmpck:0(0)==|wri:(257)(0)
+==cmpck:0(0)==|wri:(258)(0)
+==cmpck:0(85)==|wri:(258)(85)
+==cmpck:0(0)==|wri:(259)(0)
+==cmpck:0(0)==|wri:(25a)(0)
+==cmpck:0(86)==|wri:(25a)(86)
+==cmpck:0(0)==|wri:(25b)(0)
+==cmpck:0(0)==|wri:(25c)(0)
+==cmpck:0(87)==|wri:(25c)(87)
+==cmpck:0(0)==|wri:(25d)(0)
+==cmpck:0(0)==|wri:(25e)(0)
+reopening read only
+reading file
+==cmpck:41(41)==rdi:410001d3(410001d3)?(10b624)==(41)
+==cmpck:0(42)==rdi:420001d4(420001d4)?(10b83c)==(42)
+==cmpck:0(42)==rdi:420001d4(420001d4)?(10b83c)==(42)
+==cmpck:0(0)==rdi:1d5(1d5)?(10bc6c)==(0)
+==cmpck:0(43)==rdi:430001d6(430001d6)?(10afdc)==(43)
+==cmpck:0(43)==rdi:430001d6(430001d6)?(10afdc)==(43)
+==cmpck:0(0)==rdi:1d7(1d7)?(10b1f4)==(0)
+==cmpck:0(44)==rdi:440001d8(440001d8)?(10abac)==(44)
+==cmpck:0(44)==rdi:440001d8(440001d8)?(10abac)==(44)
+==cmpck:0(0)==rdi:1d9(1d9)?(10be84)==(0)
+==cmpck:0(45)==rdi:450001da(450001da)?(10ba54)==(45)
+==cmpck:0(45)==rdi:450001da(450001da)?(10ba54)==(45)
+==cmpck:0(0)==rdi:1db(1db)?(10b40c)==(0)
+==cmpck:0(46)==rdi:460001dc(460001dc)?(10adc4)==(46)
+==cmpck:0(46)==rdi:460001dc(460001dc)?(10adc4)==(46)
+==cmpck:0(0)==rdi:1dd(1dd)?(10b624)==(0)
+==cmpck:0(47)==rdi:470001de(470001de)?(10b83c)==(47)
+==cmpck:0(47)==rdi:470001de(470001de)?(10b83c)==(47)
+==cmpck:0(0)==rdi:1e0(1e0)?(10afdc)==(0)
+==cmpck:0(48)==rdi:480001e1(480001e1)?(10b1f4)==(48)
+==cmpck:0(48)==rdi:480001e1(480001e1)?(10b1f4)==(48)
+==cmpck:0(0)==rdi:1e2(1e2)?(10abac)==(0)
+==cmpck:0(49)==rdi:490001e3(490001e3)?(10be84)==(49)
+==cmpck:0(49)==rdi:490001e3(490001e3)?(10be84)==(49)
+==cmpck:0(0)==rdi:1e4(1e4)?(10ba54)==(0)
+==cmpck:0(4a)==rdi:4a0001e5(4a0001e5)?(10b40c)==(4a)
+==cmpck:0(4a)==rdi:4a0001e5(4a0001e5)?(10b40c)==(4a)
+==cmpck:0(0)==rdi:1e6(1e6)?(10adc4)==(0)
+==cmpck:0(4b)==rdi:4b0001e7(4b0001e7)?(10b624)==(4b)
+==cmpck:0(4b)==rdi:4b0001e7(4b0001e7)?(10b624)==(4b)
+==cmpck:0(0)==rdi:1e8(1e8)?(10b83c)==(0)
+==cmpck:0(4c)==rdi:4c0001e9(4c0001e9)?(10afdc)==(4c)
+==cmpck:0(4c)==rdi:4c0001e9(4c0001e9)?(10afdc)==(4c)
+==cmpck:0(0)==rdi:1ea(1ea)?(10b1f4)==(0)
+==cmpck:0(4d)==rdi:4d0001eb(4d0001eb)?(10abac)==(4d)
+==cmpck:0(4d)==rdi:4d0001eb(4d0001eb)?(10abac)==(4d)
+==cmpck:0(0)==rdi:1ec(1ec)?(10be84)==(0)
+==cmpck:0(4e)==rdi:4e0001ed(4e0001ed)?(10ba54)==(4e)
+==cmpck:0(4e)==rdi:4e0001ed(4e0001ed)?(10ba54)==(4e)
+==cmpck:0(0)==rdi:1ee(1ee)?(10b40c)==(0)
+==cmpck:0(4f)==rdi:4f0001ef(4f0001ef)?(10adc4)==(4f)
+==cmpck:0(4f)==rdi:4f0001ef(4f0001ef)?(10adc4)==(4f)
+==cmpck:0(0)==rdi:1f0(1f0)?(10b624)==(0)
+==cmpck:0(50)==rdi:500001f1(500001f1)?(10b83c)==(50)
+==cmpck:0(50)==rdi:500001f1(500001f1)?(10b83c)==(50)
+==cmpck:0(0)==rdi:1f2(1f2)?(10afdc)==(0)
+==cmpck:0(51)==rdi:510001f3(510001f3)?(10b1f4)==(51)
+==cmpck:0(51)==rdi:510001f3(510001f3)?(10b1f4)==(51)
+==cmpck:0(0)==rdi:1f4(1f4)?(10abac)==(0)
+==cmpck:0(52)==rdi:520001f5(520001f5)?(10be84)==(52)
+==cmpck:0(52)==rdi:520001f5(520001f5)?(10be84)==(52)
+==cmpck:0(0)==rdi:1f6(1f6)?(10ba54)==(0)
+==cmpck:0(53)==rdi:530001f7(530001f7)?(10b40c)==(53)
+==cmpck:0(53)==rdi:530001f7(530001f7)?(10b40c)==(53)
+==cmpck:0(0)==rdi:1f8(1f8)?(10adc4)==(0)
+==cmpck:0(54)==rdi:540001f9(540001f9)?(10b624)==(54)
+==cmpck:0(54)==rdi:540001f9(540001f9)?(10b624)==(54)
+==cmpck:0(0)==rdi:1fa(1fa)?(10b83c)==(0)
+==cmpck:0(55)==rdi:550001fb(550001fb)?(10afdc)==(55)
+==cmpck:0(55)==rdi:550001fb(550001fb)?(10afdc)==(55)
+==cmpck:0(0)==rdi:1fc(1fc)?(10b1f4)==(0)
+==cmpck:0(56)==rdi:560001fd(560001fd)?(10abac)==(56)
+==cmpck:0(56)==rdi:560001fd(560001fd)?(10abac)==(56)
+==cmpck:0(57)==rdi:570001fe(570001fe)?(10be84)==(57)
+==cmpck:0(57)==rdi:570001fe(570001fe)?(10be84)==(57)
+==cmpck:0(0)==rdi:1ff(1ff)?(10ba54)==(0)
+==cmpck:0(58)==rdi:58000200(58000200)?(10b40c)==(58)
+==cmpck:0(58)==rdi:58000200(58000200)?(10b40c)==(58)
+==cmpck:0(0)==rdi:201(201)?(10adc4)==(0)
+==cmpck:0(59)==rdi:59000202(59000202)?(10b624)==(59)
+==cmpck:0(59)==rdi:59000202(59000202)?(10b624)==(59)
+==cmpck:0(0)==rdi:203(203)?(10b83c)==(0)
+==cmpck:0(5a)==rdi:5a000204(5a000204)?(10afdc)==(5a)
+==cmpck:0(5a)==rdi:5a000204(5a000204)?(10afdc)==(5a)
+==cmpck:0(0)==rdi:205(205)?(10b1f4)==(0)
+==cmpck:0(5b)==rdi:5b000206(5b000206)?(10abac)==(5b)
+==cmpck:0(5b)==rdi:5b000206(5b000206)?(10abac)==(5b)
+==cmpck:0(0)==rdi:207(207)?(10be84)==(0)
+==cmpck:0(5c)==rdi:5c000208(5c000208)?(10ba54)==(5c)
+==cmpck:0(5c)==rdi:5c000208(5c000208)?(10ba54)==(5c)
+==cmpck:0(0)==rdi:209(209)?(10b40c)==(0)
+==cmpck:0(5d)==rdi:5d00020a(5d00020a)?(10adc4)==(5d)
+==cmpck:0(5d)==rdi:5d00020a(5d00020a)?(10adc4)==(5d)
+==cmpck:0(0)==rdi:20b(20b)?(10b624)==(0)
+==cmpck:0(5e)==rdi:5e00020c(5e00020c)?(10b83c)==(5e)
+==cmpck:0(5e)==rdi:5e00020c(5e00020c)?(10b83c)==(5e)
+==cmpck:0(0)==rdi:20d(20d)?(10afdc)==(0)
+==cmpck:0(5f)==rdi:5f00020e(5f00020e)?(10b1f4)==(5f)
+==cmpck:0(5f)==rdi:5f00020e(5f00020e)?(10b1f4)==(5f)
+==cmpck:0(0)==rdi:20f(20f)?(10abac)==(0)
+==cmpck:0(60)==rdi:60000210(60000210)?(10be84)==(60)
+==cmpck:0(60)==rdi:60000210(60000210)?(10be84)==(60)
+==cmpck:0(0)==rdi:211(211)?(10ba54)==(0)
+==cmpck:0(61)==rdi:61000212(61000212)?(10b40c)==(61)
+==cmpck:0(61)==rdi:61000212(61000212)?(10b40c)==(61)
+==cmpck:0(0)==rdi:213(213)?(10adc4)==(0)
+==cmpck:0(62)==rdi:62000214(62000214)?(10b624)==(62)
+==cmpck:0(62)==rdi:62000214(62000214)?(10b624)==(62)
+==cmpck:0(0)==rdi:215(215)?(10b83c)==(0)
+==cmpck:0(63)==rdi:63000216(63000216)?(10afdc)==(63)
+==cmpck:0(63)==rdi:63000216(63000216)?(10afdc)==(63)
+==cmpck:0(0)==rdi:217(217)?(10b1f4)==(0)
+==cmpck:0(64)==rdi:64000218(64000218)?(10abac)==(64)
+==cmpck:0(64)==rdi:64000218(64000218)?(10abac)==(64)
+==cmpck:0(0)==rdi:219(219)?(10be84)==(0)
+==cmpck:0(65)==rdi:6500021a(6500021a)?(10ba54)==(65)
+==cmpck:0(65)==rdi:6500021a(6500021a)?(10ba54)==(65)
+==cmpck:0(0)==rdi:21b(21b)?(10b40c)==(0)
+==cmpck:0(66)==rdi:6600021c(6600021c)?(10adc4)==(66)
+==cmpck:0(66)==rdi:6600021c(6600021c)?(10adc4)==(66)
+==cmpck:0(0)==rdi:21d(21d)?(10b624)==(0)
+==cmpck:0(67)==rdi:6700021e(6700021e)?(10b83c)==(67)
+==cmpck:0(67)==rdi:6700021e(6700021e)?(10b83c)==(67)
+==cmpck:0(0)==rdi:21f(21f)?(10afdc)==(0)
+==cmpck:0(68)==rdi:68000220(68000220)?(10b1f4)==(68)
+==cmpck:0(68)==rdi:68000220(68000220)?(10b1f4)==(68)
+==cmpck:0(0)==rdi:221(221)?(10abac)==(0)
+==cmpck:0(69)==rdi:69000222(69000222)?(10be84)==(69)
+==cmpck:0(69)==rdi:69000222(69000222)?(10be84)==(69)
+==cmpck:0(0)==rdi:223(223)?(10ba54)==(0)
+==cmpck:0(6a)==rdi:6a000224(6a000224)?(10b40c)==(6a)
+==cmpck:0(6a)==rdi:6a000224(6a000224)?(10b40c)==(6a)
+==cmpck:0(0)==rdi:225(225)?(10adc4)==(0)
+==cmpck:0(6b)==rdi:6b000226(6b000226)?(10b624)==(6b)
+==cmpck:0(6b)==rdi:6b000226(6b000226)?(10b624)==(6b)
+==cmpck:0(6c)==rdi:6c000227(6c000227)?(10b83c)==(6c)
+==cmpck:0(6c)==rdi:6c000227(6c000227)?(10b83c)==(6c)
+==cmpck:0(0)==rdi:228(228)?(10afdc)==(0)
+==cmpck:0(6d)==rdi:6d000229(6d000229)?(10b1f4)==(6d)
+==cmpck:0(6d)==rdi:6d000229(6d000229)?(10b1f4)==(6d)
+==cmpck:0(0)==rdi:22a(22a)?(10abac)==(0)
+==cmpck:0(6e)==rdi:6e00022b(6e00022b)?(10be84)==(6e)
+==cmpck:0(6e)==rdi:6e00022b(6e00022b)?(10be84)==(6e)
+==cmpck:0(0)==rdi:22c(22c)?(10ba54)==(0)
+==cmpck:0(6f)==rdi:6f00022d(6f00022d)?(10b40c)==(6f)
+==cmpck:0(6f)==rdi:6f00022d(6f00022d)?(10b40c)==(6f)
+==cmpck:0(0)==rdi:22e(22e)?(10adc4)==(0)
+==cmpck:0(70)==rdi:7000022f(7000022f)?(10b624)==(70)
+==cmpck:0(70)==rdi:7000022f(7000022f)?(10b624)==(70)
+==cmpck:0(0)==rdi:230(230)?(10b83c)==(0)
+==cmpck:0(71)==rdi:71000231(71000231)?(10afdc)==(71)
+==cmpck:0(71)==rdi:71000231(71000231)?(10afdc)==(71)
+==cmpck:0(0)==rdi:232(232)?(10b1f4)==(0)
+==cmpck:0(72)==rdi:72000233(72000233)?(10abac)==(72)
+==cmpck:0(72)==rdi:72000233(72000233)?(10abac)==(72)
+==cmpck:0(0)==rdi:234(234)?(10be84)==(0)
+==cmpck:0(73)==rdi:73000235(73000235)?(10ba54)==(73)
+==cmpck:0(73)==rdi:73000235(73000235)?(10ba54)==(73)
+==cmpck:0(0)==rdi:236(236)?(10b40c)==(0)
+==cmpck:0(74)==rdi:74000237(74000237)?(10adc4)==(74)
+==cmpck:0(74)==rdi:74000237(74000237)?(10adc4)==(74)
+==cmpck:0(0)==rdi:238(238)?(10b624)==(0)
+==cmpck:0(75)==rdi:75000239(75000239)?(10b83c)==(75)
+==cmpck:0(75)==rdi:75000239(75000239)?(10b83c)==(75)
+==cmpck:0(0)==rdi:23a(23a)?(10afdc)==(0)
+==cmpck:0(76)==rdi:7600023b(7600023b)?(10b1f4)==(76)
+==cmpck:0(76)==rdi:7600023b(7600023b)?(10b1f4)==(76)
+==cmpck:0(0)==rdi:23c(23c)?(10abac)==(0)
+==cmpck:0(77)==rdi:7700023d(7700023d)?(10be84)==(77)
+==cmpck:0(77)==rdi:7700023d(7700023d)?(10be84)==(77)
+==cmpck:0(0)==rdi:23e(23e)?(10ba54)==(0)
+==cmpck:0(78)==rdi:7800023f(7800023f)?(10b40c)==(78)
+==cmpck:0(78)==rdi:7800023f(7800023f)?(10b40c)==(78)
+==cmpck:0(0)==rdi:240(240)?(10adc4)==(0)
+==cmpck:0(79)==rdi:79000241(79000241)?(10b624)==(79)
+==cmpck:0(79)==rdi:79000241(79000241)?(10b624)==(79)
+==cmpck:0(0)==rdi:242(242)?(10b83c)==(0)
+==cmpck:0(7a)==rdi:7a000243(7a000243)?(10afdc)==(7a)
+==cmpck:0(7a)==rdi:7a000243(7a000243)?(10afdc)==(7a)
+==cmpck:0(0)==rdi:244(244)?(10b1f4)==(0)
+==cmpck:0(7b)==rdi:7b000245(7b000245)?(10abac)==(7b)
+==cmpck:0(7b)==rdi:7b000245(7b000245)?(10abac)==(7b)
+==cmpck:0(0)==rdi:246(246)?(10be84)==(0)
+==cmpck:0(7c)==rdi:7c000247(7c000247)?(10ba54)==(7c)
+==cmpck:0(7c)==rdi:7c000247(7c000247)?(10ba54)==(7c)
+==cmpck:0(0)==rdi:248(248)?(10b40c)==(0)
+==cmpck:0(7d)==rdi:7d000249(7d000249)?(10adc4)==(7d)
+==cmpck:0(7d)==rdi:7d000249(7d000249)?(10adc4)==(7d)
+==cmpck:0(0)==rdi:24a(24a)?(10b624)==(0)
+==cmpck:0(7e)==rdi:7e00024b(7e00024b)?(10b83c)==(7e)
+==cmpck:0(7e)==rdi:7e00024b(7e00024b)?(10b83c)==(7e)
+==cmpck:0(0)==rdi:24c(24c)?(10afdc)==(0)
+==cmpck:0(7f)==rdi:7f00024d(7f00024d)?(10b1f4)==(7f)
+==cmpck:0(7f)==rdi:7f00024d(7f00024d)?(10b1f4)==(7f)
+==cmpck:0(0)==rdi:24e(24e)?(10abac)==(0)
+==cmpck:0(80)==rdi:8000024f(8000024f)?(10be84)==(80)
+==cmpck:0(80)==rdi:8000024f(8000024f)?(10be84)==(80)
+==cmpck:0(0)==rdi:250(250)?(10ba54)==(0)
+==cmpck:81(81)==rdi:81000251(81000251)?(10b40c)==(81)
+==cmpck:0(82)==rdi:82000252(82000252)?(10adc4)==(82)
+==cmpck:0(82)==rdi:82000252(82000252)?(10adc4)==(82)
+==cmpck:0(0)==rdi:253(253)?(10b624)==(0)
+==cmpck:0(83)==rdi:83000254(83000254)?(10b83c)==(83)
+==cmpck:0(83)==rdi:83000254(83000254)?(10b83c)==(83)
+==cmpck:0(0)==rdi:255(255)?(10afdc)==(0)
+==cmpck:0(84)==rdi:84000256(84000256)?(10b1f4)==(84)
+==cmpck:0(84)==rdi:84000256(84000256)?(10b1f4)==(84)
+==cmpck:0(0)==rdi:257(257)?(10abac)==(0)
+==cmpck:0(85)==rdi:85000258(85000258)?(10be84)==(85)
+==cmpck:0(85)==rdi:85000258(85000258)?(10be84)==(85)
+==cmpck:0(0)==rdi:259(259)?(10ba54)==(0)
+==cmpck:0(86)==rdi:8600025a(8600025a)?(10b40c)==(86)
+==cmpck:0(86)==rdi:8600025a(8600025a)?(10b40c)==(86)
+==cmpck:0(0)==rdi:25b(25b)?(10adc4)==(0)
+==cmpck:0(87)==rdi:8700025c(8700025c)?(10b624)==(87)
+==cmpck:0(87)==rdi:8700025c(8700025c)?(10b624)==(87)
+==cmpck:0(0)==rdi:25d(25d)?(10b83c)==(0)
+==cmpck:0(0)==rdi:25e(25e)?(10afdc)==(0)
+TEST PASSED
+
+
+test write4 PASSED
+ (write then read, buffer larger than one block)
+
+
+**********************************************************************
+
+Test write5
+check the correct image is produced after writing
+
+**********************************************************************
+Trying to build project using make
+make
+make: Nothing to be done for `all'.
+Using image /u/c/s/cs537-2/ta/tests/5b/images/write5-before.img
+make qemu-nox
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+cpu0: starting
+init: starting sh
+$ write5
+write5
+buffer size: 512
+file size: 71680
+create checked file
+create T_CHECKED
+writing file
+==cmpck:41(41)==|wri:(22d)(41)
+==cmpck:42(42)==|wri:(22e)(42)
+==cmpck:43(43)==|wri:(22f)(43)
+==cmpck:44(44)==|wri:(230)(44)
+==cmpck:45(45)==|wri:(231)(45)
+==cmpck:46(46)==|wri:(232)(46)
+==cmpck:47(47)==|wri:(233)(47)
+==cmpck:48(48)==|wri:(234)(48)
+==cmpck:49(49)==|wri:(235)(49)
+==cmpck:4a(4a)==|wri:(236)(4a)
+==cmpck:4b(4b)==|wri:(237)(4b)
+==cmpck:4c(4c)==|wri:(238)(4c)
+==cmpck:4d(4d)==|wri:(23a)(4d)
+==cmpck:4e(4e)==|wri:(23b)(4e)
+==cmpck:4f(4f)==|wri:(23c)(4f)
+==cmpck:50(50)==|wri:(23d)(50)
+==cmpck:51(51)==|wri:(23e)(51)
+==cmpck:52(52)==|wri:(23f)(52)
+==cmpck:53(53)==|wri:(240)(53)
+==cmpck:54(54)==|wri:(241)(54)
+==cmpck:55(55)==|wri:(242)(55)
+==cmpck:56(56)==|wri:(243)(56)
+==cmpck:57(57)==|wri:(244)(57)
+==cmpck:58(58)==|wri:(245)(58)
+==cmpck:59(59)==|wri:(246)(59)
+==cmpck:5a(5a)==|wri:(247)(5a)
+==cmpck:5b(5b)==|wri:(248)(5b)
+==cmpck:5c(5c)==|wri:(249)(5c)
+==cmpck:5d(5d)==|wri:(24a)(5d)
+==cmpck:5e(5e)==|wri:(24b)(5e)
+==cmpck:5f(5f)==|wri:(24c)(5f)
+==cmpck:60(60)==|wri:(24d)(60)
+==cmpck:61(61)==|wri:(24e)(61)
+==cmpck:62(62)==|wri:(24f)(62)
+==cmpck:63(63)==|wri:(250)(63)
+==cmpck:64(64)==|wri:(251)(64)
+==cmpck:65(65)==|wri:(252)(65)
+==cmpck:66(66)==|wri:(253)(66)
+==cmpck:67(67)==|wri:(254)(67)
+==cmpck:68(68)==|wri:(255)(68)
+==cmpck:69(69)==|wri:(256)(69)
+==cmpck:6a(6a)==|wri:(257)(6a)
+==cmpck:6b(6b)==|wri:(258)(6b)
+==cmpck:6c(6c)==|wri:(259)(6c)
+==cmpck:6d(6d)==|wri:(25a)(6d)
+==cmpck:6e(6e)==|wri:(25b)(6e)
+==cmpck:6f(6f)==|wri:(25c)(6f)
+==cmpck:70(70)==|wri:(25d)(70)
+==cmpck:71(71)==|wri:(25e)(71)
+==cmpck:72(72)==|wri:(25f)(72)
+==cmpck:73(73)==|wri:(260)(73)
+==cmpck:74(74)==|wri:(261)(74)
+==cmpck:75(75)==|wri:(262)(75)
+==cmpck:76(76)==|wri:(263)(76)
+==cmpck:77(77)==|wri:(264)(77)
+==cmpck:78(78)==|wri:(265)(78)
+==cmpck:79(79)==|wri:(266)(79)
+==cmpck:7a(7a)==|wri:(267)(7a)
+==cmpck:7b(7b)==|wri:(268)(7b)
+==cmpck:7c(7c)==|wri:(269)(7c)
+==cmpck:7d(7d)==|wri:(26a)(7d)
+==cmpck:7e(7e)==|wri:(26b)(7e)
+==cmpck:7f(7f)==|wri:(26c)(7f)
+==cmpck:80(80)==|wri:(26d)(80)
+==cmpck:81(81)==|wri:(26e)(81)
+==cmpck:82(82)==|wri:(26f)(82)
+==cmpck:83(83)==|wri:(270)(83)
+==cmpck:84(84)==|wri:(271)(84)
+==cmpck:85(85)==|wri:(272)(85)
+==cmpck:86(86)==|wri:(273)(86)
+==cmpck:87(87)==|wri:(274)(87)
+==cmpck:88(88)==|wri:(275)(88)
+==cmpck:89(89)==|wri:(276)(89)
+==cmpck:8a(8a)==|wri:(277)(8a)
+==cmpck:8b(8b)==|wri:(278)(8b)
+==cmpck:8c(8c)==|wri:(279)(8c)
+==cmpck:8d(8d)==|wri:(27a)(8d)
+==cmpck:8e(8e)==|wri:(27b)(8e)
+==cmpck:8f(8f)==|wri:(27c)(8f)
+==cmpck:90(90)==|wri:(27d)(90)
+==cmpck:91(91)==|wri:(27e)(91)
+==cmpck:92(92)==|wri:(27f)(92)
+==cmpck:93(93)==|wri:(280)(93)
+==cmpck:94(94)==|wri:(281)(94)
+==cmpck:95(95)==|wri:(282)(95)
+==cmpck:96(96)==|wri:(283)(96)
+==cmpck:97(97)==|wri:(284)(97)
+==cmpck:98(98)==|wri:(285)(98)
+==cmpck:99(99)==|wri:(286)(99)
+==cmpck:9a(9a)==|wri:(287)(9a)
+==cmpck:9b(9b)==|wri:(288)(9b)
+==cmpck:9c(9c)==|wri:(289)(9c)
+==cmpck:9d(9d)==|wri:(28a)(9d)
+==cmpck:9e(9e)==|wri:(28b)(9e)
+==cmpck:9f(9f)==|wri:(28c)(9f)
+==cmpck:a0(a0)==|wri:(28d)(a0)
+==cmpck:a1(a1)==|wri:(28e)(a1)
+==cmpck:a2(a2)==|wri:(28f)(a2)
+==cmpck:a3(a3)==|wri:(290)(a3)
+==cmpck:a4(a4)==|wri:(291)(a4)
+==cmpck:a5(a5)==|wri:(292)(a5)
+==cmpck:a6(a6)==|wri:(293)(a6)
+==cmpck:a7(a7)==|wri:(294)(a7)
+==cmpck:a8(a8)==|wri:(295)(a8)
+==cmpck:a9(a9)==|wri:(296)(a9)
+==cmpck:aa(aa)==|wri:(297)(aa)
+==cmpck:ab(ab)==|wri:(298)(ab)
+==cmpck:ac(ac)==|wri:(299)(ac)
+==cmpck:ad(ad)==|wri:(29a)(ad)
+==cmpck:ae(ae)==|wri:(29b)(ae)
+==cmpck:af(af)==|wri:(29c)(af)
+==cmpck:b0(b0)==|wri:(29d)(b0)
+==cmpck:b1(b1)==|wri:(29e)(b1)
+==cmpck:b2(b2)==|wri:(29f)(b2)
+==cmpck:b3(b3)==|wri:(2a0)(b3)
+==cmpck:b4(b4)==|wri:(2a1)(b4)
+==cmpck:b5(b5)==|wri:(2a2)(b5)
+==cmpck:b6(b6)==|wri:(2a3)(b6)
+==cmpck:b7(b7)==|wri:(2a4)(b7)
+==cmpck:b8(b8)==|wri:(2a5)(b8)
+==cmpck:b9(b9)==|wri:(2a6)(b9)
+==cmpck:ba(ba)==|wri:(2a7)(ba)
+==cmpck:bb(bb)==|wri:(2a8)(bb)
+==cmpck:bc(bc)==|wri:(2a9)(bc)
+==cmpck:bd(bd)==|wri:(2aa)(bd)
+==cmpck:be(be)==|wri:(2ab)(be)
+==cmpck:bf(bf)==|wri:(2ac)(bf)
+==cmpck:c0(c0)==|wri:(2ad)(c0)
+==cmpck:c1(c1)==|wri:(2ae)(c1)
+==cmpck:c2(c2)==|wri:(2af)(c2)
+==cmpck:c3(c3)==|wri:(2b0)(c3)
+==cmpck:c4(c4)==|wri:(2b1)(c4)
+==cmpck:c5(c5)==|wri:(2b2)(c5)
+==cmpck:c6(c6)==|wri:(2b3)(c6)
+==cmpck:c7(c7)==|wri:(2b4)(c7)
+==cmpck:c8(c8)==|wri:(2b5)(c8)
+==cmpck:c9(c9)==|wri:(2b6)(c9)
+==cmpck:ca(ca)==|wri:(2b7)(ca)
+==cmpck:cb(cb)==|wri:(2b8)(cb)
+==cmpck:cc(cc)==|wri:(2b9)(cc)
+reopening read only
+reading file
+==cmpck:41(41)==rdi:4100022d(4100022d)?(10abac)==(41)
+==cmpck:42(42)==rdi:4200022e(4200022e)?(10be84)==(42)
+==cmpck:43(43)==rdi:4300022f(4300022f)?(10b1f4)==(43)
+==cmpck:44(44)==rdi:44000230(44000230)?(10afdc)==(44)
+==cmpck:45(45)==rdi:45000231(45000231)?(10ba54)==(45)
+==cmpck:46(46)==rdi:46000232(46000232)?(10b40c)==(46)
+==cmpck:47(47)==rdi:47000233(47000233)?(10adc4)==(47)
+==cmpck:48(48)==rdi:48000234(48000234)?(10b624)==(48)
+==cmpck:49(49)==rdi:49000235(49000235)?(10b83c)==(49)
+==cmpck:4a(4a)==rdi:4a000236(4a000236)?(10bc6c)==(4a)
+==cmpck:4b(4b)==rdi:4b000237(4b000237)?(10abac)==(4b)
+==cmpck:4c(4c)==rdi:4c000238(4c000238)?(10be84)==(4c)
+==cmpck:4d(4d)==rdi:4d00023a(4d00023a)?(10afdc)==(4d)
+==cmpck:4e(4e)==rdi:4e00023b(4e00023b)?(10ba54)==(4e)
+==cmpck:4f(4f)==rdi:4f00023c(4f00023c)?(10b40c)==(4f)
+==cmpck:50(50)==rdi:5000023d(5000023d)?(10adc4)==(50)
+==cmpck:51(51)==rdi:5100023e(5100023e)?(10b624)==(51)
+==cmpck:52(52)==rdi:5200023f(5200023f)?(10b83c)==(52)
+==cmpck:53(53)==rdi:53000240(53000240)?(10bc6c)==(53)
+==cmpck:54(54)==rdi:54000241(54000241)?(10abac)==(54)
+==cmpck:55(55)==rdi:55000242(55000242)?(10be84)==(55)
+==cmpck:56(56)==rdi:56000243(56000243)?(10afdc)==(56)
+==cmpck:57(57)==rdi:57000244(57000244)?(10ba54)==(57)
+==cmpck:58(58)==rdi:58000245(58000245)?(10b40c)==(58)
+==cmpck:59(59)==rdi:59000246(59000246)?(10adc4)==(59)
+==cmpck:5a(5a)==rdi:5a000247(5a000247)?(10b624)==(5a)
+==cmpck:5b(5b)==rdi:5b000248(5b000248)?(10b83c)==(5b)
+==cmpck:5c(5c)==rdi:5c000249(5c000249)?(10bc6c)==(5c)
+==cmpck:5d(5d)==rdi:5d00024a(5d00024a)?(10abac)==(5d)
+==cmpck:5e(5e)==rdi:5e00024b(5e00024b)?(10be84)==(5e)
+==cmpck:5f(5f)==rdi:5f00024c(5f00024c)?(10afdc)==(5f)
+==cmpck:60(60)==rdi:6000024d(6000024d)?(10ba54)==(60)
+==cmpck:61(61)==rdi:6100024e(6100024e)?(10b40c)==(61)
+==cmpck:62(62)==rdi:6200024f(6200024f)?(10adc4)==(62)
+==cmpck:63(63)==rdi:63000250(63000250)?(10b624)==(63)
+==cmpck:64(64)==rdi:64000251(64000251)?(10b83c)==(64)
+==cmpck:65(65)==rdi:65000252(65000252)?(10bc6c)==(65)
+==cmpck:66(66)==rdi:66000253(66000253)?(10abac)==(66)
+==cmpck:67(67)==rdi:67000254(67000254)?(10be84)==(67)
+==cmpck:68(68)==rdi:68000255(68000255)?(10afdc)==(68)
+==cmpck:69(69)==rdi:69000256(69000256)?(10ba54)==(69)
+==cmpck:6a(6a)==rdi:6a000257(6a000257)?(10b40c)==(6a)
+==cmpck:6b(6b)==rdi:6b000258(6b000258)?(10adc4)==(6b)
+==cmpck:6c(6c)==rdi:6c000259(6c000259)?(10b624)==(6c)
+==cmpck:6d(6d)==rdi:6d00025a(6d00025a)?(10b83c)==(6d)
+==cmpck:6e(6e)==rdi:6e00025b(6e00025b)?(10bc6c)==(6e)
+==cmpck:6f(6f)==rdi:6f00025c(6f00025c)?(10abac)==(6f)
+==cmpck:70(70)==rdi:7000025d(7000025d)?(10be84)==(70)
+==cmpck:71(71)==rdi:7100025e(7100025e)?(10afdc)==(71)
+==cmpck:72(72)==rdi:7200025f(7200025f)?(10ba54)==(72)
+==cmpck:73(73)==rdi:73000260(73000260)?(10b40c)==(73)
+==cmpck:74(74)==rdi:74000261(74000261)?(10adc4)==(74)
+==cmpck:75(75)==rdi:75000262(75000262)?(10b624)==(75)
+==cmpck:76(76)==rdi:76000263(76000263)?(10b83c)==(76)
+==cmpck:77(77)==rdi:77000264(77000264)?(10bc6c)==(77)
+==cmpck:78(78)==rdi:78000265(78000265)?(10abac)==(78)
+==cmpck:79(79)==rdi:79000266(79000266)?(10be84)==(79)
+==cmpck:7a(7a)==rdi:7a000267(7a000267)?(10afdc)==(7a)
+==cmpck:7b(7b)==rdi:7b000268(7b000268)?(10ba54)==(7b)
+==cmpck:7c(7c)==rdi:7c000269(7c000269)?(10b40c)==(7c)
+==cmpck:7d(7d)==rdi:7d00026a(7d00026a)?(10adc4)==(7d)
+==cmpck:7e(7e)==rdi:7e00026b(7e00026b)?(10b624)==(7e)
+==cmpck:7f(7f)==rdi:7f00026c(7f00026c)?(10b83c)==(7f)
+==cmpck:80(80)==rdi:8000026d(8000026d)?(10bc6c)==(80)
+==cmpck:81(81)==rdi:8100026e(8100026e)?(10abac)==(81)
+==cmpck:82(82)==rdi:8200026f(8200026f)?(10be84)==(82)
+==cmpck:83(83)==rdi:83000270(83000270)?(10afdc)==(83)
+==cmpck:84(84)==rdi:84000271(84000271)?(10ba54)==(84)
+==cmpck:85(85)==rdi:85000272(85000272)?(10b40c)==(85)
+==cmpck:86(86)==rdi:86000273(86000273)?(10adc4)==(86)
+==cmpck:87(87)==rdi:87000274(87000274)?(10b624)==(87)
+==cmpck:88(88)==rdi:88000275(88000275)?(10b83c)==(88)
+==cmpck:89(89)==rdi:89000276(89000276)?(10bc6c)==(89)
+==cmpck:8a(8a)==rdi:8a000277(8a000277)?(10abac)==(8a)
+==cmpck:8b(8b)==rdi:8b000278(8b000278)?(10be84)==(8b)
+==cmpck:8c(8c)==rdi:8c000279(8c000279)?(10afdc)==(8c)
+==cmpck:8d(8d)==rdi:8d00027a(8d00027a)?(10ba54)==(8d)
+==cmpck:8e(8e)==rdi:8e00027b(8e00027b)?(10b40c)==(8e)
+==cmpck:8f(8f)==rdi:8f00027c(8f00027c)?(10adc4)==(8f)
+==cmpck:90(90)==rdi:9000027d(9000027d)?(10b624)==(90)
+==cmpck:91(91)==rdi:9100027e(9100027e)?(10b83c)==(91)
+==cmpck:92(92)==rdi:9200027f(9200027f)?(10bc6c)==(92)
+==cmpck:93(93)==rdi:93000280(93000280)?(10abac)==(93)
+==cmpck:94(94)==rdi:94000281(94000281)?(10be84)==(94)
+==cmpck:95(95)==rdi:95000282(95000282)?(10afdc)==(95)
+==cmpck:96(96)==rdi:96000283(96000283)?(10ba54)==(96)
+==cmpck:97(97)==rdi:97000284(97000284)?(10b40c)==(97)
+==cmpck:98(98)==rdi:98000285(98000285)?(10adc4)==(98)
+==cmpck:99(99)==rdi:99000286(99000286)?(10b624)==(99)
+==cmpck:9a(9a)==rdi:9a000287(9a000287)?(10b83c)==(9a)
+==cmpck:9b(9b)==rdi:9b000288(9b000288)?(10bc6c)==(9b)
+==cmpck:9c(9c)==rdi:9c000289(9c000289)?(10abac)==(9c)
+==cmpck:9d(9d)==rdi:9d00028a(9d00028a)?(10be84)==(9d)
+==cmpck:9e(9e)==rdi:9e00028b(9e00028b)?(10afdc)==(9e)
+==cmpck:9f(9f)==rdi:9f00028c(9f00028c)?(10ba54)==(9f)
+==cmpck:a0(a0)==rdi:a000028d(a000028d)?(10b40c)==(a0)
+==cmpck:a1(a1)==rdi:a100028e(a100028e)?(10adc4)==(a1)
+==cmpck:a2(a2)==rdi:a200028f(a200028f)?(10b624)==(a2)
+==cmpck:a3(a3)==rdi:a3000290(a3000290)?(10b83c)==(a3)
+==cmpck:a4(a4)==rdi:a4000291(a4000291)?(10bc6c)==(a4)
+==cmpck:a5(a5)==rdi:a5000292(a5000292)?(10abac)==(a5)
+==cmpck:a6(a6)==rdi:a6000293(a6000293)?(10be84)==(a6)
+==cmpck:a7(a7)==rdi:a7000294(a7000294)?(10afdc)==(a7)
+==cmpck:a8(a8)==rdi:a8000295(a8000295)?(10ba54)==(a8)
+==cmpck:a9(a9)==rdi:a9000296(a9000296)?(10b40c)==(a9)
+==cmpck:aa(aa)==rdi:aa000297(aa000297)?(10adc4)==(aa)
+==cmpck:ab(ab)==rdi:ab000298(ab000298)?(10b624)==(ab)
+==cmpck:ac(ac)==rdi:ac000299(ac000299)?(10b83c)==(ac)
+==cmpck:ad(ad)==rdi:ad00029a(ad00029a)?(10bc6c)==(ad)
+==cmpck:ae(ae)==rdi:ae00029b(ae00029b)?(10abac)==(ae)
+==cmpck:af(af)==rdi:af00029c(af00029c)?(10be84)==(af)
+==cmpck:b0(b0)==rdi:b000029d(b000029d)?(10afdc)==(b0)
+==cmpck:b1(b1)==rdi:b100029e(b100029e)?(10ba54)==(b1)
+==cmpck:b2(b2)==rdi:b200029f(b200029f)?(10b40c)==(b2)
+==cmpck:b3(b3)==rdi:b30002a0(b30002a0)?(10adc4)==(b3)
+==cmpck:b4(b4)==rdi:b40002a1(b40002a1)?(10b624)==(b4)
+==cmpck:b5(b5)==rdi:b50002a2(b50002a2)?(10b83c)==(b5)
+==cmpck:b6(b6)==rdi:b60002a3(b60002a3)?(10bc6c)==(b6)
+==cmpck:b7(b7)==rdi:b70002a4(b70002a4)?(10abac)==(b7)
+==cmpck:b8(b8)==rdi:b80002a5(b80002a5)?(10be84)==(b8)
+==cmpck:b9(b9)==rdi:b90002a6(b90002a6)?(10afdc)==(b9)
+==cmpck:ba(ba)==rdi:ba0002a7(ba0002a7)?(10ba54)==(ba)
+==cmpck:bb(bb)==rdi:bb0002a8(bb0002a8)?(10b40c)==(bb)
+==cmpck:bc(bc)==rdi:bc0002a9(bc0002a9)?(10adc4)==(bc)
+==cmpck:bd(bd)==rdi:bd0002aa(bd0002aa)?(10b624)==(bd)
+==cmpck:be(be)==rdi:be0002ab(be0002ab)?(10b83c)==(be)
+==cmpck:bf(bf)==rdi:bf0002ac(bf0002ac)?(10bc6c)==(bf)
+==cmpck:c0(c0)==rdi:c00002ad(c00002ad)?(10abac)==(c0)
+==cmpck:c1(c1)==rdi:c10002ae(c10002ae)?(10be84)==(c1)
+==cmpck:c2(c2)==rdi:c20002af(c20002af)?(10afdc)==(c2)
+==cmpck:c3(c3)==rdi:c30002b0(c30002b0)?(10ba54)==(c3)
+==cmpck:c4(c4)==rdi:c40002b1(c40002b1)?(10b40c)==(c4)
+==cmpck:c5(c5)==rdi:c50002b2(c50002b2)?(10adc4)==(c5)
+==cmpck:c6(c6)==rdi:c60002b3(c60002b3)?(10b624)==(c6)
+==cmpck:c7(c7)==rdi:c70002b4(c70002b4)?(10b83c)==(c7)
+==cmpck:c8(c8)==rdi:c80002b5(c80002b5)?(10bc6c)==(c8)
+==cmpck:c9(c9)==rdi:c90002b6(c90002b6)?(10abac)==(c9)
+==cmpck:ca(ca)==rdi:ca0002b7(ca0002b7)?(10be84)==(ca)
+==cmpck:cb(cb)==rdi:cb0002b8(cb0002b8)?(10afdc)==(cb)
+==cmpck:cc(cc)==rdi:cc0002b9(cc0002b9)?(10ba54)==(cc)
+TEST PASSED
+Comparing actual image with expected image
+
+
+test write5 PASSED
+ (check the correct image is produced after writing)
+
+
+**********************************************************************
+
+Test checksum1
+check that stat gives the correct checksum
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/5b/tests/checksum1.c
+Trying to build project using make
+make
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/tester fs/tester
+./tools/mkfs fs.img fs
+used 29 (bit 1 ninode 26) free 29 total 1024
+file_tst
+sh
+usertests
+mkdir
+wc
+grep
+rm
+cat
+forktest
+README
+init
+zombie
+kill
+echo
+tester
+stressfs
+ln
+write2
+ls
+balloc: first 467 blocks have been allocated
+balloc: write bitmap block at sector 28
+rm user/bin/tester
+make qemu-nox 
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+cpu0: starting
+init: starting sh
+$ tester
+tester
+buffer size: 1000
+file size: 70000
+create checked file
+create T_CHECKED
+writing file
+==cmpck:42(28)==|wri:(1d3)(28)
+==cmpck:0(0)==|wri:(1d4)(0)
+==cmpck:0(2b)==|wri:(1d4)(2b)
+==cmpck:0(0)==|wri:(1d5)(0)
+==cmpck:0(0)==|wri:(1d6)(0)
+==cmpck:0(2a)==|wri:(1d6)(2a)
+==cmpck:0(0)==|wri:(1d7)(0)
+==cmpck:0(0)==|wri:(1d8)(0)
+==cmpck:0(2d)==|wri:(1d8)(2d)
+==cmpck:0(0)==|wri:(1d9)(0)
+==cmpck:0(0)==|wri:(1da)(0)
+==cmpck:0(2c)==|wri:(1da)(2c)
+==cmpck:0(0)==|wri:(1db)(0)
+==cmpck:0(0)==|wri:(1dc)(0)
+==cmpck:0(2f)==|wri:(1dc)(2f)
+==cmpck:0(0)==|wri:(1dd)(0)
+==cmpck:0(0)==|wri:(1de)(0)
+==cmpck:0(2e)==|wri:(1de)(2e)
+==cmpck:0(0)==|wri:(1e0)(0)
+==cmpck:0(0)==|wri:(1e1)(0)
+==cmpck:0(21)==|wri:(1e1)(21)
+==cmpck:0(0)==|wri:(1e2)(0)
+==cmpck:0(0)==|wri:(1e3)(0)
+==cmpck:0(20)==|wri:(1e3)(20)
+==cmpck:0(0)==|wri:(1e4)(0)
+==cmpck:0(0)==|wri:(1e5)(0)
+==cmpck:0(23)==|wri:(1e5)(23)
+==cmpck:0(0)==|wri:(1e6)(0)
+==cmpck:0(0)==|wri:(1e7)(0)
+==cmpck:0(22)==|wri:(1e7)(22)
+==cmpck:0(0)==|wri:(1e8)(0)
+==cmpck:0(0)==|wri:(1e9)(0)
+==cmpck:0(25)==|wri:(1e9)(25)
+==cmpck:0(0)==|wri:(1ea)(0)
+==cmpck:0(0)==|wri:(1eb)(0)
+==cmpck:0(24)==|wri:(1eb)(24)
+==cmpck:0(0)==|wri:(1ec)(0)
+==cmpck:0(0)==|wri:(1ed)(0)
+==cmpck:0(27)==|wri:(1ed)(27)
+==cmpck:0(0)==|wri:(1ee)(0)
+==cmpck:0(0)==|wri:(1ef)(0)
+==cmpck:0(26)==|wri:(1ef)(26)
+==cmpck:0(0)==|wri:(1f0)(0)
+==cmpck:0(0)==|wri:(1f1)(0)
+==cmpck:0(39)==|wri:(1f1)(39)
+==cmpck:0(0)==|wri:(1f2)(0)
+==cmpck:0(0)==|wri:(1f3)(0)
+==cmpck:0(38)==|wri:(1f3)(38)
+==cmpck:0(0)==|wri:(1f4)(0)
+==cmpck:0(0)==|wri:(1f5)(0)
+==cmpck:0(3b)==|wri:(1f5)(3b)
+==cmpck:0(0)==|wri:(1f6)(0)
+==cmpck:0(0)==|wri:(1f7)(0)
+==cmpck:0(3a)==|wri:(1f7)(3a)
+==cmpck:0(0)==|wri:(1f8)(0)
+==cmpck:0(0)==|wri:(1f9)(0)
+==cmpck:0(3d)==|wri:(1f9)(3d)
+==cmpck:0(0)==|wri:(1fa)(0)
+==cmpck:0(0)==|wri:(1fb)(0)
+==cmpck:0(3c)==|wri:(1fb)(3c)
+==cmpck:0(0)==|wri:(1fc)(0)
+==cmpck:0(0)==|wri:(1fd)(0)
+==cmpck:0(3f)==|wri:(1fd)(3f)
+==cmpck:0(0)==|wri:(1fe)(0)
+==cmpck:0(3e)==|wri:(1fe)(3e)
+==cmpck:0(0)==|wri:(1ff)(0)
+==cmpck:0(0)==|wri:(200)(0)
+==cmpck:0(31)==|wri:(200)(31)
+==cmpck:0(0)==|wri:(201)(0)
+==cmpck:0(0)==|wri:(202)(0)
+==cmpck:0(30)==|wri:(202)(30)
+==cmpck:0(0)==|wri:(203)(0)
+==cmpck:0(0)==|wri:(204)(0)
+==cmpck:0(33)==|wri:(204)(33)
+==cmpck:0(0)==|wri:(205)(0)
+==cmpck:0(0)==|wri:(206)(0)
+==cmpck:0(32)==|wri:(206)(32)
+==cmpck:0(0)==|wri:(207)(0)
+==cmpck:0(0)==|wri:(208)(0)
+==cmpck:0(35)==|wri:(208)(35)
+==cmpck:0(0)==|wri:(209)(0)
+==cmpck:0(0)==|wri:(20a)(0)
+==cmpck:0(34)==|wri:(20a)(34)
+==cmpck:0(0)==|wri:(20b)(0)
+==cmpck:0(0)==|wri:(20c)(0)
+==cmpck:0(37)==|wri:(20c)(37)
+==cmpck:0(0)==|wri:(20d)(0)
+==cmpck:0(0)==|wri:(20e)(0)
+==cmpck:0(36)==|wri:(20e)(36)
+==cmpck:0(0)==|wri:(20f)(0)
+==cmpck:0(0)==|wri:(210)(0)
+==cmpck:0(9)==|wri:(210)(9)
+==cmpck:0(0)==|wri:(211)(0)
+==cmpck:0(0)==|wri:(212)(0)
+==cmpck:0(8)==|wri:(212)(8)
+==cmpck:0(0)==|wri:(213)(0)
+==cmpck:0(0)==|wri:(214)(0)
+==cmpck:0(b)==|wri:(214)(b)
+==cmpck:0(0)==|wri:(215)(0)
+==cmpck:0(0)==|wri:(216)(0)
+==cmpck:0(a)==|wri:(216)(a)
+==cmpck:0(0)==|wri:(217)(0)
+==cmpck:0(0)==|wri:(218)(0)
+==cmpck:0(d)==|wri:(218)(d)
+==cmpck:0(0)==|wri:(219)(0)
+==cmpck:0(0)==|wri:(21a)(0)
+==cmpck:0(c)==|wri:(21a)(c)
+==cmpck:0(0)==|wri:(21b)(0)
+==cmpck:0(0)==|wri:(21c)(0)
+==cmpck:0(f)==|wri:(21c)(f)
+==cmpck:0(0)==|wri:(21d)(0)
+==cmpck:0(0)==|wri:(21e)(0)
+==cmpck:0(e)==|wri:(21e)(e)
+==cmpck:0(0)==|wri:(21f)(0)
+==cmpck:0(0)==|wri:(220)(0)
+==cmpck:0(1)==|wri:(220)(1)
+==cmpck:0(0)==|wri:(221)(0)
+==cmpck:0(0)==|wri:(222)(0)
+==cmpck:0(0)==|wri:(222)(0)
+==cmpck:0(0)==|wri:(223)(0)
+==cmpck:0(0)==|wri:(224)(0)
+==cmpck:0(3)==|wri:(224)(3)
+==cmpck:0(0)==|wri:(225)(0)
+==cmpck:0(0)==|wri:(226)(0)
+==cmpck:0(2)==|wri:(226)(2)
+==cmpck:0(0)==|wri:(227)(0)
+==cmpck:0(5)==|wri:(227)(5)
+==cmpck:0(0)==|wri:(228)(0)
+==cmpck:0(0)==|wri:(229)(0)
+==cmpck:0(4)==|wri:(229)(4)
+==cmpck:0(0)==|wri:(22a)(0)
+==cmpck:0(0)==|wri:(22b)(0)
+==cmpck:0(7)==|wri:(22b)(7)
+==cmpck:0(0)==|wri:(22c)(0)
+==cmpck:0(0)==|wri:(22d)(0)
+==cmpck:0(6)==|wri:(22d)(6)
+==cmpck:0(0)==|wri:(22e)(0)
+==cmpck:0(0)==|wri:(22f)(0)
+==cmpck:0(19)==|wri:(22f)(19)
+==cmpck:0(0)==|wri:(230)(0)
+==cmpck:0(0)==|wri:(231)(0)
+==cmpck:0(18)==|wri:(231)(18)
+==cmpck:0(0)==|wri:(232)(0)
+==cmpck:0(0)==|wri:(233)(0)
+==cmpck:0(1b)==|wri:(233)(1b)
+==cmpck:0(0)==|wri:(234)(0)
+==cmpck:0(0)==|wri:(235)(0)
+==cmpck:0(1a)==|wri:(235)(1a)
+==cmpck:0(0)==|wri:(236)(0)
+==cmpck:0(0)==|wri:(237)(0)
+==cmpck:0(1d)==|wri:(237)(1d)
+==cmpck:0(0)==|wri:(238)(0)
+==cmpck:0(0)==|wri:(239)(0)
+==cmpck:0(1c)==|wri:(239)(1c)
+==cmpck:0(0)==|wri:(23a)(0)
+==cmpck:0(0)==|wri:(23b)(0)
+==cmpck:0(1f)==|wri:(23b)(1f)
+==cmpck:0(0)==|wri:(23c)(0)
+==cmpck:0(0)==|wri:(23d)(0)
+==cmpck:0(1e)==|wri:(23d)(1e)
+==cmpck:0(0)==|wri:(23e)(0)
+==cmpck:0(0)==|wri:(23f)(0)
+==cmpck:0(11)==|wri:(23f)(11)
+==cmpck:0(0)==|wri:(240)(0)
+==cmpck:0(0)==|wri:(241)(0)
+==cmpck:0(10)==|wri:(241)(10)
+==cmpck:0(0)==|wri:(242)(0)
+==cmpck:0(0)==|wri:(243)(0)
+==cmpck:0(13)==|wri:(243)(13)
+==cmpck:0(0)==|wri:(244)(0)
+==cmpck:0(0)==|wri:(245)(0)
+==cmpck:0(12)==|wri:(245)(12)
+==cmpck:0(0)==|wri:(246)(0)
+==cmpck:0(0)==|wri:(247)(0)
+==cmpck:0(15)==|wri:(247)(15)
+==cmpck:0(0)==|wri:(248)(0)
+==cmpck:0(0)==|wri:(249)(0)
+==cmpck:0(14)==|wri:(249)(14)
+==cmpck:0(0)==|wri:(24a)(0)
+==cmpck:0(0)==|wri:(24b)(0)
+==cmpck:0(17)==|wri:(24b)(17)
+==cmpck:0(0)==|wri:(24c)(0)
+==cmpck:0(0)==|wri:(24d)(0)
+==cmpck:0(16)==|wri:(24d)(16)
+==cmpck:0(0)==|wri:(24e)(0)
+==cmpck:0(0)==|wri:(24f)(0)
+==cmpck:0(e9)==|wri:(24f)(e9)
+==cmpck:0(0)==|wri:(250)(0)
+==cmpck:42(e8)==|wri:(251)(e8)
+==cmpck:0(0)==|wri:(252)(0)
+==cmpck:0(eb)==|wri:(252)(eb)
+==cmpck:0(0)==|wri:(253)(0)
+==cmpck:0(0)==|wri:(254)(0)
+==cmpck:0(ea)==|wri:(254)(ea)
+==cmpck:0(0)==|wri:(255)(0)
+==cmpck:0(0)==|wri:(256)(0)
+==cmpck:0(ed)==|wri:(256)(ed)
+==cmpck:0(0)==|wri:(257)(0)
+==cmpck:0(0)==|wri:(258)(0)
+==cmpck:0(ec)==|wri:(258)(ec)
+==cmpck:0(0)==|wri:(259)(0)
+==cmpck:0(0)==|wri:(25a)(0)
+==cmpck:0(ef)==|wri:(25a)(ef)
+==cmpck:0(0)==|wri:(25b)(0)
+==cmpck:0(0)==|wri:(25c)(0)
+stat checksum: 199 actual: 199
+TEST PASSED
+
+test checksum1 PASSED
+ (check that stat gives the correct checksum)
+
+
+**********************************************************************
+
+Test checksum2
+check that stat gives the correct checksum
+
+**********************************************************************
+Trying to build project using make
+make
+make: Nothing to be done for `all'.
+Using image /u/c/s/cs537-2/ta/tests/5b/images/checksum2.img
+make qemu-nox
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+cpu0: starting
+init: starting sh
+$ checksum2
+checksum2
+==cmpck:0(0)==rdi:245(245)?(10b1f4)==(0)
+==cmpck:0(0)==rdi:246(246)?(10afdc)==(0)
+==cmpck:0(0)==rdi:247(247)?(10ba54)==(0)
+==cmpck:0(0)==rdi:248(248)?(10adc4)==(0)
+==cmpck:0(0)==rdi:249(249)?(10bc6c)==(0)
+==cmpck:0(0)==rdi:24a(24a)?(10be84)==(0)
+==cmpck:0(0)==rdi:24b(24b)?(10abac)==(0)
+==cmpck:0(0)==rdi:24c(24c)?(10b83c)==(0)
+==cmpck:0(0)==rdi:24d(24d)?(10b40c)==(0)
+==cmpck:0(0)==rdi:24e(24e)?(10b624)==(0)
+==cmpck:0(0)==rdi:24f(24f)?(10b1f4)==(0)
+==cmpck:0(0)==rdi:250(250)?(10afdc)==(0)
+==cmpck:0(0)==rdi:1000252(1000252)?(10adc4)==(1)
+checksum: 1
+TEST PASSED
+
+
+test checksum2 PASSED
+ (check that stat gives the correct checksum)
+
+
+**********************************************************************
+
+Test corrupt1
+first block of file is corrupt
+
+**********************************************************************
+Trying to build project using make
+make
+make: Nothing to be done for `all'.
+Using image /u/c/s/cs537-2/ta/tests/5b/images/corrupt1.img
+make qemu-nox
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+cpu0: starting
+init: starting sh
+$ corrupt1
+corrupt1
+==cmpck:0(0)==rdi:100022d(100022d)?(10abac)==(1)
+TEST PASSED
+
+
+test corrupt1 PASSED
+ (first block of file is corrupt)
+
+
+**********************************************************************
+
+Test corrupt2
+13th block of file is corrupt
+
+**********************************************************************
+Trying to build project using make
+make
+make: Nothing to be done for `all'.
+Using image /u/c/s/cs537-2/ta/tests/5b/images/corrupt2.img
+make qemu-nox
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+cpu0: starting
+init: starting sh
+$ corrupt2
+corrupt2
+==cmpck:0(0)==rdi:22d(22d)?(10b1f4)==(0)
+==cmpck:0(0)==rdi:22e(22e)?(10b624)==(0)
+==cmpck:0(0)==rdi:22f(22f)?(10afdc)==(0)
+==cmpck:0(0)==rdi:230(230)?(10ba54)==(0)
+==cmpck:0(0)==rdi:231(231)?(10adc4)==(0)
+==cmpck:0(0)==rdi:232(232)?(10bc6c)==(0)
+==cmpck:0(0)==rdi:233(233)?(10be84)==(0)
+==cmpck:0(0)==rdi:234(234)?(10b83c)==(0)
+==cmpck:0(0)==rdi:235(235)?(10b40c)==(0)
+==cmpck:0(0)==rdi:236(236)?(10abac)==(0)
+==cmpck:0(0)==rdi:237(237)?(10b1f4)==(0)
+==cmpck:0(0)==rdi:238(238)?(10b624)==(0)
+==cmpck:0(0)==rdi:100023a(100023a)?(10ba54)==(1)
+TEST PASSED
+
+
+test corrupt2 PASSED
+ (13th block of file is corrupt)
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build xv6 using make)
+
+test write1 PASSED
+ (write then read a block)
+
+test write2 PASSED
+ (write then read largest possible file)
+
+test write3 PASSED
+ (write then read, buffer smaller than one block)
+
+test write4 PASSED
+ (write then read, buffer larger than one block)
+
+test write5 PASSED
+ (check the correct image is produced after writing)
+
+test checksum1 PASSED
+ (check that stat gives the correct checksum)
+
+test checksum2 PASSED
+ (check that stat gives the correct checksum)
+
+test corrupt1 PASSED
+ (first block of file is corrupt)
+
+test corrupt2 PASSED
+ (13th block of file is corrupt)
+
+Passed 10 of 10 tests.
+Overall 10 of 10

@@ -1,0 +1,33 @@
+        int thTicks=get_totalTicks(0);//high 0, low 1
+299         int tlTicks=get_totalTicks(1);
+300 
+301         if(conti_flag == 1){
+302             //p->ticks.conti_flag =0;
+303             conti_flag=0;
+304             p->ticks.LTimes++;
+305             cprintf("pid(%d)hticks(%d)lticks(%d)queue(%d)Htimes(%d)Ltimes(%d    )\n",p->pid,p->ticks.hticks,p->ticks.lticks,p->ticks.queue,p->ticks.HTimes,p    ->ticks.LTimes);
+306         }
+307         else{
+308             if(thTicks !=0){    //total h ticks
+309                 winner = get_rand()%thTicks;    //winner =random
+310                 hcounter += p->ticks.hticks;
+311                 if(hcounter < winner) continue;     //continue for loop
+312                 p->ticks.HTimes ++;
+313                 cprintf("pid(%d)hticks(%d)lticks(%d)queue(%d)Htimes(%d)Ltime    s(%d)\n",p->pid,p->ticks.hticks,p->ticks.lticks,p->ticks.queue,p->ticks.HTim    es,p->ticks.LTimes);
+314                 p->ticks.queue = 1;//after executing, move to low level
+315                 p->ticks.lticks = p->ticks.hticks;
+316                 p->ticks.hticks = 0;
+317             }
+318             else
+319             {
+320                 if(tlTicks!=0) winner = get_rand()%tlTicks;
+321                 else    winner = 0;
+322                 lcounter += p->ticks.lticks;
+323                 if(lcounter<winner) continue;
+324                 p->ticks.LTimes ++;
+325                 cprintf("pid(%d)hticks(%d)lticks(%d)queue(%d)Htimes(%d)Ltime    s(%d)\n",p->pid,p->ticks.hticks,p->ticks.lticks,p->ticks.queue,p->ticks.HTim    es,p->ticks.LTimes);
+326                 p->ticks.conti_flag = 1;
+327                 conti_flag=1;
+328             }
+329         }
+

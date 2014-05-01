@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "mfs.h"
+#include "udp.h"
+#include "msg.h"
+
+int
+main(int argc, char *argv[])
+{
+  MFS_Init("mumble-05.cs.wisc.edu", 10010);
+  MFS_Lookup(1, "aa");
+    return 0;
+}
+
+
